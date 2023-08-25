@@ -1,0 +1,7 @@
+@use "../../scss/" as *;
+
+.container {
+  .slide__img {
+    object-fit: contain;
+  }
+}

@@ -1,0 +1,14 @@
+@use "../../scss/" as *;
+
+.container__content {
+  height: 1000px;
+  overflow-x: hidden;
+
+  @include smallTablet {
+    width: 720px;
+  }
+
+  @include tablet {
+    width: 960px;
+  }
+}

@@ -1,0 +1,23 @@
+@use "../../scss/" as *;
+
+.container__header {
+  @include flex(center, center);
+}
+
+.container__slide {
+  margin-top: 5px;
+
+  @include tablet {
+    margin-top: 65px;
+  }
+}
+
+.container__content {
+  @include tablet {
+    display: block;
+  }
+}
+
+.container__product {
+  height: 1000px;
+}

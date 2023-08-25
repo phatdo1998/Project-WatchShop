@@ -1,0 +1,68 @@
+@use "../../scss/" as *;
+
+.container__partner-item {
+  @include flex(center, center);
+
+  @include tablet {
+    @include flex(center, center);
+    width: 100%;
+  }
+
+  @include mobile {
+    display: block;
+    @include flex(center, center);
+    width: 100%;
+  }
+}
+
+.partner {
+  width: 1170px;
+
+  @include tablet {
+    width: 960px;
+  }
+  @include smallTablet {
+    width: 720px;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+
+  .brand {
+    margin-top: 70px;
+
+    @include mobile {
+      margin: 40px 15px 0 15px;
+    }
+
+    .slide__wrapper {
+      width: 165px !important ;
+      height: 67px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      margin-left: 3px;
+
+      @include tablet {
+        width: 150px !important;
+      }
+      @include mobile {
+        width: 130px !important;
+        margin-right: 10px !important;
+      }
+    }
+    .slide__img {
+      width: 165px;
+      height: 57px;
+
+      @include tablet {
+        width: 150px;
+        height: 57px;
+      }
+
+      @include tablet {
+        width: 130px;
+        height: 57px;
+      }
+    }
+  }
+}
