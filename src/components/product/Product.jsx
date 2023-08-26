@@ -1,47 +1,28 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import "swiper/css";
 import "swiper/swiper-bundle.css";
 import Heading from "../heading/Heding";
 import { data, newProduct } from "../../data";
 import s6 from "../../assets/image/s6_preview_rev_1.png";
 import "./product.scss";
-
-const data2 = [
-  {
-    name: "apple watch series 6",
-  },
-  {
-    name: "apple watch series 6",
-  },
-  {
-    name: "apple watch series 6",
-  },
-  {
-    name: "apple watch series 6",
-  },
-  {
-    name: "apple watch series 6",
-  },
-  {
-    name: "apple watch series 6",
-  },
-  {
-    name: "apple watch series 6",
-  },
-  {
-    name: "apple watch series 6",
-  },
-  {
-    name: "apple watch series 6",
-  },
-];
+import { Navigation, Autoplay } from "swiper/modules";
 
 const Product = () => {
   const [selected, setSelected] = useState(0);
   const handleClick = (index) => {
     setSelected(index);
+  };
+
+  const breakpoints = {
+    sx: 0,
+    sm: 480,
+    md: 768,
+    lg: 992,
+    xl: 1280,
+    xxl: 1440,
   };
   return (
     <div className="wrapper__product">
@@ -106,7 +87,37 @@ const Product = () => {
           </div>
           <div className="wrapper__slide">
             <div className="wrapper__slide--content">
-              <Swiper>
+              <div className="wrapper__slide-icon-left">
+                <AiOutlineLeft size={20} />
+              </div>
+              <div className="wrapper__slide-icon-right">
+                <AiOutlineRight size={20} />
+              </div>
+              <Swiper
+                breakpoints={{
+                  [breakpoints.xxl]: {
+                    slidesPerView: 3,
+                  },
+                  [breakpoints.xl]: {
+                    slidesPerView: 3,
+                  },
+                  [breakpoints.md]: {
+                    slidesPerView: 2,
+                  },
+                  [breakpoints.sm]: {
+                    slidesPerView: 2,
+                  },
+                }}
+                autoplay={{
+                  delay: 3000,
+                }}
+                slidesPerView={2}
+                navigation={{
+                  nextEl: ".wrapper__slide-icon-right",
+                  prevEl: ".wrapper__slide-icon-left",
+                }}
+                modules={[Navigation, Autoplay]}
+              >
                 {newProduct.map((item, index) => {
                   return (
                     <SwiperSlide key={index}>

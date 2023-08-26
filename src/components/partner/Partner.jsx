@@ -18,6 +18,15 @@ const Partner = () => {
     "https://conteenium.com/wp-content/uploads/2020/11/250-Logo-AriesGold.jpg",
   ];
 
+  const breakpoints = {
+    sx: 425,
+    sm: 480,
+    md: 768,
+    lg: 992,
+    xl: 1280,
+    xxl: 1440,
+  };
+
   return (
     <div className="container__partner-item">
       <div className="partner">
@@ -26,7 +35,26 @@ const Partner = () => {
           description="Bộ sưu tập những thương hiệu nổi tiếng về smartwatch trên thế giới"
         />
         <div className="brand">
-          <Swiper spaceBetween={30}>
+          <Swiper
+            breakpoints={{
+              [breakpoints.xxl]: {
+                slidesPerView: 6,
+              },
+              [breakpoints.xl]: {
+                slidesPerView: 3,
+              },
+              [breakpoints.md]: {
+                slidesPerView: 4,
+              },
+              [breakpoints.sm]: {
+                slidesPerView: 2,
+              },
+              [breakpoints.sx]: {
+                slidesPerView: 2,
+              },
+            }}
+            spaceBetween={30}
+          >
             {data.map((item, index) => {
               return (
                 <SwiperSlide key={index} className="slide__wrapper">

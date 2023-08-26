@@ -117,7 +117,7 @@
 
       @include tablet {
         width: 228px;
-        height: 320px;
+        height: 335px;
       }
 
       @include smallTablet {
@@ -132,7 +132,7 @@
 
       @include smallMobile {
         width: 140px;
-        height: 275px;
+        height: 225px;
       }
     }
 
@@ -149,18 +149,6 @@
       margin: 10px 0;
       transition: all 0.5s ease;
 
-      &::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 5;
-        opacity: 0;
-      }
-
       @include tablet {
         width: 192px;
         height: 217px;
@@ -173,7 +161,7 @@
 
       @include smallMobile {
         width: 110px;
-        height: 150px;
+        height: 110px;
       }
     }
 
@@ -184,6 +172,11 @@
 
       @include mobile {
         font-size: 12px;
+      }
+
+      @include smallMobile {
+        font-size: 12px;
+        margin: 0 0 10px 0;
       }
     }
 
@@ -221,6 +214,7 @@
     .wrapper__slide--content {
       width: 740px;
       margin-top: 40px;
+      position: relative;
       @include flex(center, flex-start);
 
       @include tablet {
@@ -235,40 +229,120 @@
       @include mobile {
         width: 396px;
         margin-left: 0;
+        margin-top: 30px;
+        @include flex(center, center);
+      }
+
+      @include mediumMobile {
+        width: 346px;
+        margin-top: 30px;
+
+        margin-left: 0;
         @include flex(center, center);
       }
 
       @include smallMobile {
         width: 290px;
+        margin-top: 20px;
         margin-left: 0;
         @include flex(center, center);
       }
 
+      .wrapper__slide-icon-left {
+        cursor: pointer;
+        background-color: #f5f5f5;
+        @include flex(center, center);
+        padding: 10px;
+        border-radius: 10px;
+        position: absolute;
+        z-index: 10;
+        transform: translateY(-50%);
+
+        @include tablet {
+          transform: translateY(-50%);
+        }
+
+        @include smallTablet {
+          padding: 8px;
+        }
+
+        @include mobile {
+          left: 0;
+          padding: 6px;
+          transform: translateY(-150%);
+        }
+
+        @include smallMobile {
+          padding: 5px;
+          transform: translateY(-180%);
+        }
+      }
+
+      .wrapper__slide-icon-right {
+        cursor: pointer;
+        background-color: #f5f5f5;
+        @include flex(center, center);
+        padding: 10px;
+        border-radius: 10px;
+        position: absolute;
+        right: 2px;
+        z-index: 10;
+        transform: translateY(-50%);
+
+        @include tablet {
+          transform: translateY(-50%);
+        }
+
+        @include smallTablet {
+          padding: 8px;
+        }
+
+        @include mobile {
+          right: 0;
+          padding: 6px;
+          transform: translateY(-150%);
+        }
+        @include smallMobile {
+          padding: 5px;
+          transform: translateY(-180%);
+        }
+      }
+
       .wrapper__slide-wrapper {
-        width: 247px;
-        height: 338px;
+        // width: 247px;
+        // height: 338px;
         border: 1px solid #ccc;
         text-align: center;
         padding: 10px;
 
-        @include tablet {
-          width: 195px;
-          height: 275px;
+        &:hover {
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
         }
 
-        @include smallTablet {
-          width: 192px;
-          height: 275px;
-        }
+        // @include tablet {
+        //   width: 195px;
+        //   height: 315px;
+        // }
 
-        @include mobile {
-          width: 198px;
-          height: 275px;
-        }
-        @include smallMobile {
-          width: 145px;
-          height: 275px;
-        }
+        // @include smallTablet {
+        //   width: 192px;
+        // }
+
+        // @include mobile {
+        //   width: 198px;
+        //   height: 275px;
+        // }
+
+        // @include mediumMobile {
+        //   width: 173px;
+        //   height: 275px;
+        // }
+
+        // @include smallMobile {
+        //   width: 145px;
+        //   height: 230px;
+        // }
 
         .wrapper__slide-link {
           width: 223px;
@@ -276,9 +350,42 @@
         }
 
         .list__slide-image {
-          width: 174;
-          height: 174px;
+          height: 202px;
+          width: 202px;
           object-fit: contain;
+          margin: 10px 0;
+
+          &:hover {
+            background-color: #ccc;
+            transform: scale(1.1);
+            transition: all 0.5s ease;
+          }
+
+          @include mobile {
+            width: 180px;
+            height: 180px;
+          }
+
+          @include smallMobile {
+            width: 110px;
+            height: 110px;
+          }
+        }
+
+        .wrapper__slide-name {
+          font-weight: 600;
+          margin: 10px 0;
+
+          @include mobile {
+            font-size: 14px;
+            margin: 0 0 10px 0;
+          }
+        }
+
+        .wrapper__slide-price {
+          font-weight: 700;
+          color: $primary-color;
+          font-size: 14px;
         }
       }
     }
@@ -288,24 +395,29 @@
       height: 100%;
     }
 
-    .swiper-slide {
-      width: 246px !important;
-      height: 358px !important;
+    // .swiper-slide {
+    //   width: 246px !important;
+    //   height: 358px !important;
 
-      @include tablet {
-        width: 195px !important;
-      }
+    //   @include tablet {
+    //     width: 195px !important;
+    //   }
 
-      @include smallTablet {
-        width: 192px !important;
-      }
+    //   @include smallTablet {
+    //     width: 192px !important;
+    //   }
 
-      @include mobile {
-        width: 198px !important;
-      }
-      @include smallMobile {
-        width: 145px !important;
-      }
-    }
+    //   @include mobile {
+    //     width: 198px !important;
+    //   }
+
+    //   @include mediumMobile {
+    //     width: 173px !important;
+    //   }
+
+    //   @include smallMobile {
+    //     width: 145px !important;
+    //   }
+    // }
   }
 }

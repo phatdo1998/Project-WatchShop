@@ -37,17 +37,16 @@
     }
 
     .slide__wrapper {
-      width: 165px !important ;
-      height: 67px;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       margin-left: 3px;
+      width: 200px;
+      @include flex(center, center);
+      height: 70px;
+      margin-right: 30px;
 
       @include tablet {
-        width: 150px !important;
       }
       @include mobile {
-        width: 130px !important;
-        margin-right: 10px !important;
       }
     }
     .slide__img {

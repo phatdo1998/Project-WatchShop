@@ -5,6 +5,13 @@
     @content;
   }
 }
+
+@mixin mediumMobile {
+  @media only screen and (max-width: $mediumMobile-width) {
+    @content;
+  }
+}
+
 @mixin smallMobile {
   @media only screen and (max-width: $smallMobile-width) {
     @content;
