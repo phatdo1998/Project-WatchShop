@@ -150,7 +150,7 @@
         }
 
         &:hover .search__input {
-          display: block;
+          display: flex;
         }
       }
 
@@ -190,7 +190,7 @@
       @include tablet {
         top: 40px;
         left: 0;
-        width: 100%;
+        width: 90vw;
         @include flex(center, space-between);
         padding: 0 12px;
         display: none;
@@ -200,7 +200,7 @@
       @include mobile {
         top: 40px;
         left: 0;
-        width: 100%;
+        width: 90vw;
         @include flex(center, space-between);
         padding: 0 12px;
         display: none;
@@ -226,10 +226,10 @@
       }
     }
 
-    // .search:hover ~ .search__input {
-    //   display: flex;
-    //   transition: all 0.5s ease;
-    // }
+    .search:hover .search__input {
+      display: flex;
+      transition: all 0.5s ease;
+    }
 
     .cart {
       @include flex(center, center);
@@ -316,10 +316,7 @@
   @include flex(center, center);
   .modal__overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
     @include flex(center, flex-start);
 
