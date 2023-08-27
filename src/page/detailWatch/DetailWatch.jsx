@@ -4,7 +4,16 @@ import Header from "../../components/header/Header";
 const DetailWatch = () => {
   return (
     <div>
-      <Header />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignContent: "center",
+        }}
+      >
+        {" "}
+        <Header />
+      </div>
     </div>
   );
 };

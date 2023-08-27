@@ -5,7 +5,7 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import "swiper/css";
 import "swiper/swiper-bundle.css";
 import Heading from "../heading/Heding";
-import { data, newProduct } from "../../data";
+import { data, newProduct, news } from "../../data";
 import s6 from "../../assets/image/s6_preview_rev_1.png";
 import "./product.scss";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -18,7 +18,7 @@ const Product = () => {
 
   const breakpoints = {
     sx: 0,
-    sm: 480,
+    sm: 426,
     md: 768,
     lg: 992,
     xl: 1280,
@@ -87,18 +87,15 @@ const Product = () => {
           </div>
           <div className="wrapper__slide">
             <div className="wrapper__slide--content">
-              <div className="wrapper__slide-icon-left">
-                <AiOutlineLeft size={20} />
-              </div>
-              <div className="wrapper__slide-icon-right">
-                <AiOutlineRight size={20} />
-              </div>
               <Swiper
                 breakpoints={{
                   [breakpoints.xxl]: {
                     slidesPerView: 3,
                   },
                   [breakpoints.xl]: {
+                    slidesPerView: 3,
+                  },
+                  [breakpoints.lg]: {
                     slidesPerView: 3,
                   },
                   [breakpoints.md]: {
@@ -118,6 +115,12 @@ const Product = () => {
                 }}
                 modules={[Navigation, Autoplay]}
               >
+                <div className="wrapper__slide-icon-left">
+                  <AiOutlineLeft size={20} />
+                </div>
+                <div className="wrapper__slide-icon-right">
+                  <AiOutlineRight size={20} />
+                </div>
                 {newProduct.map((item, index) => {
                   return (
                     <SwiperSlide key={index}>
@@ -140,6 +143,149 @@ const Product = () => {
                   );
                 })}
               </Swiper>
+            </div>
+          </div>
+        </div>
+
+        <div className="selling-products">
+          <div className="wrapper__selling-products--heading">
+            <Heading
+              title={"SẢN PHẨM BÁN CHẠY"}
+              description={
+                "Bộ sưu tập những sản phẩm sang chảnh, thông minh dành cho nữ giới"
+              }
+            />
+            <div className="wrapper__selling-products-slide">
+              <div className="wrapper__selling-products--content">
+                <Swiper
+                  breakpoints={{
+                    [breakpoints.xxl]: {
+                      slidesPerView: 3,
+                    },
+                    [breakpoints.xl]: {
+                      slidesPerView: 3,
+                    },
+                    [breakpoints.lg]: {
+                      slidesPerView: 3,
+                    },
+                    [breakpoints.md]: {
+                      slidesPerView: 2,
+                    },
+                    [breakpoints.sm]: {
+                      slidesPerView: 2,
+                    },
+                  }}
+                  autoplay={{
+                    delay: 3000,
+                  }}
+                  slidesPerView={2}
+                  navigation={{
+                    nextEl: ".wrapper__selling-products-icon-right",
+                    prevEl: ".wrapper__selling-products-icon-left",
+                  }}
+                  modules={[Navigation, Autoplay]}
+                >
+                  <div className="wrapper__selling-products-icon-left">
+                    <AiOutlineLeft size={20} />
+                  </div>
+                  <div className="wrapper__selling-products-icon-right">
+                    <AiOutlineRight size={20} />
+                  </div>
+                  {newProduct.map((item, index) => {
+                    return (
+                      <SwiperSlide key={index}>
+                        <div
+                          key={index}
+                          className="wrapper__selling-products-wrapper"
+                        >
+                          <a href="" className="wrapper__selling-products-link">
+                            <img
+                              src={s6}
+                              alt=""
+                              className="list__selling-products-image"
+                            />
+                          </a>
+                          <div className="wrapper__selling-products-name">
+                            <a
+                              href="/detail"
+                              className=""
+                              title="Apple Watch Series 6"
+                            >
+                              {item.name}
+                            </a>
+                          </div>
+                          <div className="wrapper__selling-products-price">
+                            {item.price}
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    );
+                  })}
+                </Swiper>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="news">
+          <div className="wrapper__news-heading">
+            <Heading
+              title={"Tin tức"}
+              description={
+                "Chúng tôi sẵn sàng cập nhật những kiến thức, công nghệ mới nhất dành cho các bạn"
+              }
+            />
+            <div className="wrapper__news-slide">
+              <div className="wrapper__news-content">
+                <Swiper
+                  breakpoints={{
+                    [breakpoints.xxl]: {
+                      slidesPerView: 4,
+                    },
+                    [breakpoints.xl]: {
+                      slidesPerView: 4,
+                    },
+                    [breakpoints.lg]: {
+                      slidesPerView: 4,
+                    },
+                    [breakpoints.md]: {
+                      slidesPerView: 2,
+                    },
+                    [breakpoints.sx]: {
+                      slidesPerView: 1,
+                    },
+                  }}
+                  autoplay={{
+                    delay: 3000,
+                  }}
+                  slidesPerView={2}
+                  modules={[Autoplay]}
+                >
+                  {news.map((item, index) => {
+                    return (
+                      <SwiperSlide key={index}>
+                        <div key={index} className="wrapper__news-wrapper">
+                          <div className="wrapper__time">
+                            <div className="">{item.time}</div>
+                          </div>
+                          <a href="" className="wrapper__news-link">
+                            <img
+                              src="https://hinhanh.webvua.com/images/news/4752/resize/3032372797202.jpg"
+                              alt=""
+                              className="list__news-image"
+                            />
+                          </a>
+                          <div className="wrapper__news-name">
+                            <a href="/detail" className="" title={item.name}>
+                              {item.name}
+                            </a>
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    );
+                  })}
+                </Swiper>
+              </div>
             </div>
           </div>
         </div>

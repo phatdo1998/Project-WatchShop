@@ -3,6 +3,7 @@ import Header from "../header/Header";
 import Slide from "../slide/Slide";
 import "./home.scss";
 import Content from "../content/Content";
+import Footer from "../footer/Footer";
 
 const Home = () => {
   return (
@@ -16,6 +17,9 @@ const Home = () => {
       </div>
       <div className="container__content">
         <Content />
+      </div>
+      <div className="">
+        <Footer />
       </div>
     </div>
   );

@@ -40,11 +40,11 @@ const Header = () => {
             <ImSearch size={20} />
 
             <div className="search__text active">tìm kiếm</div>
-          </div>
-          <div className="search__input">
-            <input className="input" type="text" placeholder="Tìm kiếm..." />
-            <div className="input__icon">
-              <ImSearch size={20} />
+            <div className="search__input">
+              <input className="input" type="text" placeholder="Tìm kiếm..." />
+              <div className="input__icon">
+                <ImSearch size={20} />
+              </div>
             </div>
           </div>
 
@@ -85,70 +85,71 @@ const Header = () => {
         </li>
       </ul>
 
-      {modalIsOpen && (
-        <div className="modal">
+      <div className="modal">
+        <div
+          style={{
+            visibility: modalIsOpen ? "visible" : "hidden",
+          }}
+          onClick={() => setModalIsOpen(false)}
+          className={` modal__overlay  `}
+        >
           <div
-            onClick={() => setModalIsOpen(false)}
-            className={`modal__overlay `}
+            className={`modal__content ${
+              modalIsOpen ? "slide-in" : "slide-out"
+            }`}
           >
-            <div
-              className={`modal__content ${
-                modalIsOpen ? "slide-in" : "slide-out"
-              }`}
-            >
-              <ul className="list__item">
-                <div className="wrapper__item">
-                  <li className="item__modal">
-                    <PiDotOutlineFill size={30} color="#05c3ff" />
-                    <a href="" className="">
-                      Trang chủ
-                    </a>
-                  </li>
-                  <li className="item__modal">
-                    <div className="item__wrapper">
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyItems: "center",
-                          alignItems: "center",
-                        }}
-                      >
-                        <PiDotOutlineFill size={30} color="#05c3ff" />
-                        <a href="" className="">
-                          Sản phẩm
-                        </a>
-                      </div>
-                      <a
-                        style={{
-                          marginRight: 12,
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          padding: 5,
-                        }}
-                      >
-                        <IoIosAdd size={20} />
+            <ul className="list__item">
+              <div className="wrapper__item">
+                <li className="item__modal">
+                  <PiDotOutlineFill size={30} color="#05c3ff" />
+                  <a href="" className="">
+                    Trang chủ
+                  </a>
+                </li>
+                <li className="item__modal">
+                  <div className="item__wrapper">
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyItems: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <PiDotOutlineFill size={30} color="#05c3ff" />
+                      <a href="" className="">
+                        Sản phẩm
                       </a>
                     </div>
-                  </li>
-                  <li className="item__modal">
-                    <PiDotOutlineFill size={30} color="#05c3ff" />
-                    <a href="" className="">
-                      Tin tức
+                    <a
+                      style={{
+                        marginRight: 12,
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        padding: 5,
+                      }}
+                    >
+                      <IoIosAdd size={20} />
                     </a>
-                  </li>
-                  <li className="item__modal">
-                    <PiDotOutlineFill size={30} color="#05c3ff" />
-                    <a href="" className="">
-                      Liên hệ
-                    </a>
-                  </li>
-                </div>
-              </ul>
-            </div>
+                  </div>
+                </li>
+                <li className="item__modal">
+                  <PiDotOutlineFill size={30} color="#05c3ff" />
+                  <a href="" className="">
+                    Tin tức
+                  </a>
+                </li>
+                <li className="item__modal">
+                  <PiDotOutlineFill size={30} color="#05c3ff" />
+                  <a href="" className="">
+                    Liên hệ
+                  </a>
+                </li>
+              </div>
+            </ul>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };

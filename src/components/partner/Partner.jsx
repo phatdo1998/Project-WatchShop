@@ -19,7 +19,7 @@ const Partner = () => {
   ];
 
   const breakpoints = {
-    sx: 425,
+    sx: 320,
     sm: 480,
     md: 768,
     lg: 992,

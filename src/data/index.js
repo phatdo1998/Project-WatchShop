@@ -164,3 +164,36 @@ export const newProduct = [
       "Theo dõi giấc ngủ, Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Báo thức, Màn hình luôn hiển thị, Từ chối cuộc gọi, Đồng hồ bấm giờ, Rung thông báo, Thay mặt đồng hồ",
   },
 ];
+
+export const news = [
+  {
+    id: 17,
+    image: "",
+    time: "01-01-1970",
+    name: "Tính năng đo điện tâm đồ được cập nhật vào Apple Watch",
+  },
+  {
+    id: 18,
+    image: "",
+    time: "01-01-1970",
+    name: "Smartwacth tốt nhất trên thị trường hiện nay",
+  },
+  {
+    id: 19,
+    image: "",
+    time: "01-01-1970",
+    name: "Phát hiện bệnh lý tim mạch bằng thiết bị đeo tay",
+  },
+  {
+    id: 20,
+    image: "",
+    time: "01-01-1970",
+    name: "Đồng hồ thông minh Apple Watch mới ra mắt",
+  },
+  {
+    id: 21,
+    image: "",
+    time: "01-01-1970",
+    name: "Đồng hồ Apple Watch chính hãng bán ra tại VN",
+  },
+];
