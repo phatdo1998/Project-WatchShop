@@ -16,6 +16,7 @@
     padding: 20px;
     @include flex(center, flex-start);
     text-align: left;
+    height: 550px;
   }
 
   @include smallMobile {
@@ -23,6 +24,11 @@
   }
 
   .wrapper__contact {
+    @include mobile {
+      border-top: 1px solid #ccc;
+      width: 100vw;
+      border-bottom: 1px solid #ccc;
+    }
   }
   .contact__heading {
     font-weight: 700;
@@ -33,11 +39,16 @@
     }
     @include mobile {
       font-size: 14px;
+      margin-top: 10px;
     }
   }
   .contact {
     font-size: 14px;
     margin: 10px 0;
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 
   .wrapper__certification {

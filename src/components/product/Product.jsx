@@ -9,6 +9,8 @@ import { data, newProduct, news } from "../../data";
 import s6 from "../../assets/image/s6_preview_rev_1.png";
 import "./product.scss";
 import { Navigation, Autoplay } from "swiper/modules";
+import ProductItems from "../productItem/ProductItems";
+import SlideWatch from "../slideWatch/SlideWatch";
 
 const Product = () => {
   const [selected, setSelected] = useState(0);
@@ -59,19 +61,7 @@ const Product = () => {
         <div className="container__list-watch">
           <div className="list__watch">
             {data[selected].items.map((item, index) => {
-              return (
-                <div key={index} className="list__watch--wrapper">
-                  <a href="" className="list__watch--wrapper-image">
-                    <img src={s6} alt="" className="list__watch--image" />
-                  </a>
-                  <div className="list__watch--name">
-                    <a href="/detail" className="" title="Apple Watch Series 6">
-                      {item.name}
-                    </a>
-                  </div>
-                  <div className="list__watch--price">{item.price}</div>
-                </div>
-              );
+              return <ProductItems item={item} />;
             })}
           </div>
         </div>
@@ -124,7 +114,7 @@ const Product = () => {
                 {newProduct.map((item, index) => {
                   return (
                     <SwiperSlide key={index}>
-                      <div key={index} className="wrapper__slide-wrapper">
+                      {/* <div key={index} className="wrapper__slide-wrapper">
                         <a href="" className="wrapper__slide-link">
                           <img src={s6} alt="" className="list__slide-image" />
                         </a>
@@ -138,7 +128,8 @@ const Product = () => {
                           </a>
                         </div>
                         <div className="wrapper__slide-price">{item.price}</div>
-                      </div>
+                      </div> */}
+                      <SlideWatch name={item.name} price={item.price} />
                     </SwiperSlide>
                   );
                 })}
@@ -194,7 +185,7 @@ const Product = () => {
                   {newProduct.map((item, index) => {
                     return (
                       <SwiperSlide key={index}>
-                        <div
+                        {/* <div
                           key={index}
                           className="wrapper__selling-products-wrapper"
                         >
@@ -217,7 +208,8 @@ const Product = () => {
                           <div className="wrapper__selling-products-price">
                             {item.price}
                           </div>
-                        </div>
+                        </div> */}
+                        <SlideWatch name={item.name} price={item.price} />
                       </SwiperSlide>
                     );
                   })}
