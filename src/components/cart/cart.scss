@@ -1,0 +1,126 @@
+@use "../../scss/" as *;
+
+.wrapper__cart {
+  &-body {
+    @include flex(center, center);
+    border-top: 1px solid $border-color;
+    margin-top: 20px;
+
+    @include tablet {
+      margin-top: 60px;
+    }
+  }
+  .wrapper__cart-body {
+    @include flex(center, center);
+
+    .wrapper__cart-content {
+      @include flex(unset, center);
+      width: 1170px;
+
+      @include tablet {
+        width: 974px;
+      }
+
+      @include smallTablet {
+        width: 734px;
+      }
+
+      @include mobile {
+        width: 440px;
+      }
+
+      .wrapper__cart-products {
+        flex: 2;
+
+        @include tablet {
+          padding: 0 15px;
+        }
+
+        .wrapper__cart-title {
+          @include flex(center, space-between);
+          border-bottom: 1px solid $border-color;
+          padding: 20px 0;
+
+          .cart__content {
+            font-size: 24px;
+            font-weight: 600;
+          }
+        }
+
+        .wrapper__product-cart {
+          border: 2px solid $border-color;
+          border-radius: 5px;
+          padding: 20px;
+          margin-top: 40px;
+
+          .wrapper__cart-item {
+            @include flex(unset, space-between);
+
+            .wrapper__cart-left {
+              @include flex(unset, center);
+
+              .wrapper__cart-img {
+                border: 1px solid $border-color;
+
+                .cart__img {
+                  width: 80px;
+                  height: 80px;
+                }
+              }
+
+              .wrapper__cart-detail {
+                margin-left: 20px;
+
+                .cart__name {
+                  font-weight: 600;
+                  margin-bottom: 10px;
+                }
+
+                .cart__price {
+                  color: #8f9bb3;
+                  font-size: 14px;
+                  font-weight: 600;
+                }
+              }
+            }
+            .wrappper__cart-total {
+              .cart__total {
+                font-weight: 600;
+                margin-bottom: 15px;
+              }
+              .wrapper__cart-icon {
+                @include flex(center, space-between);
+                width: 92px;
+
+                .cart__add {
+                  width: 28px;
+                  height: 28px;
+                  @include flex(center, center);
+                  background-color: #f9f9f9;
+                  cursor: pointer;
+                }
+
+                .cart__qty {
+                  font-weight: 600;
+                }
+
+                .cart__remove {
+                  width: 28px;
+                  height: 28px;
+                  @include flex(center, center);
+                  background-color: #f9f9f9;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .wrapper__cart-price {
+        flex: 1;
+        background-color: red;
+      }
+    }
+  }
+}

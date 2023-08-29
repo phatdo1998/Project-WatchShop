@@ -70,6 +70,7 @@
           .img__detail {
             width: 91px;
             height: 91px;
+            cursor: pointer;
 
             @include mobile {
               width: 79px;

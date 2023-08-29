@@ -6,12 +6,13 @@ import { ImSearch } from "react-icons/im";
 import { BiMenu } from "react-icons/bi";
 import { IoIosAdd } from "react-icons/io";
 import { PiDotOutlineFill } from "react-icons/pi";
-
 import logo from "../../assets/image/logo.png";
 import "./header.scss";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const cart = useSelector((state) => state.cart);
 
   return (
     <div className="header">
@@ -50,7 +51,7 @@ const Header = () => {
 
           <div className="cart">
             <AiOutlineShoppingCart size={22} />
-            <div className="cart__text">giỏ hàng (1)</div>
+            <div className="cart__text">giỏ hàng ({cart.length})</div>
           </div>
         </div>
       </div>
