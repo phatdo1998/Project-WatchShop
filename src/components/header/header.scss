@@ -135,7 +135,10 @@
 
       &:hover .search__input {
         display: flex;
-        width: 90vw;
+
+        @include tablet {
+          width: 90vw;
+        }
       }
 
       &__text {
