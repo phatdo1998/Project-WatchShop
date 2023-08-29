@@ -7,7 +7,7 @@ const ProductItems = ({ item }) => {
   return (
     <div className="">
       <div className="list__watch--wrapper">
-        <Link to={`detail`} className="list__watch--wrapper-image">
+        <Link to={`detail/${item.id}`} className="list__watch--wrapper-image">
           <img src={s6} alt="" className="list__watch--image" />
         </Link>
         <div className="list__watch--name">

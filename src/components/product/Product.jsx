@@ -1,18 +1,20 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import "swiper/css";
+import { Autoplay, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
+import { getProducts, newProduct, news } from "../../data";
 import Heading from "../heading/Heding";
-import { data, newProduct, news } from "../../data";
-import s6 from "../../assets/image/s6_preview_rev_1.png";
-import "./product.scss";
-import { Navigation, Autoplay } from "swiper/modules";
 import ProductItems from "../productItem/ProductItems";
 import SlideWatch from "../slideWatch/SlideWatch";
+import "./product.scss";
+import { Spin } from "antd";
 
 const Product = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [products, setProducts] = useState([]);
   const [selected, setSelected] = useState(0);
   const handleClick = (index) => {
     setSelected(index);
@@ -26,6 +28,18 @@ const Product = () => {
     xl: 1280,
     xxl: 1440,
   };
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setIsLoading(true);
+      const response = await getProducts();
+      setProducts(response);
+      setIsLoading(false);
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div className="wrapper__product">
       <div className="wrapper__product-item ">
@@ -39,7 +53,7 @@ const Product = () => {
         </div>
 
         <div className="container__watch">
-          {data.map((item, index) => {
+          {products.map((item, index) => {
             return (
               <div
                 onClick={() => handleClick(index)}
@@ -60,9 +74,13 @@ const Product = () => {
         </div>
         <div className="container__list-watch">
           <div className="list__watch">
-            {data[selected].items.map((item, index) => {
-              return <ProductItems item={item} />;
-            })}
+            {isLoading ? (
+              <Spin className="loading" />
+            ) : (
+              products[selected]?.items?.map((item, index) => {
+                return <ProductItems item={item} key={index} />;
+              })
+            )}
           </div>
         </div>
 

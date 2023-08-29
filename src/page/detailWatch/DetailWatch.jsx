@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../components/header/Header";
 import { Link, useParams } from "react-router-dom";
 import "./detailWatch.scss";
@@ -6,10 +6,21 @@ import { AiFillCaretRight, AiOutlineShoppingCart } from "react-icons/ai";
 import { IoMdRemoveCircle, IoIosAddCircle } from "react-icons/io";
 import s6 from "../../assets/image/s6_preview_rev_1.png";
 import Footer from "../../components/footer/Footer";
-import { newProduct } from "../../data";
+import { getProductById, newProduct } from "../../data";
 import ProductItems from "../../components/productItem/ProductItems";
 
 const DetailWatch = () => {
+  const { id } = useParams();
+
+  useEffect(() => {
+    const fetchApiProductById = async () => {
+      const response = await getProductById(id);
+      console.log(response);
+    };
+
+    fetchApiProductById();
+  }, [id]);
+
   return (
     <div>
       <div className="container__header">
