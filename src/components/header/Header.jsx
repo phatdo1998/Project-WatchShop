@@ -87,11 +87,9 @@ const Header = () => {
 
       <div className="modal">
         <div
-          style={{
-            visibility: modalIsOpen ? "visible" : "hidden",
-          }}
           onClick={() => setModalIsOpen(false)}
-          className={` modal__overlay  `}
+          className={`modal__overlay `}
+          style={{ visibility: `${modalIsOpen ? "visible" : "hidden"}` }}
         >
           <div
             className={`modal__content ${

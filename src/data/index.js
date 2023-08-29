@@ -1,7 +1,7 @@
 import logoApple from "../assets/image/logo-applewatch.png";
 import logoXiaomi from "../assets/image/logo-xiaomiwatch.png";
 
-export const data = [
+const products = [
   {
     name: "Apple Watch",
     image: logoApple,
@@ -113,6 +113,23 @@ export const data = [
     ],
   },
 ];
+
+export const getProducts = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(products);
+    }, 3000);
+  });
+};
+
+export const getProductById = (id) => {
+  console.log(id);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(products.flatMap((item) => item.items.filter((x) => x.id == id)));
+    }, 3000);
+  });
+};
 
 export const newProduct = [
   {
