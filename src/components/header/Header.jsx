@@ -9,6 +9,7 @@ import { PiDotOutlineFill } from "react-icons/pi";
 import logo from "../../assets/image/logo.png";
 import "./header.scss";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -49,10 +50,10 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="cart">
+          <Link to="/cart" className="cart">
             <AiOutlineShoppingCart size={22} />
             <div className="cart__text">giỏ hàng ({cart.length})</div>
-          </div>
+          </Link>
         </div>
       </div>
       <ul className="list">

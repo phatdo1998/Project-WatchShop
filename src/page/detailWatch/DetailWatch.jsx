@@ -8,7 +8,7 @@ import s6 from "../../assets/image/s6_preview_rev_1.png";
 import Footer from "../../components/footer/Footer";
 import { getProductById, newProduct } from "../../data";
 import ProductItems from "../../components/productItem/ProductItems";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
 
 const DetailWatch = () => {
@@ -26,11 +26,9 @@ const DetailWatch = () => {
     fetchApiProductById();
   }, [id]);
 
-  const handleAddToCart = (item) => {
-    dispatch(addToCart(item));
+  const handleAddToCart = (item, imageColor) => {
+    dispatch(addToCart({ ...item, image: imageColor }));
   };
-
-  const cart = useSelector((state) => state.cart);
 
   return (
     <div>
@@ -41,11 +39,12 @@ const DetailWatch = () => {
       {detailProducts?.map((item, index) => {
         const handleAdd = () => {
           setDetailProducts([{ ...item, qty: item.qty + 1 }]);
-          dispatch();
         };
 
         const handleRemove = () => {
-          setDetailProducts([{ ...item, qty: item.qty - 1 }]);
+          setDetailProducts([
+            { ...item, qty: item.qty === 0 ? (item.qty = 0) : item.qty - 1 },
+          ]);
         };
         return (
           <div key={index}>
@@ -108,8 +107,8 @@ const DetailWatch = () => {
 
                           <div className="wrapper__detail-button">
                             <Link
-                              onClick={() => handleAddToCart(item)}
-                              to={`/cart/${item.id}`}
+                              onClick={() => handleAddToCart(item, imageColor)}
+                              to="/cart"
                               className="detail__button"
                             >
                               <AiOutlineShoppingCart size={25} />
