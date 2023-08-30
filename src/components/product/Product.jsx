@@ -132,21 +132,6 @@ const Product = () => {
                 {newProduct.map((item, index) => {
                   return (
                     <SwiperSlide key={index}>
-                      {/* <div key={index} className="wrapper__slide-wrapper">
-                        <a href="" className="wrapper__slide-link">
-                          <img src={s6} alt="" className="list__slide-image" />
-                        </a>
-                        <div className="wrapper__slide-name">
-                          <a
-                            href="/detail"
-                            className=""
-                            title="Apple Watch Series 6"
-                          >
-                            {item.name}
-                          </a>
-                        </div>
-                        <div className="wrapper__slide-price">{item.price}</div>
-                      </div> */}
                       <SlideWatch name={item.name} price={item.price} />
                     </SwiperSlide>
                   );
@@ -203,30 +188,6 @@ const Product = () => {
                   {newProduct.map((item, index) => {
                     return (
                       <SwiperSlide key={index}>
-                        {/* <div
-                          key={index}
-                          className="wrapper__selling-products-wrapper"
-                        >
-                          <a href="" className="wrapper__selling-products-link">
-                            <img
-                              src={s6}
-                              alt=""
-                              className="list__selling-products-image"
-                            />
-                          </a>
-                          <div className="wrapper__selling-products-name">
-                            <a
-                              href="/detail"
-                              className=""
-                              title="Apple Watch Series 6"
-                            >
-                              {item.name}
-                            </a>
-                          </div>
-                          <div className="wrapper__selling-products-price">
-                            {item.price}
-                          </div>
-                        </div> */}
                         <SlideWatch name={item.name} price={item.price} />
                       </SwiperSlide>
                     );
