@@ -3,13 +3,14 @@ import Header from "../../components/header/Header";
 import { Link, useParams } from "react-router-dom";
 import "./detailWatch.scss";
 import { AiFillCaretRight, AiOutlineShoppingCart } from "react-icons/ai";
-import { IoMdRemoveCircle, IoIosAddCircle } from "react-icons/io";
+// import { IoMdRemoveCircle, IoIosAddCircle } from "react-icons/io";
 import s6 from "../../assets/image/s6_preview_rev_1.png";
 import Footer from "../../components/footer/Footer";
 import { getProductById, newProduct } from "../../data";
 import ProductItems from "../../components/productItem/ProductItems";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
+import { v4 as uuidv4 } from "uuid";
 
 const DetailWatch = () => {
   const { id } = useParams();
@@ -27,7 +28,7 @@ const DetailWatch = () => {
   }, [id]);
 
   const handleAddToCart = (item, imageColor) => {
-    dispatch(addToCart({ ...item, image: imageColor }));
+    dispatch(addToCart({ ...item, image: imageColor, id: uuidv4() }));
   };
 
   return (
@@ -37,15 +38,15 @@ const DetailWatch = () => {
       </div>
 
       {detailProducts?.map((item, index) => {
-        const handleAdd = () => {
-          setDetailProducts([{ ...item, qty: item.qty + 1 }]);
-        };
+        // const handleAdd = () => {
+        //   setDetailProducts([{ ...item, qty: item.qty + 1 }]);
+        // };
 
-        const handleRemove = () => {
-          setDetailProducts([
-            { ...item, qty: item.qty === 0 ? (item.qty = 0) : item.qty - 1 },
-          ]);
-        };
+        // const handleRemove = () => {
+        //   setDetailProducts([
+        //     { ...item, qty: item.qty === 0 ? (item.qty = 0) : item.qty - 1 },
+        //   ]);
+        // };
         return (
           <div key={index}>
             <div className="container__detail">
@@ -79,15 +80,17 @@ const DetailWatch = () => {
                   <div className="wrapper__detail-watch">
                     <div className="">
                       <h1 className="detail__name">{item.name}</h1>
-                      <div className="detail__price">{item.price}</div>
+                      <div className="detail__price">
+                        {item.price.toLocaleString()}
+                      </div>
                       <span className="detail__description">
                         {item.description}
                       </span>
 
                       <div className="wrapper__detail-cart">
-                        <div className="detail__text">Số lượng:</div>
+                        {/* <div className="detail__text">Số lượng:</div> */}
                         <div className="wrapper__quantity">
-                          <div className="wrapper__qty">
+                          {/* <div className="wrapper__qty">
                             <div className="detail__remove-icon">
                               <IoMdRemoveCircle
                                 onClick={handleRemove}
@@ -103,7 +106,7 @@ const DetailWatch = () => {
                                 color="#6e7874"
                               />
                             </div>
-                          </div>
+                          </div> */}
 
                           <div className="wrapper__detail-button">
                             <Link

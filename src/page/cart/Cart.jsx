@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/header/Header";
 import "./cart.scss";
 import { IoIosAdd, IoIosRemove, IoMdRemove } from "react-icons/io";
@@ -7,12 +7,14 @@ import {
   decrement,
   increasement,
   removeToCart,
+  totalCartPrice,
 } from "../../redux/slices/cartSlice";
 import empty from "../../assets/image/cart_empty_background.webp";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+
   const dispatch = useDispatch();
 
   const handleRemove = (id) => {
@@ -20,10 +22,16 @@ const Cart = () => {
   };
   const handleIncreasement = (id) => {
     dispatch(increasement(id));
+    dispatch(totalCartPrice(id));
   };
   const handleDecrement = (id) => {
     dispatch(decrement(id));
+    dispatch(totalCartPrice(id));
   };
+
+  const totalPrice = cart.reduce((total, item) => {
+    return (total += item.cartPriceTotal);
+  }, 0);
 
   return (
     <div className="wrapper__cart">
@@ -48,6 +56,9 @@ const Cart = () => {
                 </div>
                 <div className="wrapper__product-cart">
                   {cart.map((item, index) => {
+                    let PriceTotal = item.price;
+                    let qty = item.qty;
+                    const cartPriceTotal = PriceTotal * qty;
                     return (
                       <div key={index} className="wrapper__cart-item">
                         <div
@@ -66,11 +77,15 @@ const Cart = () => {
                           </div>
                           <div className="wrapper__cart-detail">
                             <div className="cart__name">{item.name}</div>
-                            <div className="cart__price">{item.price}</div>
+                            <div className="cart__price">
+                              {item.price?.toLocaleString()}
+                            </div>
                           </div>
                         </div>
                         <div className="wrappper__cart-total">
-                          <div className="cart__total">{item.price}</div>
+                          <div className="cart__total">
+                            {cartPriceTotal.toLocaleString()}
+                          </div>
                           <div className="wrapper__cart-icon">
                             <div className="cart__remove">
                               <IoIosRemove
@@ -96,7 +111,9 @@ const Cart = () => {
                 <div className="cart__right-total">
                   <div className="wrapper__total">
                     <div className="cart__title-total">Tổng tiền:</div>
-                    <div className="cart__price-total">10,000,000₫</div>
+                    <div className="cart__price-total">
+                      {totalPrice.toLocaleString()}
+                    </div>
                   </div>
                   <div className="wrapper__policy">
                     <div className="policy__text">
@@ -106,9 +123,11 @@ const Cart = () => {
                       - Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.
                     </div>
                   </div>
-                  <button className="cart__button">
-                    <div className="">THANH TOÁN</div>
-                  </button>
+                  <div className="cart__button">
+                    <Link to={"/shipment"} className="cart__link">
+                      THANH TOÁN
+                    </Link>
+                  </div>
                 </div>
                 <div className="purchase-policy">
                   <div className="wrapper__purchase-policy">

@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "../header/Header";
-import Slide from "../slide/Slide";
+import Header from "../../components/header/Header";
+import Slide from "../../components/slide/Slide";
 import "./home.scss";
-import Content from "../content/Content";
-import Footer from "../footer/Footer";
+import Content from "../../components/content/Content";
+import Footer from "../../components/footer/Footer";
 
 const Home = () => {
   return (

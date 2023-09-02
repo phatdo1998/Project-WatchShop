@@ -15,7 +15,7 @@ const ProductItems = ({ item }) => {
             {item.name}
           </Link>
         </div>
-        <div className="list__watch--price">{item.price}</div>
+        <div className="list__watch--price">{item.price.toLocaleString()}</div>
       </div>
     </div>
   );
