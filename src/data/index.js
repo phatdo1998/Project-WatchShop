@@ -3,6 +3,7 @@ import logoXiaomi from "../assets/image/logo-xiaomiwatch.png";
 import s6_2 from "../assets/image/s6-2_preview_rev_1.png";
 import s6_3 from "../assets/image/s6-3_preview_rev_1.png";
 import s6 from "../assets/image/s6_preview_rev_1.png";
+import axios from "axios";
 
 const products = [
   {
@@ -13,10 +14,11 @@ const products = [
         id: 1,
         image: "",
         name: "Apple Watch Series 6",
-        price: "10,000,000",
+        price: 10000000,
         priceSale: "",
         qty: 1,
         imageColor: [s6_2, s6, s6_3],
+        cartPriceTotal: 10000000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
       },
@@ -24,10 +26,11 @@ const products = [
         id: 2,
         image: "",
         name: "Apple Watch Series 6",
-        price: "11,000,000",
+        price: 11000000,
         priceSale: "12,000,000₫",
         qty: 1,
         imageColor: [s6_2, s6, s6_3],
+        cartPriceTotal: 11000000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
       },
@@ -39,6 +42,7 @@ const products = [
         priceSale: "",
         qty: 1,
         imageColor: [s6_2, s6, s6_3],
+        cartPriceTotal: 0,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
       },
@@ -46,10 +50,11 @@ const products = [
         id: 4,
         image: "",
         name: "Apple Watch Series 4",
-        price: "7,700,000",
+        price: 7700000,
         priceSale: "",
         qty: 1,
         imageColor: [s6_2, s6, s6_3],
+        cartPriceTotal: 7700000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
       },
@@ -61,6 +66,7 @@ const products = [
         priceSale: "",
         qty: 1,
         imageColor: [s6_2, s6, s6_3],
+        cartPriceTotal: 0,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
       },
@@ -68,10 +74,11 @@ const products = [
         id: 6,
         image: "",
         name: "Apple Watch Series 6",
-        price: "9,000,000",
+        price: 9000000,
         priceSale: "10,000,000₫",
         qty: 1,
         imageColor: [s6_2, s6, s6_3],
+        cartPriceTotal: 9000000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
       },
@@ -79,10 +86,11 @@ const products = [
         id: 7,
         image: "",
         name: "Apple Watch Series 4",
-        price: "7,000,000",
+        price: 7000000,
         priceSale: "",
         qty: 1,
         imageColor: [s6_2, s6, s6_3],
+        cartPriceTotal: 7000000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
       },
@@ -90,10 +98,11 @@ const products = [
         id: 8,
         image: "",
         name: "Apple Watch Series 3",
-        price: "5,500,000",
+        price: 5500000,
         priceSale: "6,000,000₫",
         qty: 1,
         imageColor: [s6_2, s6, s6_3],
+        cartPriceTotal: 5500000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
       },
@@ -107,9 +116,10 @@ const products = [
         id: 9,
         image: "",
         name: "Amazfit Gts nội địa",
-        price: "2,500,000",
+        price: 2500000,
         qty: 1,
         imageColor: [s6_2, s6, s6_3],
+        cartPriceTotal: 2500000,
         description:
           "Theo dõi giấc ngủ, Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Báo thức, Màn hình luôn hiển thị, Từ chối cuộc gọi, Đồng hồ bấm giờ, Rung thông báo, Thay mặt đồng hồ",
       },
@@ -117,9 +127,10 @@ const products = [
         id: 10,
         image: "",
         name: "Xiaomi Amazfit Gts Vàng",
-        price: "3,000,000",
+        price: 3000000,
         qty: 1,
         imageColor: [s6_2, s6, s6_3],
+        cartPriceTotal: 3000000,
         description:
           "Theo dõi giấc ngủ, Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Báo thức, Màn hình luôn hiển thị, Từ chối cuộc gọi, Đồng hồ bấm giờ, Rung thông báo, Thay mặt đồng hồ",
       },
@@ -144,14 +155,30 @@ export const getProductById = (id) => {
   });
 };
 
+// const host = "https://provinces.open-api.vn/api/";
+
+// export const callApi = async (api) => {
+//   return await axios
+//     .get(api)
+//     .then((response) => {
+//       console.log(response.data); // In ra dữ liệu nhận được từ API
+//     })
+//     .catch((error) => {
+//       console.log(error); // In ra lỗi nếu có
+//     });
+// };
+
+// callApi("https://provinces.open-api.vn/api/?depth=1");
+
 export const newProduct = [
   {
     id: 11,
     image: "",
     name: "Amazfit Gts nội địa",
-    price: "2,500,000",
+    price: 2500000,
     qty: 1,
     imageColor: [s6_2, s6, s6_3],
+    cartPriceTotal: 2500000,
     description:
       "Theo dõi giấc ngủ, Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Báo thức, Màn hình luôn hiển thị, Từ chối cuộc gọi, Đồng hồ bấm giờ, Rung thông báo, Thay mặt đồng hồ",
   },
@@ -163,6 +190,7 @@ export const newProduct = [
     priceSale: "",
     qty: 1,
     imageColor: [s6_2, s6, s6_3],
+    cartPriceTotal: 0,
     description:
       "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
   },
@@ -170,10 +198,11 @@ export const newProduct = [
     id: 13,
     image: "",
     name: "Apple Watch Series 4",
-    price: "7,000,000",
+    price: 7000000,
     priceSale: "",
     qty: 1,
     imageColor: [s6_2, s6, s6_3],
+    cartPriceTotal: 7000000,
     description:
       "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
   },
@@ -181,10 +210,11 @@ export const newProduct = [
     id: 14,
     image: "",
     name: "Apple Watch Series 3",
-    price: "5,500,000",
+    price: 5500000,
     priceSale: "6,000,000₫",
     qty: 1,
     imageColor: [s6_2, s6, s6_3],
+    cartPriceTotal: 5500000,
     description:
       "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
   },
@@ -192,9 +222,10 @@ export const newProduct = [
     id: 16,
     image: "",
     name: "Xiaomi Amazfit Gts Vàng",
-    price: "3,000,000",
+    price: 3000000,
     qty: 1,
     imageColor: [s6_2, s6, s6_3],
+    cartPriceTotal: 3000000,
     description:
       "Theo dõi giấc ngủ, Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Báo thức, Màn hình luôn hiển thị, Từ chối cuộc gọi, Đồng hồ bấm giờ, Rung thông báo, Thay mặt đồng hồ",
   },

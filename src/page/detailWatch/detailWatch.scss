@@ -115,7 +115,7 @@
           font-size: 14px;
         }
         .wrapper__quantity {
-          @include flex(center, flex-start);
+          @include flex(center, center);
           gap: 30px;
 
           @include mobile {
@@ -158,7 +158,7 @@
             .detail__button {
               @include flex(center, center);
               border-radius: 5px;
-              padding: 0 20px;
+              padding: 0 50px;
               border: none;
               height: 50px;
               gap: 10px;

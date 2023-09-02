@@ -258,13 +258,19 @@
             border: none;
             background-color: $primary-color;
             color: #fff;
-            padding: 13px 5px;
             width: 100%;
             font-size: 15px;
             font-weight: 700;
             text-align: center;
             margin-top: 10px;
             cursor: pointer;
+
+            .cart__link {
+              width: 100%;
+              display: block;
+              height: 100%;
+              padding: 10px 5px;
+            }
           }
         }
         .purchase-policy {
