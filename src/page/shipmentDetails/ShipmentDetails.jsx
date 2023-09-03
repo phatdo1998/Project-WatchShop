@@ -10,7 +10,9 @@ import * as Yup from "yup";
 import axios from "axios";
 
 const ShipmentDetails = () => {
-  const [city, setCity] = useState([]);
+  const [city, setCity] = useState();
+  const [districts, setDistricts] = useState();
+  const [wards, setWards] = useState();
 
   const cart = useSelector((state) => state.cart);
 
@@ -29,18 +31,16 @@ const ShipmentDetails = () => {
   });
 
   useEffect(() => {
-    const callApi = async (api) => {
-      return await axios
-        .get(api)
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
-
-    callApi("https://provinces.open-api.vn/api/?depth=1");
+    const res = axios.get("https://provinces.open-api.vn/api/?depth=3");
+    res.then((value) => {
+      setCity(
+        value.data.map((item) => ({
+          ...item,
+          label: item.name,
+          value: item.codename,
+        }))
+      );
+    });
   }, []);
 
   return (
@@ -154,7 +154,19 @@ const ShipmentDetails = () => {
                   />
                   <div className="wrapper__select">
                     <div className="select__item">
-                      <Select placeholder="Tỉnh/Thành phố" />
+                      <Select
+                        placeholder="Tỉnh/Thành phố"
+                        options={city}
+                        onChange={(city) =>
+                          setDistricts(
+                            city.districts.map((item) => ({
+                              ...item,
+                              value: item.codename,
+                              label: item.name,
+                            }))
+                          )
+                        }
+                      />
                     </div>
                     <div
                       style={{
@@ -164,10 +176,24 @@ const ShipmentDetails = () => {
                       <Select
                         className="select__item"
                         placeholder="Quận/Huyện"
+                        options={districts}
+                        onChange={(district) =>
+                          setWards(
+                            district.wards.map((item) => ({
+                              ...item,
+                              value: item.codename,
+                              label: item.name,
+                            }))
+                          )
+                        }
                       />
                     </div>
                   </div>
-                  <Select className="select__item-3" placeholder="Xã/Phường" />
+                  <Select
+                    className="select__item-3"
+                    placeholder="Xã/Phường"
+                    options={wards}
+                  />
                   <div className="wrapper__check">
                     <Link to="/cart" className="check-text">
                       Giỏ hàng
