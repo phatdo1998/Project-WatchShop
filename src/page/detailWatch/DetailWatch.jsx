@@ -11,6 +11,7 @@ import ProductItems from "../../components/productItem/ProductItems";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
 import { v4 as uuidv4 } from "uuid";
+import s6_2 from "../../assets/image/s6-2_preview_rev_1.png";
 
 const DetailWatch = () => {
   const { id } = useParams();
@@ -28,7 +29,12 @@ const DetailWatch = () => {
   }, [id]);
 
   const handleAddToCart = (item, imageColor) => {
-    dispatch(addToCart({ ...item, image: imageColor, id: uuidv4() }));
+    dispatch(
+      addToCart({
+        ...item,
+        image: imageColor,
+      })
+    );
   };
 
   return (
@@ -38,15 +44,6 @@ const DetailWatch = () => {
       </div>
 
       {detailProducts?.map((item, index) => {
-        // const handleAdd = () => {
-        //   setDetailProducts([{ ...item, qty: item.qty + 1 }]);
-        // };
-
-        // const handleRemove = () => {
-        //   setDetailProducts([
-        //     { ...item, qty: item.qty === 0 ? (item.qty = 0) : item.qty - 1 },
-        //   ]);
-        // };
         return (
           <div key={index}>
             <div className="container__detail">

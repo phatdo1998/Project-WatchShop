@@ -239,6 +239,7 @@
         }
         .shipment__item {
           @include flex(center, space-between);
+          margin-bottom: 15px;
 
           @include tablet {
             margin-bottom: 15px;
