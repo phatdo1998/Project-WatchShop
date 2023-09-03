@@ -155,21 +155,6 @@ export const getProductById = (id) => {
   });
 };
 
-// const host = "https://provinces.open-api.vn/api/";
-
-// export const callApi = async (api) => {
-//   return await axios
-//     .get(api)
-//     .then((response) => {
-//       console.log(response.data); // In ra dữ liệu nhận được từ API
-//     })
-//     .catch((error) => {
-//       console.log(error); // In ra lỗi nếu có
-//     });
-// };
-
-// callApi("https://provinces.open-api.vn/api/?depth=1");
-
 export const newProduct = [
   {
     id: 11,

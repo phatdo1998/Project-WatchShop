@@ -19,22 +19,22 @@ const Header = () => {
     <div className="header">
       <div className="header__wrapper">
         <div className="header__wrapper-icon">
-          <a className="icon__menu">
+          <Link className="icon__menu">
             <BiMenu
               onClick={() => setModalIsOpen(true)}
               size={30}
               color="black"
             />
-          </a>
+          </Link>
         </div>
         <div className="header__hotline-wrapper">
           Hotline:
           <div className="header__hotline">09xxxxxx</div>
         </div>
         <div className="header__logo">
-          <a href="/" className="header__logo-wrapper">
+          <Link to="/" className="header__logo-wrapper">
             <img className="header__image" src={logo} alt="" />
-          </a>
+          </Link>
         </div>
         <div className="header__empty"></div>
         <div className="header__wrapper-right">
@@ -58,32 +58,32 @@ const Header = () => {
       </div>
       <ul className="list">
         <li className="item">
-          <a href="/">TRANHG CHỦ</a>
+          <Link to="/">TRANHG CHỦ</Link>
         </li>
         <li className="item wrapper active">
-          <a href="/">SẢN PHẨM</a>
+          <Link to="/">SẢN PHẨM</Link>
           <MdKeyboardArrowDown size={26} />
 
           <ul className="list__modal">
             <li className="item__modal">
               <div className="">
-                <a href="/" className="item__link">
+                <Link to="/" className="item__link">
                   Xiaomi Watch
-                </a>
+                </Link>
               </div>
             </li>
             <li className="item__modal ">
-              <a href="/" className="item__link">
+              <Link to="/" className="item__link">
                 Apple Watch
-              </a>
+              </Link>
             </li>
           </ul>
         </li>
         <li className="item">
-          <a href="/">TIN TỨC</a>
+          <Link to="/">TIN TỨC</Link>
         </li>
         <li className="item">
-          <a href="/">LIÊN HỆ</a>
+          <Link to="/">LIÊN HỆ</Link>
         </li>
       </ul>
 
@@ -102,9 +102,9 @@ const Header = () => {
               <div className="wrapper__item">
                 <li className="item__modal">
                   <PiDotOutlineFill size={30} color="#05c3ff" />
-                  <a href="" className="">
+                  <Link to="" className="">
                     Trang chủ
-                  </a>
+                  </Link>
                 </li>
                 <li className="item__modal">
                   <div className="item__wrapper">
@@ -116,11 +116,11 @@ const Header = () => {
                       }}
                     >
                       <PiDotOutlineFill size={30} color="#05c3ff" />
-                      <a href="" className="">
+                      <Link to="" className="">
                         Sản phẩm
-                      </a>
+                      </Link>
                     </div>
-                    <a
+                    <Link
                       style={{
                         marginRight: 12,
                         display: "flex",
@@ -130,20 +130,20 @@ const Header = () => {
                       }}
                     >
                       <IoIosAdd size={20} />
-                    </a>
+                    </Link>
                   </div>
                 </li>
                 <li className="item__modal">
                   <PiDotOutlineFill size={30} color="#05c3ff" />
-                  <a href="" className="">
+                  <Link to="" className="">
                     Tin tức
-                  </a>
+                  </Link>
                 </li>
                 <li className="item__modal">
                   <PiDotOutlineFill size={30} color="#05c3ff" />
-                  <a href="" className="">
+                  <Link to="" className="">
                     Liên hệ
-                  </a>
+                  </Link>
                 </li>
               </div>
             </ul>

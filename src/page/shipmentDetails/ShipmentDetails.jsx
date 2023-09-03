@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./shipmentDetails.scss";
 import { Link } from "react-router-dom";
 import logo from "../../assets/image/logo.png";
@@ -7,13 +7,10 @@ import s6 from "../../assets/image/s6_preview_rev_1.png";
 import { useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
 
 const ShipmentDetails = () => {
-  const options = [
-    { value: "option1", label: "Option 1" },
-    { value: "option2", label: "Option 2" },
-    { value: "option3", label: "Option 3" },
-  ];
+  const [city, setCity] = useState([]);
 
   const cart = useSelector((state) => state.cart);
 
@@ -30,6 +27,21 @@ const ShipmentDetails = () => {
       .max(11, ({ max }) => `Vui lòng nhập ít hơn ${max} số`),
     address: Yup.string().required("Bạn chưa nhập địa chỉ"),
   });
+
+  useEffect(() => {
+    const callApi = async (api) => {
+      return await axios
+        .get(api)
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    callApi("https://provinces.open-api.vn/api/?depth=1");
+  }, []);
 
   return (
     <Formik
@@ -142,7 +154,7 @@ const ShipmentDetails = () => {
                   />
                   <div className="wrapper__select">
                     <div className="select__item">
-                      <Select placeholder="Tỉnh/Thành phố" options={options} />
+                      <Select placeholder="Tỉnh/Thành phố" />
                     </div>
                     <div
                       style={{
@@ -152,15 +164,10 @@ const ShipmentDetails = () => {
                       <Select
                         className="select__item"
                         placeholder="Quận/Huyện"
-                        options={options}
                       />
                     </div>
                   </div>
-                  <Select
-                    className="select__item-3"
-                    placeholder="Xã/Phường"
-                    options={options}
-                  />
+                  <Select className="select__item-3" placeholder="Xã/Phường" />
                   <div className="wrapper__check">
                     <Link to="/cart" className="check-text">
                       Giỏ hàng
