@@ -3,7 +3,6 @@ import logoXiaomi from "../assets/image/logo-xiaomiwatch.png";
 import s6_2 from "../assets/image/s6-2_preview_rev_1.png";
 import s6_3 from "../assets/image/s6-3_preview_rev_1.png";
 import s6 from "../assets/image/s6_preview_rev_1.png";
-import axios from "axios";
 
 const products = [
   {
