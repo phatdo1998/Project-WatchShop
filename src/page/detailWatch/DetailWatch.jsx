@@ -10,8 +10,6 @@ import { getProductById, newProduct } from "../../data";
 import ProductItems from "../../components/productItem/ProductItems";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
-import { v4 as uuidv4 } from "uuid";
-import s6_2 from "../../assets/image/s6-2_preview_rev_1.png";
 
 const DetailWatch = () => {
   const { id } = useParams();

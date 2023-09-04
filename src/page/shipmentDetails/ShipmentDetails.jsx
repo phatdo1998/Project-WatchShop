@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./shipmentDetails.scss";
 import { Link } from "react-router-dom";
 import logo from "../../assets/image/logo.png";
@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { useState } from "react";
 
 const ShipmentDetails = () => {
   const [city, setCity] = useState();
