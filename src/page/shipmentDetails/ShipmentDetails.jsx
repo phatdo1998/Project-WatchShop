@@ -13,6 +13,7 @@ const ShipmentDetails = () => {
   const [city, setCity] = useState();
   const [districts, setDistricts] = useState();
   const [wards, setWards] = useState();
+  const [hasSubmit, setHasSubmit] = useState(false);
 
   const cart = useSelector((state) => state.cart);
 
@@ -47,9 +48,7 @@ const ShipmentDetails = () => {
     <Formik
       initialValues={{ name: "", email: "", phone: "", address: "" }}
       validationSchema={shipmentValidationScheme}
-      onSubmit={(values) => {
-        console.log(values);
-      }}
+      onSubmit={(values) => {}}
     >
       {({
         handleChange,
@@ -72,59 +71,66 @@ const ShipmentDetails = () => {
 
                 <div className="wrapper__form-shipment">
                   <div className="shipment__heading">Thông tin giao hàng</div>
-                  {!isValid ? (
-                    <div className="wrapper__error">
-                      {errors.name && touched.name && (
-                        <div
-                          style={{
-                            fontWeight: 500,
-                            marginTop: 2,
-                          }}
-                        >
-                          - {errors.name}
-                        </div>
-                      )}
-                      {errors.email && touched.email && (
-                        <div
-                          style={{
-                            fontWeight: 500,
-                            marginTop: 2,
-                          }}
-                        >
-                          - {errors.email}
-                        </div>
-                      )}
-                      {errors.phone && touched.phone && (
-                        <div
-                          style={{
-                            fontWeight: 500,
-                            marginTop: 2,
-                          }}
-                        >
-                          - {errors.phone}
-                        </div>
-                      )}
-                      {errors.address && touched.address && (
-                        <div
-                          style={{
-                            fontWeight: 500,
-                            marginTop: 2,
-                          }}
-                        >
-                          - {errors.address}
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <></>
-                  )}
+                  <div className="wrapper__error">
+                    {!isValid && hasSubmit ? (
+                      <div
+                        style={{
+                          padding: !isValid ? 10 : 0,
+                        }}
+                        className="error__message"
+                      >
+                        {errors.name && touched.name && (
+                          <div
+                            style={{
+                              fontWeight: 500,
+                              marginTop: 2,
+                            }}
+                          >
+                            - {errors.name}
+                          </div>
+                        )}
+                        {errors.email && touched.email && (
+                          <div
+                            style={{
+                              fontWeight: 500,
+                              marginTop: 2,
+                            }}
+                          >
+                            - {errors.email}
+                          </div>
+                        )}
+                        {errors.phone && touched.phone && (
+                          <div
+                            style={{
+                              fontWeight: 500,
+                              marginTop: 2,
+                            }}
+                          >
+                            - {errors.phone}
+                          </div>
+                        )}
+                        {errors.address && touched.address && (
+                          <div
+                            style={{
+                              fontWeight: 500,
+                              marginTop: 2,
+                            }}
+                          >
+                            - {errors.address}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <></>
+                    )}
+                  </div>
                   <input
                     type="text"
                     placeholder="Họ và tên"
                     className="input__name"
                     onChange={handleChange("name")}
-                    onBlur={handleBlur("name")}
                     value={values.name}
+                    name="name"
                   />
                   <div className="wrapper__input">
                     <input
@@ -132,16 +138,16 @@ const ShipmentDetails = () => {
                       placeholder="Email"
                       className="input__email"
                       onChange={handleChange("email")}
-                      onBlur={handleBlur("email")}
                       value={values.email}
+                      name="email"
                     />
                     <input
-                      type="text"
+                      type="number"
                       placeholder="Số điện thoại"
                       className="input__phone"
                       onChange={handleChange("phone")}
-                      onBlur={handleBlur("phone")}
                       value={values.phone}
+                      name="phone"
                     />
                   </div>
                   <input
@@ -149,8 +155,8 @@ const ShipmentDetails = () => {
                     placeholder="Địa chỉ"
                     className="input__address"
                     onChange={handleChange("address")}
-                    onBlur={handleBlur("address")}
                     value={values.address}
+                    name="address"
                   />
                   <div className="wrapper__select">
                     <div className="select__item">
@@ -200,12 +206,15 @@ const ShipmentDetails = () => {
                     </Link>
                     <Link className="">
                       <button
-                        type="button"
-                        onClick={handleSubmit}
+                        type="submit"
+                        onClick={() => {
+                          handleSubmit();
+                          setHasSubmit(true);
+                        }}
                         className="check-button"
                         style={{
-                          backgroundColor: !isValid ? "#c8c8c8" : "#338dbc",
-                          cursor: !isValid ? "default" : "pointer",
+                          // backgroundColor: !isValid ? "#c8c8c8" : "#338dbc",
+                          cursor: "pointer",
                         }}
                       >
                         Tiếp tục đến phương thức thanh toán
@@ -221,7 +230,7 @@ const ShipmentDetails = () => {
                   return (
                     <div key={index} className="shipment__item">
                       <div className="wrapper__item-product">
-                        <div className="item__qty">1</div>
+                        <div className="item__qty">{item.qty}</div>
                         <img src={s6} alt="" className="shipment__img" />
                         <div className="shipment__item-name">{item.name}</div>
                       </div>
