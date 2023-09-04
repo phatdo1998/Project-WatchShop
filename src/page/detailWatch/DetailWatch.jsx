@@ -3,15 +3,12 @@ import Header from "../../components/header/Header";
 import { Link, useParams } from "react-router-dom";
 import "./detailWatch.scss";
 import { AiFillCaretRight, AiOutlineShoppingCart } from "react-icons/ai";
-// import { IoMdRemoveCircle, IoIosAddCircle } from "react-icons/io";
 import s6 from "../../assets/image/s6_preview_rev_1.png";
 import Footer from "../../components/footer/Footer";
 import { getProductById, newProduct } from "../../data";
 import ProductItems from "../../components/productItem/ProductItems";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
-import { v4 as uuidv4 } from "uuid";
-import s6_2 from "../../assets/image/s6-2_preview_rev_1.png";
 
 const DetailWatch = () => {
   const { id } = useParams();
