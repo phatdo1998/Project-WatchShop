@@ -70,7 +70,7 @@ const Cart = () => {
                         <div className="wrapper__cart-left">
                           <div className="wrapper__cart-img">
                             <img
-                              src={item.image}
+                              src={item.image.image}
                               alt=""
                               className="cart__img"
                             />

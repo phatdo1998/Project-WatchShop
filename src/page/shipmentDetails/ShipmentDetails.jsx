@@ -65,7 +65,7 @@ const ShipmentDetails = () => {
             <div className="conatiner__left-shipment">
               <div className="wrapper__left-shipment">
                 <div className="shipment__link">
-                  <Link>
+                  <Link to="/">
                     <img src={logo} alt="" className="shipment__image" />
                   </Link>
                 </div>

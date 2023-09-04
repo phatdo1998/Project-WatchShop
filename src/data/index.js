@@ -16,7 +16,22 @@ const products = [
         price: 10000000,
         priceSale: "",
         qty: 1,
-        imageColor: [s6_2, s6, s6_3],
+        imageColor: [
+          {
+            image: s6_2,
+            color: "Trắng",
+          },
+          {
+            image: s6,
+            color: "Đen",
+          },
+
+          {
+            image: s6_3,
+            color: "Xanh",
+          },
+        ],
+        color: ["trắng", "đen", "xanh"],
         cartPriceTotal: 10000000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
@@ -28,7 +43,22 @@ const products = [
         price: 11000000,
         priceSale: "12,000,000₫",
         qty: 1,
-        imageColor: [s6_2, s6, s6_3],
+        imageColor: [
+          {
+            image: s6_2,
+            color: "Trắng",
+          },
+          {
+            image: s6,
+            color: "Đen",
+          },
+
+          {
+            image: s6_3,
+            color: "Xanh",
+          },
+        ],
+        color: ["trắng", "đen", "xanh"],
         cartPriceTotal: 11000000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
@@ -40,7 +70,22 @@ const products = [
         price: "Liên hệ",
         priceSale: "",
         qty: 1,
-        imageColor: [s6_2, s6, s6_3],
+        imageColor: [
+          {
+            image: s6_2,
+            color: "Trắng",
+          },
+          {
+            image: s6,
+            color: "Đen",
+          },
+
+          {
+            image: s6_3,
+            color: "Xanh",
+          },
+        ],
+        color: ["trắng", "đen", "xanh"],
         cartPriceTotal: 0,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
@@ -52,7 +97,22 @@ const products = [
         price: 7700000,
         priceSale: "",
         qty: 1,
-        imageColor: [s6_2, s6, s6_3],
+        imageColor: [
+          {
+            image: s6_2,
+            color: "Trắng",
+          },
+          {
+            image: s6,
+            color: "Đen",
+          },
+
+          {
+            image: s6_3,
+            color: "Xanh",
+          },
+        ],
+        color: ["trắng", "đen", "xanh"],
         cartPriceTotal: 7700000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
@@ -64,7 +124,22 @@ const products = [
         price: "Liên hệ",
         priceSale: "",
         qty: 1,
-        imageColor: [s6_2, s6, s6_3],
+        imageColor: [
+          {
+            image: s6_2,
+            color: "Trắng",
+          },
+          {
+            image: s6,
+            color: "Đen",
+          },
+
+          {
+            image: s6_3,
+            color: "Xanh",
+          },
+        ],
+        color: ["trắng", "đen", "xanh"],
         cartPriceTotal: 0,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
@@ -76,7 +151,22 @@ const products = [
         price: 9000000,
         priceSale: "10,000,000₫",
         qty: 1,
-        imageColor: [s6_2, s6, s6_3],
+        imageColor: [
+          {
+            image: s6_2,
+            color: "Trắng",
+          },
+          {
+            image: s6,
+            color: "Đen",
+          },
+
+          {
+            image: s6_3,
+            color: "Xanh",
+          },
+        ],
+        color: ["trắng", "đen", "xanh"],
         cartPriceTotal: 9000000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
@@ -88,7 +178,22 @@ const products = [
         price: 7000000,
         priceSale: "",
         qty: 1,
-        imageColor: [s6_2, s6, s6_3],
+        imageColor: [
+          {
+            image: s6_2,
+            color: "Trắng",
+          },
+          {
+            image: s6,
+            color: "Đen",
+          },
+
+          {
+            image: s6_3,
+            color: "Xanh",
+          },
+        ],
+        color: ["trắng", "đen", "xanh"],
         cartPriceTotal: 7000000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
@@ -100,7 +205,22 @@ const products = [
         price: 5500000,
         priceSale: "6,000,000₫",
         qty: 1,
-        imageColor: [s6_2, s6, s6_3],
+        imageColor: [
+          {
+            image: s6_2,
+            color: "Trắng",
+          },
+          {
+            image: s6,
+            color: "Đen",
+          },
+
+          {
+            image: s6_3,
+            color: "Xanh",
+          },
+        ],
+        color: ["trắng", "đen", "xanh"],
         cartPriceTotal: 5500000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
@@ -117,7 +237,22 @@ const products = [
         name: "Amazfit Gts nội địa",
         price: 2500000,
         qty: 1,
-        imageColor: [s6_2, s6, s6_3],
+        imageColor: [
+          {
+            image: s6_2,
+            color: "Trắng",
+          },
+          {
+            image: s6,
+            color: "Đen",
+          },
+
+          {
+            image: s6_3,
+            color: "Xanh",
+          },
+        ],
+        color: ["trắng", "đen", "xanh"],
         cartPriceTotal: 2500000,
         description:
           "Theo dõi giấc ngủ, Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Báo thức, Màn hình luôn hiển thị, Từ chối cuộc gọi, Đồng hồ bấm giờ, Rung thông báo, Thay mặt đồng hồ",
@@ -128,7 +263,22 @@ const products = [
         name: "Xiaomi Amazfit Gts Vàng",
         price: 3000000,
         qty: 1,
-        imageColor: [s6_2, s6, s6_3],
+        imageColor: [
+          {
+            image: s6_2,
+            color: "Trắng",
+          },
+          {
+            image: s6,
+            color: "Đen",
+          },
+
+          {
+            image: s6_3,
+            color: "Xanh",
+          },
+        ],
+        color: ["trắng", "đen", "xanh"],
         cartPriceTotal: 3000000,
         description:
           "Theo dõi giấc ngủ, Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Báo thức, Màn hình luôn hiển thị, Từ chối cuộc gọi, Đồng hồ bấm giờ, Rung thông báo, Thay mặt đồng hồ",
@@ -161,7 +311,22 @@ export const newProduct = [
     name: "Amazfit Gts nội địa",
     price: 2500000,
     qty: 1,
-    imageColor: [s6_2, s6, s6_3],
+    imageColor: [
+      {
+        image: s6_2,
+        color: "Trắng",
+      },
+      {
+        image: s6,
+        color: "Đen",
+      },
+
+      {
+        image: s6_3,
+        color: "Xanh",
+      },
+    ],
+    color: ["trắng", "đen", "xanh"],
     cartPriceTotal: 2500000,
     description:
       "Theo dõi giấc ngủ, Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Báo thức, Màn hình luôn hiển thị, Từ chối cuộc gọi, Đồng hồ bấm giờ, Rung thông báo, Thay mặt đồng hồ",
@@ -173,7 +338,22 @@ export const newProduct = [
     price: "Liên hệ",
     priceSale: "",
     qty: 1,
-    imageColor: [s6_2, s6, s6_3],
+    imageColor: [
+      {
+        image: s6_2,
+        color: "Trắng",
+      },
+      {
+        image: s6,
+        color: "Đen",
+      },
+
+      {
+        image: s6_3,
+        color: "Xanh",
+      },
+    ],
+    color: ["trắng", "đen", "xanh"],
     cartPriceTotal: 0,
     description:
       "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
@@ -185,7 +365,22 @@ export const newProduct = [
     price: 7000000,
     priceSale: "",
     qty: 1,
-    imageColor: [s6_2, s6, s6_3],
+    imageColor: [
+      {
+        image: s6_2,
+        color: "Trắng",
+      },
+      {
+        image: s6,
+        color: "Đen",
+      },
+
+      {
+        image: s6_3,
+        color: "Xanh",
+      },
+    ],
+    color: ["trắng", "đen", "xanh"],
     cartPriceTotal: 7000000,
     description:
       "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
@@ -197,7 +392,22 @@ export const newProduct = [
     price: 5500000,
     priceSale: "6,000,000₫",
     qty: 1,
-    imageColor: [s6_2, s6, s6_3],
+    imageColor: [
+      {
+        image: s6_2,
+        color: "Trắng",
+      },
+      {
+        image: s6,
+        color: "Đen",
+      },
+
+      {
+        image: s6_3,
+        color: "Xanh",
+      },
+    ],
+    color: ["trắng", "đen", "xanh"],
     cartPriceTotal: 5500000,
     description:
       "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
@@ -208,7 +418,22 @@ export const newProduct = [
     name: "Xiaomi Amazfit Gts Vàng",
     price: 3000000,
     qty: 1,
-    imageColor: [s6_2, s6, s6_3],
+    imageColor: [
+      {
+        image: s6_2,
+        color: "Trắng",
+      },
+      {
+        image: s6,
+        color: "Đen",
+      },
+
+      {
+        image: s6_3,
+        color: "Xanh",
+      },
+    ],
+    color: ["trắng", "đen", "xanh"],
     cartPriceTotal: 3000000,
     description:
       "Theo dõi giấc ngủ, Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Báo thức, Màn hình luôn hiển thị, Từ chối cuộc gọi, Đồng hồ bấm giờ, Rung thông báo, Thay mặt đồng hồ",

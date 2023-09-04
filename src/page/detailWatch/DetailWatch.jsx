@@ -3,34 +3,42 @@ import Header from "../../components/header/Header";
 import { Link, useParams } from "react-router-dom";
 import "./detailWatch.scss";
 import { AiFillCaretRight, AiOutlineShoppingCart } from "react-icons/ai";
-// import { IoMdRemoveCircle, IoIosAddCircle } from "react-icons/io";
 import s6 from "../../assets/image/s6_preview_rev_1.png";
 import Footer from "../../components/footer/Footer";
 import { getProductById, newProduct } from "../../data";
 import ProductItems from "../../components/productItem/ProductItems";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
+import { v4 as uuidv4 } from "uuid";
 
 const DetailWatch = () => {
   const { id } = useParams();
   const [detailProducts, setDetailProducts] = useState([]);
   const [imageColor, setImageColor] = useState(s6);
+  const [colorSelected, setColorSelected] = useState();
   const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchApiProductById = async () => {
       const response = await getProductById(id);
+      console.log(response);
       setDetailProducts(response);
+      setColorSelected({
+        color: response[0].color[1],
+        image: response[0].imageColor[1].image,
+      });
     };
 
     fetchApiProductById();
   }, [id]);
 
-  const handleAddToCart = (item, imageColor) => {
+  const handleAddToCart = (item, colors) => {
+    console.log(colors);
     dispatch(
       addToCart({
         ...item,
-        image: imageColor,
+        image: colorSelected,
+        id: uuidv4(),
       })
     );
   };
@@ -58,15 +66,18 @@ const DetailWatch = () => {
                       <img src={imageColor} alt="" className="" />
                     </div>
                     <div className="wrapper__detail-color">
-                      {item.imageColor.map((image, index) => {
+                      {item.imageColor.map(({ image, color }, index) => {
                         return (
-                          <img
-                            onClick={() => setImageColor(image)}
-                            key={index}
-                            src={image}
-                            alt=""
-                            className="img__detail"
-                          />
+                          <div key={index} className="wrapper__image-color">
+                            <img
+                              onClick={() => setImageColor(image)}
+                              key={index}
+                              src={image}
+                              alt=""
+                              className="img__detail"
+                            />
+                            <div className="color__name">{color}</div>
+                          </div>
                         );
                       })}
                     </div>
@@ -81,31 +92,33 @@ const DetailWatch = () => {
                       <span className="detail__description">
                         {item.description}
                       </span>
+                      <div className="wrapper__watch-color">
+                        {item.imageColor.map(({ color, image }, index) => {
+                          return (
+                            <div
+                              onClick={() => setColorSelected({ color, image })}
+                              key={index}
+                              className={`watch__color ${
+                                color.toLowerCase() ===
+                                  colorSelected.color.toLowerCase() && "active"
+                              }`}
+                            >
+                              {color}
+                            </div>
+                          );
+                        })}
+                      </div>
 
                       <div className="wrapper__detail-cart">
-                        {/* <div className="detail__text">Số lượng:</div> */}
                         <div className="wrapper__quantity">
-                          {/* <div className="wrapper__qty">
-                            <div className="detail__remove-icon">
-                              <IoMdRemoveCircle
-                                onClick={handleRemove}
-                                size={24}
-                                color="#6e7874"
-                              />
-                            </div>
-                            <div className="detail__qty">{item.qty}</div>
-                            <div className="detail__add-icon">
-                              <IoIosAddCircle
-                                onClick={handleAdd}
-                                size={24}
-                                color="#6e7874"
-                              />
-                            </div>
-                          </div> */}
-
                           <div className="wrapper__detail-button">
                             <Link
-                              onClick={() => handleAddToCart(item, imageColor)}
+                              onClick={() =>
+                                handleAddToCart(
+                                  item,
+                                  item.imageColor.map((colors) => colors)
+                                )
+                              }
                               to="/cart"
                               className="detail__button"
                             >
