@@ -2,6 +2,7 @@
 
 .container__shipment {
   @include flex(center, center);
+  overflow-y: scroll;
   .wrapper__shipment {
     width: 1100px;
     @include flex(unset, center);
@@ -32,6 +33,7 @@
       flex: 1;
       padding: 56px 44px 0 0;
       border-right: 1px solid $border-color;
+      padding-bottom: 20px;
 
       @include smallTablet {
         border: none;
@@ -63,6 +65,7 @@
         .wrapper__form-shipment {
           margin-top: 20px;
           font-size: 14px;
+          margin-bottom: 100px;
 
           @include tablet {
             margin-bottom: 40px;
@@ -84,11 +87,15 @@
           }
 
           .wrapper__error {
-            width: 100%;
-            padding: 12px 20px;
-            background-color: #f8d7da;
+            background-color: #fff;
             margin-bottom: 20px;
-            border-radius: 4px;
+            width: 100%;
+
+            .error__message {
+              background-color: #f8d7da;
+
+              border-radius: 4px;
+            }
 
             .error__item {
               font-size: 14px;
