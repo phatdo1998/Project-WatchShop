@@ -3,7 +3,6 @@ import Header from "../../components/header/Header";
 import { Link, useParams } from "react-router-dom";
 import "./detailWatch.scss";
 import { AiFillCaretRight, AiOutlineShoppingCart } from "react-icons/ai";
-// import { IoMdRemoveCircle, IoIosAddCircle } from "react-icons/io";
 import s6 from "../../assets/image/s6_preview_rev_1.png";
 import Footer from "../../components/footer/Footer";
 import { getProductById, newProduct } from "../../data";
@@ -83,26 +82,7 @@ const DetailWatch = () => {
                       </span>
 
                       <div className="wrapper__detail-cart">
-                        {/* <div className="detail__text">Số lượng:</div> */}
                         <div className="wrapper__quantity">
-                          {/* <div className="wrapper__qty">
-                            <div className="detail__remove-icon">
-                              <IoMdRemoveCircle
-                                onClick={handleRemove}
-                                size={24}
-                                color="#6e7874"
-                              />
-                            </div>
-                            <div className="detail__qty">{item.qty}</div>
-                            <div className="detail__add-icon">
-                              <IoIosAddCircle
-                                onClick={handleAdd}
-                                size={24}
-                                color="#6e7874"
-                              />
-                            </div>
-                          </div> */}
-
                           <div className="wrapper__detail-button">
                             <Link
                               onClick={() => handleAddToCart(item, imageColor)}
