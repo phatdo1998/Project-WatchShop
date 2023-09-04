@@ -113,7 +113,7 @@ const DetailWatch = () => {
                       thời lượng pin.
                     </p>
                     <p className="feature">
-                      Định vị chính xác bằng GPS và la bàn
+                      Định vị chính xác bằng GPS và la bàn.
                     </p>
                     <div className="feature">
                       Định vị GPS định vị với độ chính xác cao vị trí của bạn,
