@@ -104,7 +104,7 @@
   }
 
   &__wrapper-right {
-    @include flex(center, end);
+    @include flex(center, flex-end);
     font-size: 16px;
     font-weight: bolder;
     position: relative;

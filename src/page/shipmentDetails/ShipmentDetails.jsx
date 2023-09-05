@@ -214,7 +214,6 @@ const ShipmentDetails = () => {
                         }}
                         className="check-button"
                         style={{
-                          // backgroundColor: !isValid ? "#c8c8c8" : "#338dbc",
                           cursor: "pointer",
                         }}
                       >
