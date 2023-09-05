@@ -50,7 +50,7 @@ const Cart = () => {
                     Bạn đang có{" "}
                     <span style={{ fontWeight: 700 }}>
                       {cart.length} sản phẩm
-                    </span>{" "}
+                    </span>
                     trong giỏ hàng
                   </div>
                 </div>
@@ -61,14 +61,14 @@ const Cart = () => {
                     const cartPriceTotal = PriceTotal * qty;
                     return (
                       <div key={index} className="wrapper__cart-item">
-                        <div
-                          onClick={() => handleRemove(item.id)}
-                          className="wrapper__icon-cart"
-                        >
-                          <IoMdRemove color="white" />
-                        </div>
                         <div className="wrapper__cart-left">
                           <div className="wrapper__cart-img">
+                            <div
+                              onClick={() => handleRemove(item.id)}
+                              className="wrapper__icon-cart"
+                            >
+                              <IoMdRemove color="white" />
+                            </div>
                             <img
                               src={item.image.image}
                               alt=""

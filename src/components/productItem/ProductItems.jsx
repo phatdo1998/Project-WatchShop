@@ -4,10 +4,17 @@ import { Link } from "react-router-dom";
 import s6 from "../../assets/image/s6_preview_rev_1.png";
 
 const ProductItems = ({ item }) => {
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <div className="">
       <div className="list__watch--wrapper">
-        <Link to={`detail/${item.id}`} className="list__watch--wrapper-image">
+        <Link
+          onClick={handleClick}
+          to={`detail/${item.id}`}
+          className="list__watch--wrapper-image"
+        >
           <img src={s6} alt="" className="list__watch--image" />
         </Link>
         <div className="list__watch--name">

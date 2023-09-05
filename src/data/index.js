@@ -289,18 +289,14 @@ const products = [
 
 export const getProducts = () => {
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(products);
-    }, 1000);
+    resolve(products);
   });
 };
 
 export const getProductById = (id) => {
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // eslint-disable-next-line eqeqeq
-      resolve(products.flatMap((item) => item.items.filter((x) => x.id == id)));
-    }, 1000);
+    // eslint-disable-next-line eqeqeq
+    resolve(products.flatMap((item) => item.items.filter((x) => x.id == id)));
   });
 };
 

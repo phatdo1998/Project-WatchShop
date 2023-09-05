@@ -111,6 +111,10 @@
             box-shadow: 0 0 0 1px #d9d9d9;
             border: none;
             font-size: 14px;
+
+            @include mobile {
+              border: 1px solid $border-color;
+            }
           }
           .wrapper__input {
             @include flex(center, center);
@@ -131,6 +135,11 @@
               box-shadow: 0 0 0 1px #d9d9d9;
               border: none;
               flex: 3;
+
+              @include mobile {
+                border: 1px solid $border-color;
+                font-size: 14px;
+              }
             }
 
             .input__phone {
@@ -148,6 +157,7 @@
 
               @include mobile {
                 font-size: 14px;
+                border: 1px solid $border-color;
               }
             }
           }
@@ -159,6 +169,10 @@
             border: none;
             font-size: 14px;
             margin-top: 10px;
+
+            @include mobile {
+              border: 1px solid $border-color;
+            }
           }
           .wrapper__select {
             @include flex(center, center);
@@ -205,11 +219,6 @@
               &:hover {
                 filter: brightness(1.2);
               }
-
-              // @include mobile {
-              //   display: block;
-              //   text-align: center;
-              // }
             }
 
             .check-button {
@@ -219,6 +228,7 @@
               border-radius: 4px;
               font-size: 13px;
               font-weight: 600;
+              cursor: pointer;
 
               @include mobile {
                 width: 100%;

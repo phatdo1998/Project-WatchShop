@@ -85,7 +85,6 @@
             margin: 10px 0;
             border-bottom: 1px solid $border-color;
             padding: 20px 0;
-            position: relative;
 
             &:last-child {
               border: none;
@@ -99,23 +98,29 @@
               padding: 15px 0;
             }
 
-            .wrapper__icon-cart {
-              position: absolute;
-              padding: 4px;
-              background-color: red;
-              border-radius: 50%;
-              @include flex(center, center);
-              left: -13px;
-              top: 12px;
-              cursor: pointer;
-            }
-
             .wrapper__cart-left {
               @include flex(unset, center);
 
               .wrapper__cart-img {
                 border: 1px solid $border-color;
                 @include flex(center, center);
+                position: relative;
+
+                .wrapper__icon-cart {
+                  position: absolute;
+                  padding: 4px;
+                  background-color: red;
+                  border-radius: 50%;
+                  @include flex(center, center);
+                  left: -10px;
+                  top: -7px;
+                  cursor: pointer;
+
+                  @include mobile {
+                    top: -6px;
+                    left: -9px;
+                  }
+                }
 
                 .cart__img {
                   width: 80px;

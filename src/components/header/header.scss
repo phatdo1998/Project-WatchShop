@@ -119,10 +119,6 @@
       margin-top: 25px;
     }
 
-    @include mobile {
-      // @include flex(center, space-between);
-    }
-
     .search {
       @include flex(center, center);
       padding: 12px;

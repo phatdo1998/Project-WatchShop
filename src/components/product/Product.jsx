@@ -10,10 +10,8 @@ import Heading from "../heading/Heding";
 import ProductItems from "../productItem/ProductItems";
 import SlideWatch from "../slideWatch/SlideWatch";
 import "./product.scss";
-import { Spin } from "antd";
 
 const Product = () => {
-  const [isLoading, setIsLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const [selected, setSelected] = useState(0);
   const handleClick = (index) => {
@@ -31,10 +29,8 @@ const Product = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      setIsLoading(true);
       const response = await getProducts();
       setProducts(response);
-      setIsLoading(false);
     };
 
     fetchProducts();
@@ -74,13 +70,9 @@ const Product = () => {
         </div>
         <div className="container__list-watch">
           <div className="list__watch">
-            {isLoading ? (
-              <Spin className="loading" />
-            ) : (
-              products[selected]?.items?.map((item, index) => {
-                return <ProductItems item={item} key={index} />;
-              })
-            )}
+            {products[selected]?.items?.map((item, index) => {
+              return <ProductItems item={item} key={index} />;
+            })}
           </div>
         </div>
 
