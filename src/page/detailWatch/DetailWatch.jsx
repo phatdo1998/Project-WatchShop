@@ -7,7 +7,7 @@ import s6 from "../../assets/image/s6_preview_rev_1.png";
 import Footer from "../../components/footer/Footer";
 import { getProductById, newProduct } from "../../data";
 import ProductItems from "../../components/productItem/ProductItems";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
 import { v4 as uuidv4 } from "uuid";
 
@@ -21,7 +21,6 @@ const DetailWatch = () => {
   useEffect(() => {
     const fetchApiProductById = async () => {
       const response = await getProductById(id);
-      console.log(response);
       setDetailProducts(response);
       setColorSelected({
         color: response[0].color[1],
@@ -33,7 +32,6 @@ const DetailWatch = () => {
   }, [id]);
 
   const handleAddToCart = (item, colors) => {
-    console.log(colors);
     dispatch(
       addToCart({
         ...item,
@@ -65,7 +63,7 @@ const DetailWatch = () => {
                     <div className="wrapper__img-detail">
                       <img src={imageColor} alt="" className="" />
                     </div>
-                    <div className="wrapper__detail-color">
+                    {/* <div className="wrapper__detail-color">
                       {item.imageColor.map(({ image, color }, index) => {
                         return (
                           <div key={index} className="wrapper__image-color">
@@ -80,7 +78,7 @@ const DetailWatch = () => {
                           </div>
                         );
                       })}
-                    </div>
+                    </div> */}
                   </div>
 
                   <div className="wrapper__detail-watch">
@@ -96,7 +94,10 @@ const DetailWatch = () => {
                         {item.imageColor.map(({ color, image }, index) => {
                           return (
                             <div
-                              onClick={() => setColorSelected({ color, image })}
+                              onClick={() => {
+                                setColorSelected({ color, image });
+                                setImageColor(image);
+                              }}
                               key={index}
                               className={`watch__color ${
                                 color.toLowerCase() ===

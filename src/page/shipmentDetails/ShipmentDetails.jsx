@@ -18,10 +18,6 @@ const ShipmentDetails = () => {
 
   const cart = useSelector((state) => state.cart);
 
-  const totalPrice = cart.reduce((total, item) => {
-    return (total += item.price);
-  }, 0);
-
   const shipmentValidationScheme = Yup.object().shape({
     email: Yup.string().email("Email Invalid").required("Bạn chưa nhập Email"),
     name: Yup.string().required("Bạn chưa nhập họ tên"),
@@ -44,6 +40,12 @@ const ShipmentDetails = () => {
       );
     });
   }, []);
+
+  const price = cart.map((price) => price);
+
+  const totalShipemntPrice = price.reduce((total, item) => {
+    return (total += item.price * item.qty);
+  }, 0);
 
   return (
     <Formik
@@ -213,10 +215,6 @@ const ShipmentDetails = () => {
                           setHasSubmit(true);
                         }}
                         className="check-button"
-                        style={{
-                          // backgroundColor: !isValid ? "#c8c8c8" : "#338dbc",
-                          cursor: "pointer",
-                        }}
                       >
                         Tiếp tục đến phương thức thanh toán
                       </button>
@@ -228,6 +226,7 @@ const ShipmentDetails = () => {
             <div className="conatiner__right-shipment">
               <div className="wrapper__product-shipment">
                 {cart.map((item, index) => {
+                  const priceTotal = item.price * item.qty;
                   return (
                     <div key={index} className="shipment__item">
                       <div className="wrapper__item-product">
@@ -236,7 +235,7 @@ const ShipmentDetails = () => {
                         <div className="shipment__item-name">{item.name}</div>
                       </div>
                       <div className="shipment__item-price">
-                        {item.price.toLocaleString()}
+                        {priceTotal.toLocaleString()}
                       </div>
                     </div>
                   );
@@ -255,7 +254,7 @@ const ShipmentDetails = () => {
               <div className="wrapper__price-shipment">
                 <div className="shipment__product-price">
                   <div className="">Tạm tính</div>
-                  <div className="">{totalPrice.toLocaleString()}</div>
+                  <div className="">{totalShipemntPrice.toLocaleString()}</div>
                 </div>
                 <div className="shipment__delivery">
                   <div className="">Phí vận chuyển</div>
@@ -268,7 +267,7 @@ const ShipmentDetails = () => {
                   <div className="wrapper__price">
                     <div className="vnd">vnd</div>
                     <div className="total-price">
-                      {totalPrice.toLocaleString()}
+                      {totalShipemntPrice.toLocaleString()}
                     </div>
                   </div>
                 </div>
