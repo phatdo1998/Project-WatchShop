@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import { Link, useParams } from "react-router-dom";
 import "./detailWatch.scss";
-import { AiFillCaretRight, AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import s6 from "../../assets/image/s6_preview_rev_1.png";
 import Footer from "../../components/footer/Footer";
 import { getProductById, newProduct } from "../../data";
@@ -52,33 +52,17 @@ const DetailWatch = () => {
           <div key={index}>
             <div className="container__detail">
               <div className="wrapper__detail">
-                <div className="wrapper__brand">
+                {/* <div className="wrapper__brand">
                   <Link className="detail__home">Trang chủ</Link>
                   <AiFillCaretRight size={14} />
                   <span className="detail__brand">Apple Watch</span>
-                </div>
+                </div> */}
 
                 <div className="wrapper__detail-product">
                   <div className="wrapper__watch">
                     <div className="wrapper__img-detail">
                       <img src={imageColor} alt="" className="" />
                     </div>
-                    {/* <div className="wrapper__detail-color">
-                      {item.imageColor.map(({ image, color }, index) => {
-                        return (
-                          <div key={index} className="wrapper__image-color">
-                            <img
-                              onClick={() => setImageColor(image)}
-                              key={index}
-                              src={image}
-                              alt=""
-                              className="img__detail"
-                            />
-                            <div className="color__name">{color}</div>
-                          </div>
-                        );
-                      })}
-                    </div> */}
                   </div>
 
                   <div className="wrapper__detail-watch">
