@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
-
   const dispatch = useDispatch();
 
   const handleRemove = (id) => {
@@ -27,6 +26,10 @@ const Cart = () => {
   const handleDecrement = (id) => {
     dispatch(decrement(id));
     dispatch(totalCartPrice(id));
+  };
+
+  const handleClick = () => {
+    window.scrollTo(0, 0);
   };
 
   const totalPrice = cart.reduce((total, item) => {
@@ -124,7 +127,11 @@ const Cart = () => {
                     </div>
                   </div>
                   <div className="cart__button">
-                    <Link to={"/shipment"} className="cart__link">
+                    <Link
+                      onClick={handleClick}
+                      to={"/shipment"}
+                      className="cart__link"
+                    >
                       THANH TOÁN
                     </Link>
                   </div>

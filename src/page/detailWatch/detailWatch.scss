@@ -103,7 +103,7 @@
         .wrapper__watch-color {
           @include flex(center, flex-start);
           font-size: 14px;
-          margin-top: 15px;
+          margin: 30px 0;
 
           .watch__color {
             padding: 5px 15px;
