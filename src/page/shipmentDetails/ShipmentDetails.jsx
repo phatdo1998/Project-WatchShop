@@ -26,7 +26,6 @@ const ShipmentDetails = () => {
   const [wards, setWards] = useState();
   const [hasSubmit, setHasSubmit] = useState(false);
   const [step, setStep] = useState(1);
-  const [isValid, setIsValid] = useState(false);
   const cart = useSelector((state) => state.cart);
   const information = useSelector((state) => state.information);
   const dispatch = useDispatch();
@@ -60,11 +59,13 @@ const ShipmentDetails = () => {
     return (total += item.price * item.qty);
   }, 0);
 
-  const handleLink = () => {
-    if (isValid) {
-      setStep(2);
-    }
-  };
+  // const handleLink = () => {
+  //   if (hasValid) {
+  //     console.log("loi");
+  //   } else {
+  //     setStep(2);
+  //   }
+  // };
 
   return (
     <div className="container__shipment">
@@ -242,8 +243,7 @@ const ShipmentDetails = () => {
                           onClick={() => {
                             handleSubmit();
                             setHasSubmit(true);
-                            setIsValid(isValid);
-                            handleLink();
+                            setStep(2);
                           }}
                           className="check-button"
                         >

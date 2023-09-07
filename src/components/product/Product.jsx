@@ -19,7 +19,7 @@ const Product = () => {
   };
 
   const breakpoints = {
-    sx: 0,
+    sx: 320,
     sm: 426,
     md: 768,
     lg: 992,
@@ -96,13 +96,13 @@ const Product = () => {
                     slidesPerView: 3,
                   },
                   [breakpoints.lg]: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                   },
                   [breakpoints.md]: {
                     slidesPerView: 2,
                   },
                   [breakpoints.sm]: {
-                    slidesPerView: 2,
+                    slidesPerView: 3,
                   },
                 }}
                 autoplay={{
@@ -124,7 +124,10 @@ const Product = () => {
                 {newProduct.map((item, index) => {
                   return (
                     <SwiperSlide key={index}>
-                      <SlideWatch name={item.name} price={item.price} />
+                      <SlideWatch
+                        name={item.name}
+                        price={item.price.toLocaleString()}
+                      />
                     </SwiperSlide>
                   );
                 })}
@@ -135,12 +138,14 @@ const Product = () => {
 
         <div className="selling-products">
           <div className="wrapper__selling-products--heading">
-            <Heading
-              title={"SẢN PHẨM BÁN CHẠY"}
-              description={
-                "Bộ sưu tập những sản phẩm sang chảnh, thông minh dành cho nữ giới"
-              }
-            />
+            <div className="wrapper__selling-heading">
+              <Heading
+                title={"SẢN PHẨM BÁN CHẠY"}
+                description={
+                  "Bộ sưu tập những sản phẩm sang chảnh, thông minh dành cho nữ giới"
+                }
+              />
+            </div>
             <div className="wrapper__selling-products-slide">
               <div className="wrapper__selling-products--content">
                 <Swiper
@@ -152,13 +157,13 @@ const Product = () => {
                       slidesPerView: 3,
                     },
                     [breakpoints.lg]: {
-                      slidesPerView: 3,
+                      slidesPerView: 2,
                     },
                     [breakpoints.md]: {
                       slidesPerView: 2,
                     },
                     [breakpoints.sm]: {
-                      slidesPerView: 2,
+                      slidesPerView: 3,
                     },
                   }}
                   autoplay={{
@@ -180,7 +185,10 @@ const Product = () => {
                   {newProduct.map((item, index) => {
                     return (
                       <SwiperSlide key={index}>
-                        <SlideWatch name={item.name} price={item.price} />
+                        <SlideWatch
+                          name={item.name}
+                          price={item.price.toLocaleString()}
+                        />
                       </SwiperSlide>
                     );
                   })}
@@ -192,12 +200,14 @@ const Product = () => {
 
         <div className="news">
           <div className="wrapper__news-heading">
-            <Heading
-              title={"Tin tức"}
-              description={
-                "Chúng tôi sẵn sàng cập nhật những kiến thức, công nghệ mới nhất dành cho các bạn"
-              }
-            />
+            <div className="wrapper__news">
+              <Heading
+                title={"Tin tức"}
+                description={
+                  "Chúng tôi sẵn sàng cập nhật những kiến thức, công nghệ mới nhất dành cho các bạn"
+                }
+              />
+            </div>
             <div className="wrapper__news-slide">
               <div className="wrapper__news-content">
                 <Swiper

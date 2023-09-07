@@ -321,7 +321,6 @@
     @include flex(center, flex-start);
 
     @include mediumMobile {
-      // top: -20px;
     }
 
     .modal__content {
@@ -329,10 +328,20 @@
       height: 100vh;
       background-color: #fff;
       transition: all 0.5s ease;
+      position: absolute;
+      top: 0;
 
       @include mobile {
         width: 65%;
         height: 100%;
+      }
+
+      @include mediumMobile {
+        width: 70%;
+      }
+
+      @include smallMobile {
+        width: 70%;
       }
 
       .list__item {

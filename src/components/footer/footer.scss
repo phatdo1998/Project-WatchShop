@@ -12,6 +12,14 @@
     height: 500px;
   }
 
+  @include bigMobile {
+    padding: 20px;
+    @include flex(center, center);
+    gap: 20px;
+    text-align: left;
+    height: 550px;
+  }
+
   @include mobile {
     padding: 20px;
     @include flex(center, flex-start);
@@ -19,8 +27,16 @@
     height: 550px;
   }
 
+  @include mediumMobile {
+    height: 550px;
+    @include flex(center, unset);
+    padding: 0 10px;
+  }
+
   @include smallMobile {
     height: 550px;
+    @include flex(center, unset);
+    padding: 0 10px;
   }
 
   .wrapper__contact {
@@ -41,6 +57,10 @@
       font-size: 14px;
       margin-top: 10px;
     }
+
+    @include mediumMobile {
+      margin-top: 15px;
+    }
   }
   .contact {
     font-size: 14px;
@@ -52,13 +72,7 @@
   }
 
   .wrapper__certification {
-    text-align: center;
-
     @include mobile {
-      text-align: left;
-    }
-    .wrapper__image-certification {
-      text-align: center;
     }
   }
 }
