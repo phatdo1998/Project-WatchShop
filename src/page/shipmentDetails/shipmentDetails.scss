@@ -14,6 +14,54 @@
     @include flex(center, center);
   }
 
+  @include bigMobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 102px;
+    border-bottom: 1px solid $border-color;
+    background-color: #fff;
+    @include flex(center, center);
+  }
+
+  @include mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 102px;
+    border-bottom: 1px solid $border-color;
+    background-color: #fff;
+    @include flex(center, center);
+  }
+
+  @include mediumMobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 102px;
+    border-bottom: 1px solid $border-color;
+    background-color: #fff;
+    @include flex(center, center);
+  }
+
+  @include smallMobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 102px;
+    border-bottom: 1px solid $border-color;
+    background-color: #fff;
+    @include flex(center, center);
+  }
+
   .shipment__image {
     height: 60px;
   }
@@ -36,16 +84,28 @@
       flex-direction: column-reverse;
     }
 
+    @include bigMobile {
+      @include flex(center, center);
+      flex-direction: column-reverse;
+      padding: 0 10px;
+    }
+
     @include mobile {
-      width: 398px;
+      @include flex(center, center);
+      flex-direction: column-reverse;
+      padding: 0 10px;
     }
 
     @include mediumMobile {
-      width: 348px;
+      @include flex(center, center);
+      flex-direction: column-reverse;
+      padding: 0 10px;
     }
 
     @include smallMobile {
-      width: 292px;
+      @include flex(center, center);
+      flex-direction: column-reverse;
+      padding: 0 10px;
     }
 
     .container__left-shipment {
@@ -63,9 +123,24 @@
         padding: 0;
       }
 
+      @include bigMobile {
+        padding: 0;
+        width: 100%;
+      }
+
       @include mobile {
-        margin: 0;
-        border: none;
+        padding: 0;
+        width: 100%;
+      }
+
+      @include mediumMobile {
+        padding: 0;
+        width: 100%;
+      }
+
+      @include smallMobile {
+        padding: 0;
+        width: 100%;
       }
 
       .wrapper__left-shipment {
@@ -129,7 +204,25 @@
             margin-top: 10px;
             font-size: 14px;
 
+            @include bigMobile {
+              @include flex(center, center);
+              flex-direction: column;
+              gap: 10px;
+            }
+
             @include mobile {
+              @include flex(center, center);
+              flex-direction: column;
+              gap: 10px;
+            }
+
+            @include mediumMobile {
+              @include flex(center, center);
+              flex-direction: column;
+              gap: 10px;
+            }
+
+            @include smallMobile {
               @include flex(center, center);
               flex-direction: column;
               gap: 10px;
@@ -187,7 +280,19 @@
             gap: 20px;
             margin-top: 10px;
 
+            @include bigMobile {
+              display: block;
+            }
+
             @include mobile {
+              display: block;
+            }
+
+            @include mediumMobile {
+              display: block;
+            }
+
+            @include smallMobile {
               display: block;
             }
 
@@ -195,8 +300,20 @@
               flex: 1;
               font-weight: 500;
 
+              @include bigMobile {
+                margin-bottom: 10px;
+              }
+
               @include mobile {
                 margin: 10px 0;
+              }
+
+              @include mediumMobile {
+                margin-bottom: 10px;
+              }
+
+              @include smallMobile {
+                margin-bottom: 10px;
               }
             }
           }
@@ -205,7 +322,19 @@
             margin-top: 10px;
             font-weight: 500;
 
+            @include bigMobile {
+              width: 100%;
+            }
+
             @include mobile {
+              width: 100%;
+            }
+
+            @include mediumMobile {
+              width: 100%;
+            }
+
+            @include smallMobile {
               width: 100%;
             }
           }
@@ -214,9 +343,27 @@
             @include flex(center, space-between);
             margin-top: 40px;
 
+            @include bigMobile {
+              @include flex(center, center);
+              flex-direction: column-reverse;
+              gap: 20px;
+            }
+
             @include mobile {
               @include flex(center, center);
               flex-direction: column-reverse;
+            }
+
+            @include mediumMobile {
+              @include flex(center, center);
+              flex-direction: column-reverse;
+              gap: 20px;
+            }
+
+            @include smallMobile {
+              @include flex(center, center);
+              flex-direction: column-reverse;
+              gap: 20px;
             }
 
             .check-text {
@@ -346,9 +493,6 @@
               margin-bottom: 5px;
             }
 
-            .information {
-            }
-
             .information__vn {
               margin: 15px 0;
             }
@@ -367,6 +511,26 @@
           @include flex(center, space-between);
           font-size: 14px;
           margin-top: 40px;
+
+          @include bigMobile {
+            flex-direction: column-reverse;
+            gap: 20px;
+          }
+
+          @include mobile {
+            flex-direction: column-reverse;
+            gap: 20px;
+          }
+
+          @include mediumMobile {
+            flex-direction: column-reverse;
+            gap: 20px;
+          }
+
+          @include smallMobile {
+            flex-direction: column-reverse;
+            gap: 20px;
+          }
 
           .wrapper__left {
             @include flex(center, flex-start);
@@ -388,6 +552,26 @@
             font-size: 13px;
             font-weight: 500;
 
+            @include bigMobile {
+              width: 100%;
+              text-align: center;
+            }
+
+            @include mobile {
+              width: 100%;
+              text-align: center;
+            }
+
+            @include mediumMobile {
+              width: 100%;
+              text-align: center;
+            }
+
+            @include smallMobile {
+              width: 100%;
+              text-align: center;
+            }
+
             &:hover {
               filter: brightness(1.2);
             }
@@ -402,6 +586,26 @@
 
       @include smallTablet {
         padding: 120px 0 0 0;
+      }
+
+      @include bigMobile {
+        width: 100%;
+        padding: 120px 5px 0 5px;
+      }
+
+      @include mobile {
+        padding: 120px 5px 0 5px;
+        width: 100%;
+      }
+
+      @include mediumMobile {
+        padding: 120px 5px 0 5px;
+        width: 100%;
+      }
+
+      @include smallMobile {
+        padding: 120px 5px 0 5px;
+        width: 100%;
       }
 
       .wrapper__product-shipment {

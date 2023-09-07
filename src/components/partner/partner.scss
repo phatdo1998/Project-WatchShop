@@ -8,6 +8,16 @@
     width: 100%;
   }
 
+  @include smallTablet {
+    display: block;
+    margin-left: 20px;
+  }
+
+  @include bigMobile {
+    display: block;
+    margin-left: 20px;
+  }
+
   @include mobile {
     display: block;
     @include flex(center, center);
@@ -25,7 +35,19 @@
     width: 720px;
   }
 
+  @include bigMobile {
+    width: 600px;
+  }
+
   @include mobile {
+    width: 100%;
+  }
+
+  @include mediumMobile {
+    width: 100%;
+  }
+
+  @include smallMobile {
     width: 100%;
   }
 

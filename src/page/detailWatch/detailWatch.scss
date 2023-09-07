@@ -13,23 +13,33 @@
     width: 1170px;
 
     @include tablet {
-      width: 960px;
+      width: 100%;
+      padding: 0 20px;
     }
 
     @include smallTablet {
-      width: 720px;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    @include bigMobile {
+      width: 100%;
+      padding: 0 20px;
     }
 
     @include mobile {
-      width: 396px;
+      width: 100%;
+      padding: 0 15px;
     }
 
     @include mediumMobile {
-      width: 345px;
+      width: 100%;
+      padding: 0 15px;
     }
 
     @include smallMobile {
-      width: 290px;
+      width: 100%;
+      padding: 0 15px;
     }
 
     .wrapper__brand {
@@ -56,6 +66,15 @@
       @include mobile {
         display: block;
       }
+
+      @include mediumMobile {
+        display: block;
+      }
+
+      @include smallMobile {
+        display: block;
+      }
+
       .wrapper__watch {
         flex: 1;
         .wrapper__detail-color {

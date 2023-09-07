@@ -51,7 +51,7 @@ const Cart = () => {
                   <h1 className="cart__content">Giỏ hàng của bạn</h1>
                   <div className="wrapper__title">
                     Bạn đang có{" "}
-                    <span style={{ fontWeight: 700 }}>
+                    <span style={{ fontWeight: 700, marginRight: 3 }}>
                       {cart.length} sản phẩm
                     </span>
                     trong giỏ hàng

@@ -30,8 +30,26 @@
         display: block;
       }
 
+      @include bigMobile {
+        display: block;
+        margin-bottom: 20px;
+      }
+
       @include mobile {
-        width: 440px;
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      @include mediumMobile {
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      @include smallMobile {
+        display: block;
+        width: 100%;
+        padding: 0 10px;
+        margin-bottom: 20px;
       }
 
       .wrapper__cart-products {
@@ -40,6 +58,10 @@
 
         @include tablet {
           padding: 0 15px;
+        }
+
+        @include smallMobile {
+          padding: 0;
         }
 
         .wrapper__cart-title {
@@ -52,12 +74,24 @@
             display: block;
           }
 
+          @include mediumMobile {
+            display: block;
+          }
+
+          @include smallMobile {
+            display: block;
+          }
+
           .cart__content {
             font-size: 24px;
             font-weight: 600;
 
             @include mobile {
               margin-bottom: 10px;
+            }
+
+            @include smallMobile {
+              margin-bottom: 5px;
             }
           }
 
@@ -78,6 +112,10 @@
 
           @include mobile {
             padding: 0 9px;
+          }
+
+          @include smallMobile {
+            padding: 0 10px 0 10px;
           }
 
           .wrapper__cart-item {
@@ -126,6 +164,11 @@
                   width: 80px;
                   height: 80px;
                   object-fit: contain;
+
+                  @include smallMobile {
+                    width: 60px;
+                    height: 60px;
+                  }
                 }
 
                 @include mobile {
@@ -228,6 +271,10 @@
         flex: 1;
         padding: 0 15px;
         margin-top: 20px;
+
+        @include smallMobile {
+          padding: 0;
+        }
 
         .cart__right-total {
           padding: 15px;
