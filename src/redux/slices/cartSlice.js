@@ -27,8 +27,8 @@ export const cartSlice = createSlice({
         return item.id !== action.payload;
       });
     },
-    emptyCart: (state) => {
-      state = [];
+    emptyCart: (state, action) => {
+      return [];
     },
     increasement: (state, action) => {
       return (state = state.map((item) =>

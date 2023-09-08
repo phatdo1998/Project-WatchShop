@@ -19,6 +19,7 @@ import {
   addPhone,
   addWards,
 } from "../../redux/slices/informationSlice";
+import { emptyCart } from "../../redux/slices/cartSlice";
 
 const ShipmentDetails = () => {
   const [city, setCity] = useState();
@@ -59,13 +60,9 @@ const ShipmentDetails = () => {
     return (total += item.price * item.qty);
   }, 0);
 
-  // const handleLink = () => {
-  //   if (hasValid) {
-  //     console.log("loi");
-  //   } else {
-  //     setStep(2);
-  //   }
-  // };
+  const handleButtonClick = () => {
+    dispatch(emptyCart());
+  };
 
   return (
     <div className="container__shipment">
@@ -86,6 +83,7 @@ const ShipmentDetails = () => {
                   dispatch(addEmail(values.email));
                   dispatch(addAddress(values.address));
                   dispatch(addPhone(values.phone));
+                  setStep(2);
                 }}
               >
                 {({
@@ -237,13 +235,12 @@ const ShipmentDetails = () => {
                       <Link to="/cart" className="check-text">
                         Giỏ hàng
                       </Link>
-                      <Link className="">
+                      <Link className="shipment__button-link">
                         <button
                           type="submit"
                           onClick={() => {
                             handleSubmit();
                             setHasSubmit(true);
-                            setStep(2);
                           }}
                           className="check-button"
                         >
@@ -326,7 +323,9 @@ const ShipmentDetails = () => {
                     </div>
                   </div>
                   <div className="information__button">
-                    <Link to="/">Tiếp tục mua hàng</Link>
+                    <Link onClick={handleButtonClick} to="/">
+                      Tiếp tục mua hàng
+                    </Link>
                   </div>
                 </div>
               </div>

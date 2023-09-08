@@ -8,7 +8,7 @@ const ProductItems = ({ item }) => {
     window.scrollTo(0, 0);
   };
   return (
-    <div className="">
+    <div className="wrapper__list-watch-item">
       <div className="list__watch--wrapper">
         <Link
           onClick={handleClick}

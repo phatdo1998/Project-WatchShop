@@ -10,6 +10,26 @@
   @include tablet {
     margin-top: 65px;
   }
+
+  @include smallTablet {
+    margin-top: 65px;
+  }
+
+  @include bigMobile {
+    margin-top: 45px;
+  }
+
+  @include mobile {
+    margin-top: 50px;
+  }
+
+  @include mediumMobile {
+    margin-top: 35px;
+  }
+
+  @include smallMobile {
+    margin-top: 35px;
+  }
 }
 
 .container__content {

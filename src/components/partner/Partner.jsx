@@ -30,10 +30,12 @@ const Partner = () => {
   return (
     <div className="container__partner-item">
       <div className="partner">
-        <Heding
-          title="ĐỐI TÁC"
-          description="Bộ sưu tập những thương hiệu nổi tiếng về smartwatch trên thế giới"
-        />
+        <div className="wrapper__partner-heading">
+          <Heding
+            title="ĐỐI TÁC"
+            description="Bộ sưu tập những thương hiệu nổi tiếng về smartwatch trên thế giới"
+          />
+        </div>
         <div className="brand">
           <Swiper
             breakpoints={{
