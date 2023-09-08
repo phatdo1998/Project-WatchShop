@@ -20,10 +20,10 @@ const Product = () => {
 
   const breakpoints = {
     sx: 320,
-    sm: 426,
-    md: 768,
-    lg: 992,
-    xl: 1280,
+    sm: 425,
+    md: 650,
+    lg: 768,
+    xl: 1024,
     xxl: 1440,
   };
 
@@ -219,7 +219,7 @@ const Product = () => {
                       slidesPerView: 4,
                     },
                     [breakpoints.lg]: {
-                      slidesPerView: 4,
+                      slidesPerView: 2,
                     },
                     [breakpoints.md]: {
                       slidesPerView: 2,

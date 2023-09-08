@@ -17,6 +17,14 @@
   &-item {
     width: 1170px;
 
+    @include tablet {
+      width: 100%;
+    }
+
+    @include smallTablet {
+      width: 100%;
+    }
+
     @include bigMobile {
       width: 100%;
     }
@@ -37,6 +45,11 @@
       @include tablet {
         margin-left: 25px;
       }
+
+      @include bigMobile {
+        margin-left: 0;
+      }
+
       @include mobile {
         margin-left: 0;
       }
@@ -58,8 +71,23 @@
         margin-left: 25px;
       }
 
+      @include smallTablet {
+        margin-left: 20px;
+      }
+
+      @include bigMobile {
+        margin-left: 20px;
+      }
+
       @include mobile {
         margin-left: 20px;
+      }
+
+      @include mediumMobile {
+        margin-left: 15px;
+      }
+      @include smallMobile {
+        margin-left: 10px;
       }
 
       .watch {
@@ -91,7 +119,17 @@
             font-size: 14px;
           }
 
+          @include bigMobile {
+            font-size: 14px;
+          }
+
           @include mobile {
+            font-size: 12px;
+          }
+          @include mediumMobile {
+            font-size: 12px;
+          }
+          @include smallMobile {
             font-size: 12px;
           }
         }
@@ -111,32 +149,36 @@
     width: 1170px;
     @include flex(center, flex-start);
     flex-wrap: wrap;
-    gap: 15px;
-
+    gap: 10px;
     @include tablet {
       width: 960px;
       @include flex(center, flex-start);
     }
 
     @include smallTablet {
-      width: 690px;
+      @include flex(center, center);
+      padding: 0 10px;
     }
 
     @include bigMobile {
-      width: 600px;
+      @include flex(center, center);
+      padding: 0 20px;
     }
 
     @include mobile {
-      width: 396px;
+      @include flex(center, center);
+      padding: 0 10px;
     }
 
     @include mediumMobile {
-      width: 345px;
+      @include flex(center, center);
+      padding: 0 5px;
     }
 
     @include smallMobile {
       width: 100%;
       @include flex(center, center);
+      padding: 0 5px;
     }
   }
 
@@ -146,6 +188,10 @@
     .wrapper__heading--product {
       @include tablet {
         margin-left: 30px;
+      }
+
+      @include bigMobile {
+        margin-left: 0;
       }
 
       @include mobile {
@@ -193,13 +239,14 @@
         margin-left: 0;
         margin-top: 30px;
         @include flex(center, center);
+        padding: 0 10px;
+        width: 100%;
       }
 
       @include mediumMobile {
         width: 100%;
         padding: 0 10px;
         margin-top: 30px;
-
         margin-left: 0;
         @include flex(center, center);
       }
@@ -353,7 +400,7 @@
 
       .wrapper__selling-heading {
         @include bigMobile {
-          @include flex(center, center);
+          @include flex(center, flex-start);
         }
       }
     }
@@ -377,6 +424,7 @@
       }
       @include smallTablet {
         width: 385px;
+        margin-left: 30px;
       }
 
       @include bigMobile {
@@ -388,7 +436,7 @@
         width: 100%;
         margin-top: 30px;
         @include flex(center, center);
-        padding: 0 20px;
+        padding: 0 10px;
       }
 
       @include mediumMobile {
@@ -501,11 +549,12 @@
       margin-top: 40px;
 
       @include tablet {
-        width: 960px;
+        width: 100%;
       }
 
       @include smallTablet {
-        width: 720px;
+        width: 100%;
+        padding: 0 25px;
       }
 
       @include bigMobile {
@@ -546,7 +595,6 @@
 
       @include mobile {
         width: 100%;
-        padding: 0 10px;
       }
 
       @include mediumMobile {

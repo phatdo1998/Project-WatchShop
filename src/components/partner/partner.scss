@@ -10,12 +10,10 @@
 
   @include smallTablet {
     display: block;
-    margin-left: 20px;
   }
 
   @include bigMobile {
     display: block;
-    margin-left: 20px;
   }
 
   @include mobile {
@@ -29,14 +27,14 @@
   width: 1170px;
 
   @include tablet {
-    width: 960px;
+    width: 100%;
   }
   @include smallTablet {
-    width: 720px;
+    width: 100%;
   }
 
   @include bigMobile {
-    width: 600px;
+    width: 100%;
   }
 
   @include mobile {
@@ -49,6 +47,12 @@
 
   @include smallMobile {
     width: 100%;
+  }
+
+  .wrapper__partner-heading {
+    @include tablet {
+      margin-left: 25px;
+    }
   }
 
   .brand {

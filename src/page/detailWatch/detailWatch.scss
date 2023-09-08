@@ -9,6 +9,20 @@
     margin-top: 60px;
   }
 
+  @include bigMobile {
+    margin-top: 40px;
+  }
+
+  @include mobile {
+    margin-top: 60px;
+  }
+  @include mediumMobile {
+    margin-top: 40px;
+  }
+  @include smallMobile {
+    margin-top: 40px;
+  }
+
   .wrapper__detail {
     width: 1170px;
 
@@ -203,6 +217,13 @@
           }
 
           .wrapper__detail-button {
+            @include tablet {
+              width: 100%;
+            }
+
+            @include mediumMobile {
+              width: 100%;
+            }
             .detail__button {
               @include flex(center, center);
               border-radius: 5px;
@@ -214,8 +235,17 @@
               color: #fff;
               cursor: pointer;
 
+              @include tablet {
+                width: 100%;
+              }
+
               @include mobile {
                 margin: 20px 0;
+                width: 100%;
+              }
+
+              @include mediumMobile {
+                padding: 0;
                 width: 100%;
               }
 

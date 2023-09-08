@@ -1,8 +1,30 @@
 @use "../../scss/" as *;
 
+.wrapper__list-watch-item {
+  width: calc(25% - 10px);
+
+  @include smallTablet {
+    width: calc(33% - 10px);
+  }
+
+  @include bigMobile {
+    width: calc(50% - 10px);
+  }
+
+  @include mobile {
+    width: calc(50% - 10px);
+  }
+
+  @include mediumMobile {
+    width: calc(50% - 10px);
+  }
+
+  @include smallMobile {
+    width: calc(50% - 10px);
+  }
+}
+
 .list__watch--wrapper {
-  width: 247px;
-  height: 337px;
   padding: 10px;
   text-align: center;
   border: 1px solid $border-color;
@@ -13,33 +35,33 @@
       rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   }
 
-  @include tablet {
-    width: 228px;
-    height: 335px;
-  }
+  // @include tablet {
+  //   width: 228px;
+  //   height: 335px;
+  // }
 
-  @include smallTablet {
-    width: 220px;
-    height: 330px;
-  }
+  // @include smallTablet {
+  //   width: 220px;
+  //   height: 330px;
+  // }
 
-  @include bigMobile {
-    width: 190px;
-  }
+  // @include bigMobile {
+  //   width: 190px;
+  // }
 
-  @include mobile {
-    width: 190px;
-    height: 280px;
-  }
+  // @include mobile {
+  //   width: 190px;
+  //   height: 280px;
+  // }
 
-  @include mediumMobile {
-    width: 165px;
-  }
+  // @include mediumMobile {
+  //   width: 165px;
+  // }
 
-  @include smallMobile {
-    width: 140px;
-    height: 210px;
-  }
+  // @include smallMobile {
+  //   width: 140px;
+  //   height: 210px;
+  // }
 }
 
 .list__watch--wrapper-image:hover .list__watch--image {
