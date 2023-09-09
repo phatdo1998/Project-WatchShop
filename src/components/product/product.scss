@@ -350,10 +350,8 @@
 
         .wrapper__slide-name {
           font-weight: 600;
-          margin: 10px 0;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          white-space: nowrap;
+          margin-bottom: 10px;
+          @include truncate-multiline-new(2);
 
           @include mobile {
             font-size: 12px;
@@ -509,7 +507,6 @@
 
     .wrapper__news-heading {
       @include tablet {
-        margin-left: 30px;
       }
 
       @include bigMobile {
@@ -529,6 +526,10 @@
       }
 
       .wrapper__news {
+        @include tablet {
+          margin-left: 30px;
+        }
+
         @include bigMobile {
           @include flex(center, center);
         }
@@ -550,11 +551,12 @@
 
       @include tablet {
         width: 100%;
+        padding: 0 10px;
       }
 
       @include smallTablet {
         width: 100%;
-        padding: 0 25px;
+        padding: 0 10px;
       }
 
       @include bigMobile {
@@ -581,11 +583,13 @@
       position: relative;
 
       @include tablet {
-        width: 210px;
+        width: 100%;
+        padding: 0 10px;
       }
 
       @include smallTablet {
-        width: 330px;
+        width: 100%;
+        padding: 0 10px;
       }
 
       @include bigMobile {

@@ -61,7 +61,7 @@ const Header = () => {
           <Link to="/">TRANHG CHỦ</Link>
         </li>
         <li className="item wrapper active">
-          <Link to="/">SẢN PHẨM</Link>
+          <Link to="/products">SẢN PHẨM</Link>
           <MdKeyboardArrowDown size={26} />
 
           <ul className="list__modal">

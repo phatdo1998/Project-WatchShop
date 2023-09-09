@@ -577,6 +577,23 @@
               text-decoration: underline;
             }
           }
+
+          .wrapper__shipment-button {
+            @include bigMobile {
+              width: 100%;
+            }
+
+            @include mobile {
+              width: 100%;
+            }
+            @include mediumMobile {
+              width: 100%;
+            }
+
+            @include smallMobile {
+              width: 100%;
+            }
+          }
           .information__button {
             padding: 18px 20px;
             background-color: #338dbc;
@@ -585,6 +602,7 @@
             cursor: pointer;
             font-size: 13px;
             font-weight: 500;
+            display: block;
 
             @include bigMobile {
               width: 100%;
