@@ -3,3 +3,12 @@
   justify-content: $justify-content;
   align-items: $aligin-item;
 }
+
+@mixin truncate-multiline-new($line-number) {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  // font-family: Ellipsis, #{$font-family-base};
+  -webkit-line-clamp: $line-number;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

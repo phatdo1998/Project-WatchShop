@@ -4,6 +4,7 @@ import Home from "./page/Home/Home";
 import DetailWatch from "./page/detailWatch/DetailWatch";
 import Cart from "./page/cart/Cart";
 import ShipmentDetails from "./page/shipmentDetails/ShipmentDetails";
+import Products from "./page/products/Products";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/detail/:id" element={<DetailWatch />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/shipment" element={<ShipmentDetails />} />
+        <Route path="/products" element={<Products />} />
       </Routes>
     </div>
   );

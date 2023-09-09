@@ -3,7 +3,6 @@ import Header from "../../components/header/Header";
 import { Link, useParams } from "react-router-dom";
 import "./detailWatch.scss";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import s6 from "../../assets/image/s6_preview_rev_1.png";
 import Footer from "../../components/footer/Footer";
 import { getProductById, newProduct } from "../../data";
 import ProductItems from "../../components/productItem/ProductItems";
@@ -14,7 +13,7 @@ import { v4 as uuidv4 } from "uuid";
 const DetailWatch = () => {
   const { id } = useParams();
   const [detailProducts, setDetailProducts] = useState([]);
-  const [imageColor, setImageColor] = useState(s6);
+  // const [imageColor, setImageColor] = useState(s6);
   const [colorSelected, setColorSelected] = useState();
   const dispatch = useDispatch();
 
@@ -24,14 +23,14 @@ const DetailWatch = () => {
       setDetailProducts(response);
       setColorSelected({
         color: response[0].color[1],
-        image: response[0].imageColor[1].image,
+        image: response[0].imageColor[0].image,
       });
     };
 
     fetchApiProductById();
   }, [id]);
 
-  const handleAddToCart = (item, colors) => {
+  const handleAddToCart = (item) => {
     dispatch(
       addToCart({
         ...item,
@@ -52,16 +51,10 @@ const DetailWatch = () => {
           <div key={index}>
             <div className="container__detail">
               <div className="wrapper__detail">
-                {/* <div className="wrapper__brand">
-                  <Link className="detail__home">Trang chủ</Link>
-                  <AiFillCaretRight size={14} />
-                  <span className="detail__brand">Apple Watch</span>
-                </div> */}
-
                 <div className="wrapper__detail-product">
                   <div className="wrapper__watch">
                     <div className="wrapper__img-detail">
-                      <img src={imageColor} alt="" className="" />
+                      <img src={colorSelected.image} alt="" className="" />
                     </div>
                   </div>
 
@@ -78,18 +71,19 @@ const DetailWatch = () => {
                         {item.imageColor.map(({ color, image }, index) => {
                           return (
                             <div
+                              style={{
+                                backgroundColor: color,
+                              }}
                               onClick={() => {
                                 setColorSelected({ color, image });
-                                setImageColor(image);
+                                // setImageColor(image);
                               }}
                               key={index}
                               className={`watch__color ${
                                 color.toLowerCase() ===
                                   colorSelected.color.toLowerCase() && "active"
                               }`}
-                            >
-                              {color}
-                            </div>
+                            ></div>
                           );
                         })}
                       </div>

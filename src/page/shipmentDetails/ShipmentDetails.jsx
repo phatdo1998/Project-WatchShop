@@ -322,8 +322,11 @@ const ShipmentDetails = () => {
                       Liên hệ chúng tôi
                     </div>
                   </div>
-                  <div className="information__button">
-                    <Link onClick={handleButtonClick} to="/">
+                  <div
+                    onClick={handleButtonClick}
+                    className="wrapper__shipment-button"
+                  >
+                    <Link className="information__button" to="/">
                       Tiếp tục mua hàng
                     </Link>
                   </div>

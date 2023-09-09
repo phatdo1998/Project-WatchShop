@@ -25,18 +25,21 @@
     @include flex(center, flex-start);
     text-align: left;
     height: 550px;
+    margin-top: 15px;
   }
 
   @include mediumMobile {
     height: 550px;
     @include flex(center, unset);
     padding: 0 10px;
+    margin-top: 10px;
   }
 
   @include smallMobile {
     height: 550px;
     @include flex(center, unset);
     padding: 0 10px;
+    margin-top: 15px;
   }
 
   .wrapper__contact {

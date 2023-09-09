@@ -12,27 +12,23 @@ const products = [
       {
         id: 1,
         image: "",
-        name: "Apple Watch Series 6",
-        price: 10000000,
+        name: "Apple Watch SE 2022 44mm viền nhôm dây silicone",
+        price: 6790000,
         priceSale: "",
         qty: 1,
         imageColor: [
           {
-            image: s6_2,
-            color: "Trắng",
-          },
-          {
-            image: s6,
-            color: "Đen",
+            image: "/images/apple-watch-se-2022-44mm-den_preview_rev_1.png",
+            color: "#45484f",
           },
 
           {
-            image: s6_3,
-            color: "Xanh",
+            image: "/images/apple-watch-se-2022-44mm-trang_preview_rev_1.png",
+            color: "#f1f2ed",
           },
         ],
         color: ["trắng", "đen", "xanh"],
-        cartPriceTotal: 10000000,
+        cartPriceTotal: 6790000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
       },

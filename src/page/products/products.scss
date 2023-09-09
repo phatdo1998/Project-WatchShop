@@ -1,0 +1,150 @@
+@use "../../scss/" as *;
+
+.wrapper__products-container {
+  width: 100%;
+
+  .wrapper__icon-modal {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 40%;
+
+    @include smallTablet {
+      @include flex(center, center);
+      background-color: $blue-color;
+      padding: 3px;
+      cursor: pointer;
+    }
+
+    @include bigMobile {
+      @include flex(center, center);
+    }
+  }
+
+  .modal__products {
+    display: none;
+    @include smallTablet {
+      display: block;
+      position: relative;
+    }
+
+    .overlay__products {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      @include flex(center, flex-end);
+      z-index: 999;
+
+      .modal__products-content {
+        background-color: #fff;
+        height: 100%;
+        transition: all 0.5s ease;
+        animation: appear 0.5s ease;
+
+        @include smallTablet {
+          width: 30%;
+          padding: 10px;
+          overflow-y: scroll;
+        }
+      }
+
+      .slide-in {
+        animation: appear 0.5s ease;
+      }
+
+      .slide-out {
+        animation: hide 0.5s ease;
+      }
+    }
+  }
+
+  .container__products {
+    border-top: 1px solid $border-color;
+    width: 100%;
+    height: 100%;
+    @include flex(center, center);
+    margin-top: 20px;
+
+    @include tablet {
+      width: 100%;
+      padding: 0 20px;
+      margin-top: 60px;
+    }
+
+    @include smallTablet {
+      margin-top: 40px;
+    }
+
+    .wrapper__products {
+      width: 1170px;
+      height: 100%;
+      @include flex(unset, center);
+      gap: 30px;
+      margin-top: 40px;
+
+      .wrapper__sidebar-content {
+        width: 25%;
+        @include smallTablet {
+          display: none;
+        }
+      }
+
+      .products__list {
+        width: 75%;
+        height: 100%;
+
+        .products__list-heading {
+          font-size: 20px;
+          font-weight: 500;
+          border-bottom: 1px solid $border-color;
+          padding: 0 0 10px 0;
+        }
+        .products__list-item {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin-top: 20px;
+
+          .wrapper__item-list {
+            width: 33%;
+            @include flex(center, center);
+            flex-direction: column;
+            border: 1px solid $border-color;
+            padding: 10px 0;
+
+            .item__list-image {
+              width: 235px;
+              height: 235px;
+            }
+
+            .item__name {
+              text-align: center;
+            }
+            .item__price {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes hide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(230px);
+  }
+}
+
+@keyframes appear {
+  from {
+    transform: translateX(230px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

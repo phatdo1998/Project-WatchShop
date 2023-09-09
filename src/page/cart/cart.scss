@@ -4,7 +4,7 @@
   &-body {
     @include flex(center, center);
     border-top: 1px solid $border-color;
-    margin-top: 20px;
+    margin-top: 14px;
 
     @include tablet {
       margin-top: 60px;
@@ -361,7 +361,7 @@
 .wrapper__empty-card {
   @include flex(center, center);
   border-top: 1px solid $border-color;
-  margin-top: 20px;
+  margin-top: 13px;
 
   @include tablet {
     margin-top: 60px;
