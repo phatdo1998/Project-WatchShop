@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./sidebar.scss";
 import s6 from "../../assets/image/s6_preview_rev_1.png";
 import { useSearchParams } from "react-router-dom";
-import { getProductByCategory, getProducts } from "../../data";
+import { getProducts } from "../../data";
 
 const SideBar = ({ data, type }) => {
   const [searchParams, setSearchParams] = useSearchParams();
