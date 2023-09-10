@@ -102,7 +102,7 @@ const Header = () => {
               <div className="wrapper__item">
                 <li className="item__modal">
                   <PiDotOutlineFill size={30} color="#05c3ff" />
-                  <Link to="" className="">
+                  <Link to="" className="item__modal-link">
                     Trang chủ
                   </Link>
                 </li>
@@ -113,10 +113,11 @@ const Header = () => {
                         display: "flex",
                         justifyItems: "center",
                         alignItems: "center",
+                        flex: 1,
                       }}
                     >
                       <PiDotOutlineFill size={30} color="#05c3ff" />
-                      <Link to="" className="">
+                      <Link to="/products" className="item__modal-link">
                         Sản phẩm
                       </Link>
                     </div>
@@ -135,13 +136,13 @@ const Header = () => {
                 </li>
                 <li className="item__modal">
                   <PiDotOutlineFill size={30} color="#05c3ff" />
-                  <Link to="" className="">
+                  <Link to="" className="item__modal-link">
                     Tin tức
                   </Link>
                 </li>
                 <li className="item__modal">
                   <PiDotOutlineFill size={30} color="#05c3ff" />
-                  <Link to="" className="">
+                  <Link to="" className="item__modal-link">
                     Liên hệ
                   </Link>
                 </li>

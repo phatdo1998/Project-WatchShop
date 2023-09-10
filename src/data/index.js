@@ -235,7 +235,7 @@ const products = [
         qty: 1,
         imageColor: [
           {
-            image: s6_2,
+            image: "/images/redmi-watch-3-active-den-1-1.jpg",
             color: "Trắng",
           },
           {
@@ -293,6 +293,20 @@ export const getProductById = (id) => {
   return new Promise((resolve, reject) => {
     // eslint-disable-next-line eqeqeq
     resolve(products.flatMap((item) => item.items.filter((x) => x.id == id)));
+  });
+};
+
+export const getProductByCategory = (category) => {
+  return new Promise((resolve, reject) => {
+    if (category !== "all") {
+      resolve(
+        products.filter(
+          (item) => item.name.replace(/\s/g, "").toLowerCase() === category
+        )
+      );
+    } else {
+      resolve(products);
+    }
   });
 };
 
