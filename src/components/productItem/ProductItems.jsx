@@ -1,8 +1,8 @@
 import React from "react";
 import "./productItems.scss";
 import { Link } from "react-router-dom";
-import s6 from "../../assets/image/s6_preview_rev_1.png";
-import xiaomi from "../../assets/image/redmi-watch-3-active-den-1-1.jpg";
+// import s6 from "../../assets/image/s6_preview_rev_1.png";
+// import xiaomi from "../../assets/image/redmi-watch-3-active-den-1-1.jpg";
 import ssWatch from "../../assets/image/samsung-galaxy-watch6-classic-lte-43mm-den-1.jpg";
 
 const ProductItems = ({ item, numColumn }) => {
