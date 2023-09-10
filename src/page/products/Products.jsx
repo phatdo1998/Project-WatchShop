@@ -7,13 +7,13 @@ import Footer from "../../components/footer/Footer";
 import SideBar from "../../components/sidebar/SideBar";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
-import Pagination from "@mui/material/Pagination";
+// import Pagination from "@mui/material/Pagination";
 import { useSearchParams } from "react-router-dom";
 
 const Products = () => {
   const [productsSelling, setProductsSelling] = useState();
   const [openModal, setOpenModal] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
     getProducts().then((respone) => {
