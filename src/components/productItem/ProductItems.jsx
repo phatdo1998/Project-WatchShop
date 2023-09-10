@@ -2,6 +2,8 @@ import React from "react";
 import "./productItems.scss";
 import { Link } from "react-router-dom";
 import s6 from "../../assets/image/s6_preview_rev_1.png";
+import xiaomi from "../../assets/image/redmi-watch-3-active-den-1-1.jpg";
+import ssWatch from "../../assets/image/samsung-galaxy-watch6-classic-lte-43mm-den-1.jpg";
 
 const ProductItems = ({ item, numColumn }) => {
   const handleClick = () => {
@@ -16,13 +18,17 @@ const ProductItems = ({ item, numColumn }) => {
       <div className="list__watch--wrapper">
         <Link
           onClick={handleClick}
-          to={`detail/${item.id}`}
+          to={`/detail/${item.id}`}
           className="list__watch--wrapper-image"
         >
-          <img src={s6} alt="" className="list__watch--image" />
+          <img src={ssWatch} alt="" className="list__watch--image" />
         </Link>
         <div className="list__watch--name">
-          <Link href="/detail" className="" title={item.name}>
+          <Link
+            href="/detail"
+            className="product__items-link"
+            title={item.name}
+          >
             {item.name}
           </Link>
         </div>

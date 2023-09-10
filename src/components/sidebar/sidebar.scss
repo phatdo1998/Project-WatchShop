@@ -4,10 +4,19 @@
   width: 100%;
   height: 100%;
 
+  @include bigMobile {
+    padding: 1px;
+  }
+
+  @include mobile {
+    width: 230px;
+  }
+
   .wrapper__heading-products {
-    padding: 15px;
+    padding: 15px 15px 0 15px;
     font-size: 14px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+      rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     border-radius: 4px;
 
     .heading__products {
@@ -19,17 +28,23 @@
     .products__brand {
       padding: 8px 0;
       font-weight: 500;
+      cursor: pointer;
 
-      &:nth-child(1) {
-        border-bottom: 1px solid $border-color;
+      &:last-child {
+        border-top: 1px solid $border-color;
       }
+    }
+    .selected {
+      color: $blue-color;
+      font-weight: 600;
     }
   }
 
   .wrapper__selling-products {
     margin-top: 20px;
     padding: 20px 20px 10px 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+      rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     border-radius: 4px;
 
     @include smallTablet {

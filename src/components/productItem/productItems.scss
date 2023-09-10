@@ -50,7 +50,7 @@
   overflow: hidden;
   position: relative;
   width: 90%;
-  margin: 10px 0;
+
   transition: all 0.5s ease;
 
   @include tablet {
@@ -75,15 +75,26 @@
   margin-bottom: 10px;
   height: 42px;
   @include flex(center, center);
-  @include truncate-multiline-new(2);
 
-  @include mobile {
-    font-size: 12px;
-  }
+  .product__items-link {
+    @include truncate-multiline-new(2);
 
-  @include smallMobile {
-    font-size: 12px;
-    margin: 0 0 10px 0;
+    @include mobile {
+      font-size: 12px;
+      @include truncate-multiline-new(2);
+    }
+
+    @include mediumMobile {
+      font-size: 12px;
+      margin: 0 0 10px 0;
+      @include truncate-multiline-new(2);
+    }
+
+    @include smallMobile {
+      font-size: 12px;
+      margin: 0 0 10px 0;
+      @include truncate-multiline-new(2);
+    }
   }
 }
 

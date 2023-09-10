@@ -5,9 +5,11 @@
 
   .wrapper__icon-modal {
     display: none;
-    position: fixed;
-    right: 0;
+    position: absolute;
+    right: 230px;
     top: 40%;
+    z-index: 999;
+    transition: all 0.5s ease;
 
     @include smallTablet {
       @include flex(center, center);
@@ -18,6 +20,30 @@
 
     @include bigMobile {
       @include flex(center, center);
+      background-color: $blue-color;
+      padding: 3px;
+      cursor: pointer;
+    }
+
+    @include mobile {
+      @include flex(center, center);
+      background-color: $blue-color;
+      padding: 3px;
+      cursor: pointer;
+    }
+
+    @include mediumMobile {
+      @include flex(center, center);
+      background-color: $blue-color;
+      padding: 3px;
+      cursor: pointer;
+    }
+
+    @include smallMobile {
+      @include flex(center, center);
+      background-color: $blue-color;
+      padding: 3px;
+      cursor: pointer;
     }
   }
 
@@ -28,10 +54,28 @@
       position: relative;
     }
 
+    @include bigMobile {
+      display: block;
+      position: relative;
+    }
+
+    @include mobile {
+      display: block;
+      position: relative;
+    }
+
+    @include mediumMobile {
+      display: block;
+      position: relative;
+    }
+    @include smallMobile {
+      display: block;
+      position: relative;
+    }
+
     .overlay__products {
       position: fixed;
       inset: 0;
-      background-color: rgba(0, 0, 0, 0.5);
       @include flex(center, flex-end);
       z-index: 999;
 
@@ -39,21 +83,35 @@
         background-color: #fff;
         height: 100%;
         transition: all 0.5s ease;
-        animation: appear 0.5s ease;
 
         @include smallTablet {
-          width: 30%;
-          padding: 10px;
+          width: 230px;
           overflow-y: scroll;
+          position: relative;
         }
-      }
+        @include bigMobile {
+          width: 230px;
+          overflow-y: scroll;
+          position: relative;
+        }
 
-      .slide-in {
-        animation: appear 0.5s ease;
-      }
+        @include mobile {
+          width: 230px;
+          overflow-y: scroll;
+          position: relative;
+        }
 
-      .slide-out {
-        animation: hide 0.5s ease;
+        @include mediumMobile {
+          width: 230px;
+          overflow-y: scroll;
+          position: relative;
+        }
+
+        @include smallMobile {
+          width: 230px;
+          overflow-y: scroll;
+          position: relative;
+        }
       }
     }
   }
@@ -63,7 +121,7 @@
     width: 100%;
     height: 100%;
     @include flex(center, center);
-    margin-top: 20px;
+    margin-top: 13px;
 
     @include tablet {
       width: 100%;
@@ -72,6 +130,22 @@
     }
 
     @include smallTablet {
+      margin-top: 40px;
+    }
+
+    @include bigMobile {
+      margin-top: 40px;
+    }
+
+    @include mobile {
+      margin-top: 60px;
+    }
+
+    @include mediumMobile {
+      margin-top: 40px;
+    }
+
+    @include smallMobile {
       margin-top: 40px;
     }
 
@@ -87,11 +161,32 @@
         @include smallTablet {
           display: none;
         }
+
+        @include bigMobile {
+          display: none;
+        }
+
+        @include mobile {
+          display: none;
+        }
+
+        @include mediumMobile {
+          display: none;
+        }
+
+        @include smallMobile {
+          display: none;
+        }
       }
 
       .products__list {
         width: 75%;
         height: 100%;
+
+        > .pagination {
+          @include flex(center, center);
+          margin-block: 20px;
+        }
 
         .products__list-heading {
           font-size: 20px;
@@ -105,6 +200,18 @@
           flex-wrap: wrap;
           gap: 10px;
           margin-top: 20px;
+
+          @include mobile {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          @include mediumMobile {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          @include smallMobile {
+            grid-template-columns: 1fr 1fr;
+          }
 
           .wrapper__item-list {
             width: 33%;
@@ -128,23 +235,5 @@
         }
       }
     }
-  }
-}
-
-@keyframes hide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(230px);
-  }
-}
-
-@keyframes appear {
-  from {
-    transform: translateX(230px);
-  }
-  to {
-    transform: translateX(0);
   }
 }
