@@ -1,17 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./slideWatch.scss";
-import s6 from "../../assets/image/s6_preview_rev_1.png";
 import { Link } from "react-router-dom";
 
-const SlideWatch = ({ name, price }) => {
+const SlideWatch = ({ name, price, item, id }) => {
+  const [data, setData] = useState();
+
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+  };
+
+  useEffect(() => {
+    item?.imageColor.map((item) => setData(item.image));
+  }, [item?.imageColor]);
+
   return (
     <div>
       <div className="wrapper__slide-wrapper">
-        <Link href="" className="wrapper__slide-link">
-          <img src={s6} alt="" className="list__slide-image" />
+        <Link
+          onClick={handleClick}
+          to={`/detail/${id}`}
+          className="wrapper__slide-link"
+        >
+          <img src={data} alt="" className="list__slide-image" />
         </Link>
         <div className="wrapper__slide-name">
-          <Link href="/detail" className="" title="Apple Watch Series 6">
+          <Link
+            onClick={handleClick}
+            to={`/detail/${id}`}
+            className=""
+            title={name}
+          >
             {name}
           </Link>
         </div>

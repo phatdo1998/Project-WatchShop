@@ -146,7 +146,7 @@
             }
 
             @include mobile {
-              padding: 15px;
+              padding: 15px 0;
             }
 
             @include smallMobile {
@@ -155,6 +155,10 @@
 
             .wrapper__cart-left {
               @include flex(unset, center);
+
+              @include mobile {
+                @include flex(center, center);
+              }
 
               .wrapper__cart-img {
                 border: 1px solid $border-color;
@@ -175,6 +179,14 @@
                     top: -6px;
                     left: -9px;
                   }
+
+                  @include mediumMobile {
+                    padding: 2px;
+                  }
+
+                  @include smallMobile {
+                    padding: 2px;
+                  }
                 }
 
                 .cart__img {
@@ -185,12 +197,13 @@
                   @include smallMobile {
                     width: 60px;
                     height: 60px;
+                    transform: scale(1.7);
                   }
                 }
 
                 @include mobile {
                   height: 60px;
-                  width: 60px;
+                  width: 160px;
                   object-fit: contain;
                 }
 

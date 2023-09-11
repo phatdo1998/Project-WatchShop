@@ -127,6 +127,8 @@ const Product = () => {
                       <SlideWatch
                         name={item.name}
                         price={item.price.toLocaleString()}
+                        item={item}
+                        id={item.id}
                       />
                     </SwiperSlide>
                   );
@@ -188,6 +190,8 @@ const Product = () => {
                         <SlideWatch
                           name={item.name}
                           price={item.price.toLocaleString()}
+                          item={item}
+                          id={item.id}
                         />
                       </SwiperSlide>
                     );
