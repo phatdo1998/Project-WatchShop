@@ -9,6 +9,7 @@ const color = {
   cream: "#e1dbd3",
   darkBlue: "#484850",
   red: "#ed4e62",
+  orange: "#fb812f",
 };
 
 const products = [
@@ -34,7 +35,7 @@ const products = [
             color: color.white,
           },
         ],
-        // color: ["trắng", "đen", "xanh"],
+        color: ["trắng", "đen", "xanh"],
         cartPriceTotal: 6790000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
@@ -107,16 +108,19 @@ const products = [
         qty: 1,
         imageColor: [
           {
-            image: "../../public/images/apple-watch-s8-41mm-trang-1.jpg",
+            image:
+              "../../public/images/apple-watch-s8-gps-45mm-day-silicone-trang-1-1.jpg",
             color: color.white,
           },
           {
-            image: "../../public/images/apple-watch-s8-41mm-trang-kem-1.jpg",
+            image:
+              "../../public/images/dong-ho-thong-minh-apple-watch-s8-trang-starlight-4.jpg",
             color: color.cream,
           },
 
           {
-            image: "../../public/images/apple-watch-s8-41mm-den-xanh-1.jpg",
+            image:
+              "../../public/images/apple-watch-s8-gps-45mm-day-silicone-den-xanh-1.jpg",
             color: color.darkBlue,
           },
         ],
@@ -128,108 +132,87 @@ const products = [
       {
         id: 5,
         image: "",
-        name: "Apple Watch Series 3 38 mm",
-        price: "Liên hệ",
+        name: "Apple Watch S8 LTE 41mm viền nhôm dây silicone",
+        price: 12290000,
         priceSale: "",
         qty: 1,
         imageColor: [
           {
-            image: s6_2,
-            color: "Trắng",
-          },
-          {
-            image: s6,
-            color: "Đen",
-          },
-
-          {
-            image: s6_3,
-            color: "Xanh",
+            image:
+              "../../public/images/apple-watch-s8-gps-45mm-day-silicone-den-xanh-1.jpg",
+            color: color.darkBlue,
           },
         ],
         color: ["trắng", "đen", "xanh"],
-        cartPriceTotal: 0,
+        cartPriceTotal: 12290000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
       },
       {
         id: 6,
         image: "",
-        name: "Apple Watch Series 6",
-        price: 9000000,
+        name: "Đồng hồ thông minh Apple Watch Ultra LTE 49mm dây Alpine size M",
+        price: 19490000,
         priceSale: "10,000,000₫",
         qty: 1,
         imageColor: [
           {
-            image: s6_2,
-            color: "Trắng",
-          },
-          {
-            image: s6,
-            color: "Đen",
-          },
-
-          {
-            image: s6_3,
-            color: "Xanh",
+            image:
+              "../../public/images/apple-watch-ultra-49mm-day-alpine-size-m-cam-1.jpg",
+            color: color.orange,
           },
         ],
         color: ["trắng", "đen", "xanh"],
-        cartPriceTotal: 9000000,
+        cartPriceTotal: 19490000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
       },
       {
         id: 7,
         image: "",
-        name: "Apple Watch Series 4",
-        price: 7000000,
+        name: "Apple Watch SE 2022 LTE 40mm viền nhôm dây silicone",
+        price: 7490000,
         priceSale: "",
         qty: 1,
         imageColor: [
           {
-            image: s6_2,
-            color: "Trắng",
+            image:
+              "../../public/images/apple-watch-se-2022-40mm-day-silicone-1.jpg",
+            color: color.white,
           },
           {
-            image: s6,
-            color: "Đen",
+            image:
+              "../../public/images/apple-watch-se-2022-40mm-day-silicone-trang-kem-1.jpg",
+            color: color.cream,
           },
 
           {
-            image: s6_3,
-            color: "Xanh",
+            image:
+              "../../public/images/apple-watch-se-2022-40mm-den-xanh-1.jpg",
+            color: color.darkBlue,
           },
         ],
         color: ["trắng", "đen", "xanh"],
-        cartPriceTotal: 7000000,
+        cartPriceTotal: 7490000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
       },
       {
         id: 8,
         image: "",
-        name: "Apple Watch Series 3",
-        price: 5500000,
-        priceSale: "6,000,000₫",
+        name: "Apple Watch SE 2022 LTE 44mm viền nhôm dây silicone",
+        price: 8190000,
+        priceSale: "",
         qty: 1,
         imageColor: [
           {
-            image: s6_2,
-            color: "Trắng",
-          },
-          {
-            image: s6,
-            color: "Đen",
-          },
-
-          {
-            image: s6_3,
-            color: "Xanh",
+            image:
+              "../../public/images/apple-watch-se-2022-40mm-den-xanh-1.jpg",
+            color: color.darkBlue,
           },
         ],
         color: ["trắng", "đen", "xanh"],
-        cartPriceTotal: 5500000,
+        cartPriceTotal: 8190000,
         description:
           "Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Phát hiện té ngã, Báo thức, Nghe nhạc với tai nghe Bluetooth, Gọi điện trên đồng hồ, Từ chối cuộc gọi, Dự báo thời tiết, La bàn, Điều khiển chơi nhạc, Thay mặt đồng hồ",
       },
@@ -242,26 +225,21 @@ const products = [
       {
         id: 9,
         image: "",
-        name: "Amazfit Gts nội địa",
-        price: 2500000,
+        name: "Đồng hồ thông minh Xiaomi Redmi Watch 3 42.6mm",
+        price: 2490000,
         qty: 1,
         imageColor: [
           {
             image: "/images/redmi-watch-3-active-den-1-1.jpg",
-            color: "Trắng",
+            color: color.white,
           },
           {
             image: s6,
-            color: "Đen",
-          },
-
-          {
-            image: s6_3,
-            color: "Xanh",
+            color: color.darkBlue,
           },
         ],
         color: ["trắng", "đen", "xanh"],
-        cartPriceTotal: 2500000,
+        cartPriceTotal: 2490000,
         description:
           "Theo dõi giấc ngủ, Đo nhịp tim, Tính lượng Calories tiêu thụ, Đếm số bước chân, Tính quãng đường chạy, Chế độ luyện tập, Báo thức, Màn hình luôn hiển thị, Từ chối cuộc gọi, Đồng hồ bấm giờ, Rung thông báo, Thay mặt đồng hồ",
       },
