@@ -115,7 +115,7 @@ const products = [
 ];
 
 export const getProducts = () => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       resolve(products);
     }, 3000);
@@ -124,7 +124,7 @@ export const getProducts = () => {
 
 export const getProductById = (id) => {
   console.log(id);
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       resolve(products.flatMap((item) => item.items.filter((x) => x.id == id)));
     }, 3000);
