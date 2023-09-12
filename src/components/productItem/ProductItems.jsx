@@ -28,7 +28,8 @@ const ProductItems = ({ item, numColumn }) => {
         </Link>
         <div className="list__watch--name">
           <Link
-            // to={`/detail/${item.id}`}
+            onClick={handleClick}
+            to={`/detail/${item.id}`}
             className="product__items-link"
             title={item.name}
           >

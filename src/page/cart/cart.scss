@@ -145,12 +145,24 @@
               border: none;
             }
 
+            @include bigMobile {
+              padding: 15px 0;
+              margin: 0;
+            }
+
             @include mobile {
               padding: 15px 0;
+              margin: 0;
+            }
+
+            @include mediumMobile {
+              padding: 15px 0;
+              margin: 0;
             }
 
             @include smallMobile {
               padding: 15px 0;
+              margin: 0;
             }
 
             .wrapper__cart-left {
@@ -164,6 +176,25 @@
                 border: 1px solid $border-color;
                 @include flex(center, center);
                 position: relative;
+
+                object-fit: contain;
+
+                @include bigMobile {
+                  width: 100%;
+                }
+
+                @include mobile {
+                  height: 100%;
+                  width: 100%;
+                }
+
+                @include mediumMobile {
+                  width: 100%;
+                }
+
+                @include smallMobile {
+                  width: 100%;
+                }
 
                 .wrapper__icon-cart {
                   position: absolute;
@@ -197,23 +228,28 @@
                   @include smallMobile {
                     width: 60px;
                     height: 60px;
-                    transform: scale(1.7);
                   }
-                }
-
-                @include mobile {
-                  height: 60px;
-                  width: 160px;
-                  object-fit: contain;
-                }
-
-                @include smallMobile {
-                  width: 94px;
                 }
               }
 
               .wrapper__cart-detail {
                 margin-left: 20px;
+
+                @include bigMobile {
+                  margin-left: 10px;
+                }
+
+                @include mobile {
+                  margin-left: 10px;
+                }
+
+                @include mediumMobile {
+                  margin-left: 10px;
+                }
+
+                @include smallMobile {
+                  margin-left: 10px;
+                }
 
                 .cart__name {
                   font-weight: 600;

@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./sidebar.scss";
-import s6 from "../../assets/image/s6_preview_rev_1.png";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { getProducts } from "../../data";
 
 const SideBar = ({ data, type }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [products, setProducts] = useState();
   const category = String(searchParams.get("category") || "all");
+
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+  };
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -47,15 +50,24 @@ const SideBar = ({ data, type }) => {
         <div className="selling__products-heading">SẢN PHẨM BÁN CHẠY</div>
         {data?.map((item, index) => {
           return (
-            <div key={index} className="wrapper__selling-item">
-              <img src={s6} alt="" className="selling__image" />
+            <Link
+              onClick={handleClick}
+              to={`/detail/${item.id}`}
+              key={index}
+              className="wrapper__selling-item"
+            >
+              <img
+                src={item.imageColor[0].image}
+                alt=""
+                className="selling__image"
+              />
               <div className="selling__item">
                 <div className="products__name">{item.name}</div>
                 <div className="products__price">
                   {item.price.toLocaleString()}
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

@@ -4,12 +4,21 @@
   width: 100%;
   height: 100%;
 
-  @include bigMobile {
+  @include smallTablet {
     padding: 1px;
   }
 
+  @include bigMobile {
+    padding: 1px;
+  }
   @include mobile {
-    width: 230px;
+    padding: 1px;
+  }
+  @include mediumMobile {
+    padding: 1px;
+  }
+  @include smallMobile {
+    padding: 1px;
   }
 
   .wrapper__heading-products {
@@ -29,10 +38,7 @@
       padding: 8px 0;
       font-weight: 500;
       cursor: pointer;
-
-      &:last-child {
-        border-top: 1px solid $border-color;
-      }
+      border-top: 1px solid $border-color;
     }
     .selected {
       color: $blue-color;
@@ -42,7 +48,7 @@
 
   .wrapper__selling-products {
     margin-top: 20px;
-    padding: 20px 20px 10px 20px;
+    padding: 20px 20px 10px 0;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
       rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     border-radius: 4px;
@@ -54,7 +60,7 @@
     .selling__products-heading {
       font-size: 16px;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin: 0 0 20px 20px;
 
       @include smallTablet {
         text-align: center;
@@ -72,7 +78,7 @@
       }
 
       .selling__image {
-        width: 80px;
+        width: 100%;
         height: 80px;
       }
 

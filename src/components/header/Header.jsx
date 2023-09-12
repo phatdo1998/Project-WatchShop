@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { ImSearch } from "react-icons/im";
@@ -9,11 +9,24 @@ import { PiDotOutlineFill } from "react-icons/pi";
 import logo from "../../assets/image/logo.png";
 import "./header.scss";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import { getProducts } from "../../data";
 
 const Header = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const cart = useSelector((state) => state.cart);
+  const [products, setProducts] = useState();
+  const [, setSearchParams] = useSearchParams();
+  // const category = String(searchParams.get("category" || "all"));
+
+  useEffect(() => {
+    const fetchApi = async () => {
+      const res = await getProducts();
+      setProducts(res);
+    };
+
+    fetchApi();
+  }, []);
 
   return (
     <div className="header">
@@ -61,22 +74,35 @@ const Header = () => {
           <Link to="/">TRANHG CHỦ</Link>
         </li>
         <li className="item wrapper active">
-          <Link to="/products">SẢN PHẨM</Link>
+          <Link to="/products?category=applewatch">SẢN PHẨM</Link>
           <MdKeyboardArrowDown size={26} />
 
           <ul className="list__modal">
-            <li className="item__modal">
-              <div className="">
-                <Link to="/" className="item__link">
-                  Xiaomi Watch
-                </Link>
-              </div>
-            </li>
-            <li className="item__modal ">
-              <Link to="/" className="item__link">
-                Apple Watch
-              </Link>
-            </li>
+            {products?.map((item, index) => {
+              return (
+                <div key={index}>
+                  <li className="item__modal">
+                    <div className="">
+                      <Link
+                        onClick={() =>
+                          setSearchParams({
+                            category: item.name
+                              .replace(/\s/g, "")
+                              .toLowerCase(),
+                          })
+                        }
+                        to={`/products?category=${item.name
+                          .replace(/\s/g, "")
+                          .toLowerCase()}`}
+                        className="item__link"
+                      >
+                        {item.name}
+                      </Link>
+                    </div>
+                  </li>
+                </div>
+              );
+            })}
           </ul>
         </li>
         <li className="item">
@@ -117,7 +143,10 @@ const Header = () => {
                       }}
                     >
                       <PiDotOutlineFill size={30} color="#05c3ff" />
-                      <Link to="/products" className="item__modal-link">
+                      <Link
+                        to="/products?category=applewatch"
+                        className="item__modal-link"
+                      >
                         Sản phẩm
                       </Link>
                     </div>
