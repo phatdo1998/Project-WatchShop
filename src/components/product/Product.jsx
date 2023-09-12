@@ -5,7 +5,7 @@ import "swiper/css";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import { getProducts, newProduct, news } from "../../data";
+import { getProducts, newProduct, news, sellingProducts } from "../../data";
 import Heading from "../heading/Heding";
 import ProductItems from "../productItem/ProductItems";
 import SlideWatch from "../slideWatch/SlideWatch";
@@ -127,6 +127,8 @@ const Product = () => {
                       <SlideWatch
                         name={item.name}
                         price={item.price.toLocaleString()}
+                        item={item}
+                        id={item.id}
                       />
                     </SwiperSlide>
                   );
@@ -182,12 +184,14 @@ const Product = () => {
                   <div className="wrapper__selling-products-icon-right">
                     <AiOutlineRight size={20} />
                   </div>
-                  {newProduct.map((item, index) => {
+                  {sellingProducts.map((item, index) => {
                     return (
                       <SwiperSlide key={index}>
                         <SlideWatch
                           name={item.name}
                           price={item.price.toLocaleString()}
+                          item={item}
+                          id={item.id}
                         />
                       </SwiperSlide>
                     );

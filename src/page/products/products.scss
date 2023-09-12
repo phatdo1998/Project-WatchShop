@@ -183,6 +183,30 @@
         width: 75%;
         height: 100%;
 
+        @include smallTablet {
+          width: 100%;
+          padding: 0 20px;
+        }
+        @include bigMobile {
+          width: 100%;
+          padding: 0 20px;
+        }
+
+        @include mobile {
+          width: 100%;
+          padding: 0 20px;
+        }
+
+        @include mediumMobile {
+          width: 100%;
+          padding: 0 10px;
+        }
+
+        @include smallMobile {
+          width: 100%;
+          padding: 0 10px;
+        }
+
         > .pagination {
           @include flex(center, center);
           margin-block: 20px;

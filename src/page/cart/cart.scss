@@ -145,21 +145,56 @@
               border: none;
             }
 
+            @include bigMobile {
+              padding: 15px 0;
+              margin: 0;
+            }
+
             @include mobile {
-              padding: 15px;
+              padding: 15px 0;
+              margin: 0;
+            }
+
+            @include mediumMobile {
+              padding: 15px 0;
+              margin: 0;
             }
 
             @include smallMobile {
               padding: 15px 0;
+              margin: 0;
             }
 
             .wrapper__cart-left {
               @include flex(unset, center);
 
+              @include mobile {
+                @include flex(center, center);
+              }
+
               .wrapper__cart-img {
                 border: 1px solid $border-color;
                 @include flex(center, center);
                 position: relative;
+
+                object-fit: contain;
+
+                @include bigMobile {
+                  width: 100%;
+                }
+
+                @include mobile {
+                  height: 100%;
+                  width: 100%;
+                }
+
+                @include mediumMobile {
+                  width: 100%;
+                }
+
+                @include smallMobile {
+                  width: 100%;
+                }
 
                 .wrapper__icon-cart {
                   position: absolute;
@@ -175,6 +210,14 @@
                     top: -6px;
                     left: -9px;
                   }
+
+                  @include mediumMobile {
+                    padding: 2px;
+                  }
+
+                  @include smallMobile {
+                    padding: 2px;
+                  }
                 }
 
                 .cart__img {
@@ -187,20 +230,26 @@
                     height: 60px;
                   }
                 }
-
-                @include mobile {
-                  height: 60px;
-                  width: 60px;
-                  object-fit: contain;
-                }
-
-                @include smallMobile {
-                  width: 94px;
-                }
               }
 
               .wrapper__cart-detail {
                 margin-left: 20px;
+
+                @include bigMobile {
+                  margin-left: 10px;
+                }
+
+                @include mobile {
+                  margin-left: 10px;
+                }
+
+                @include mediumMobile {
+                  margin-left: 10px;
+                }
+
+                @include smallMobile {
+                  margin-left: 10px;
+                }
 
                 .cart__name {
                   font-weight: 600;
