@@ -75,7 +75,7 @@ const Header = () => {
                 placeholder="Tìm kiếm..."
               />
               <button type="submit" className="input__icon">
-                <ImSearch size={20} />
+                <ImSearch style={{ backgroundColor: "#fff" }} size={20} />
               </button>
             </form>
           </div>
