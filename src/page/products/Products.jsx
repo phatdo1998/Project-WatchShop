@@ -9,11 +9,13 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 // import Pagination from "@mui/material/Pagination";
 import { useSearchParams } from "react-router-dom";
+import { getSellingProducts } from "../../data";
 
 const Products = () => {
   const [productsSelling, setProductsSelling] = useState();
   const [openModal, setOpenModal] = useState(false);
   const [searchParams] = useSearchParams();
+  const [sellingProducts, setSellingProducts] = useState();
 
   useEffect(() => {
     getProducts().then((respone) => {
@@ -31,6 +33,15 @@ const Products = () => {
 
     fetchApi();
   }, [category]);
+
+  useEffect(() => {
+    const fetchApi = async () => {
+      const res = await getSellingProducts();
+      setSellingProducts(res);
+    };
+
+    fetchApi();
+  }, []);
 
   return (
     <div className="wrapper__products-container">
@@ -73,7 +84,7 @@ const Products = () => {
       <div className="container__products">
         <div className="wrapper__products">
           <div className="wrapper__sidebar-content">
-            <SideBar type={"modal"} data={productsSelling} />
+            <SideBar type={"modal"} data={sellingProducts} />
           </div>
           <div className="products__list">
             <div className="products__list-heading">Sản phẩm</div>

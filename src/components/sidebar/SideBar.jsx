@@ -6,7 +6,7 @@ import { getProducts } from "../../data";
 const SideBar = ({ data, type }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [products, setProducts] = useState();
-  const category = String(searchParams.get("category") || "all");
+  const category = String(searchParams.get("category"));
 
   const handleClick = () => {
     window.scrollTo(0, 0);

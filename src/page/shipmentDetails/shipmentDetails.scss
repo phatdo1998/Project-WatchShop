@@ -206,13 +206,8 @@
             width: 100%;
             padding: 13px 40px 13px 12px;
             border-radius: 4px;
-            box-shadow: 0 0 0 1px #d9d9d9;
-            border: none;
+            border: 1px solid #c8c3c3;
             font-size: 14px;
-
-            @include mobile {
-              box-shadow: 0 0 0 1px #d9d9d9;
-            }
           }
           .wrapper__input {
             @include flex(center, center);
@@ -248,13 +243,11 @@
               width: 100%;
               padding: 13px 40px 13px 12px;
               border-radius: 4px;
-              box-shadow: 0 0 0 1px #d9d9d9;
-              border: none;
+              border: 1px solid #c8c3c3;
+
               flex: 3;
 
               @include mobile {
-                box-shadow: 0 0 0 1px #d9d9d9;
-
                 font-size: 14px;
               }
             }
@@ -264,17 +257,17 @@
               width: 100%;
               padding: 13px 40px 13px 12px;
               border-radius: 4px;
-              box-shadow: 0 0 0 1px #d9d9d9;
-              border: none;
+              border: 1px solid #c8c3c3;
+
               font-size: 14px;
 
               @include tablet {
+                padding: 13px 30px 13px 12px;
                 font-size: 13px;
               }
 
               @include mobile {
                 font-size: 14px;
-                box-shadow: 0 0 0 1px #d9d9d9;
               }
             }
           }
@@ -282,13 +275,12 @@
             width: 100%;
             padding: 13px 40px 13px 12px;
             border-radius: 4px;
-            box-shadow: 0 0 0 1px #d9d9d9;
-            border: none;
+            border: 1px solid #c8c3c3;
+
             font-size: 14px;
             margin-top: 10px;
 
             @include mobile {
-              box-shadow: 0 0 0 1px #d9d9d9;
             }
           }
           .wrapper__select {

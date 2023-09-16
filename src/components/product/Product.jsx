@@ -10,10 +10,13 @@ import Heading from "../heading/Heding";
 import ProductItems from "../productItem/ProductItems";
 import SlideWatch from "../slideWatch/SlideWatch";
 import "./product.scss";
+import { Link } from "react-router-dom";
+// import { Spin } from "antd";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
   const [selected, setSelected] = useState(0);
+  const [loading] = useState(false);
   const handleClick = (index) => {
     setSelected(index);
   };
@@ -49,24 +52,25 @@ const Product = () => {
         </div>
 
         <div className="container__watch">
-          {products.map((item, index) => {
-            return (
-              <div
-                onClick={() => handleClick(index)}
-                key={index}
-                className="watch"
-              >
-                <a
-                  className={`watch__link ${
-                    selected === index ? "active" : "inactive"
-                  }`}
+          {loading &&
+            products.map((item, index) => {
+              return (
+                <div
+                  onClick={() => handleClick(index)}
+                  key={index}
+                  className="watch"
                 >
-                  <img src={item.image} alt="" className="watch__img" />
-                  <div className="watch__name">{item.name}</div>
-                </a>
-              </div>
-            );
-          })}
+                  <a
+                    className={`watch__link ${
+                      selected === index ? "active" : "inactive"
+                    }`}
+                  >
+                    <img src={item.image} alt="" className="watch__img" />
+                    <div className="watch__name">{item.name}</div>
+                  </a>
+                </div>
+              );
+            })}
         </div>
         <div className="container__list-watch">
           <div className="list__watch">
@@ -169,7 +173,7 @@ const Product = () => {
                     },
                   }}
                   autoplay={{
-                    delay: 3000,
+                    delay: 4000,
                   }}
                   slidesPerView={2}
                   navigation={{
@@ -233,7 +237,7 @@ const Product = () => {
                     },
                   }}
                   autoplay={{
-                    delay: 3000,
+                    delay: 5000,
                   }}
                   slidesPerView={2}
                   modules={[Autoplay]}
@@ -245,13 +249,13 @@ const Product = () => {
                           <div className="wrapper__time">
                             <div className="">{item.time}</div>
                           </div>
-                          <a href="" className="wrapper__news-link">
+                          <Link className="wrapper__news-link">
                             <img
-                              src="https://hinhanh.webvua.com/images/news/4752/resize/3032372797202.jpg"
+                              src={item.image}
                               alt=""
                               className="list__news-image"
                             />
-                          </a>
+                          </Link>
                           <div className="wrapper__news-name">
                             <a href="/detail" className="" title={item.name}>
                               {item.name}

@@ -1,23 +1,24 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { MdKeyboardArrowDown } from "react-icons/md";
-import { ImSearch } from "react-icons/im";
 import { BiMenu } from "react-icons/bi";
+import { ImSearch } from "react-icons/im";
 import { IoIosAdd } from "react-icons/io";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import { PiDotOutlineFill } from "react-icons/pi";
-import logo from "../../assets/image/logo.png";
-import "./header.scss";
 import { useSelector } from "react-redux";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../../assets/image/logo.png";
 import { getProducts } from "../../data";
+
+import "./header.scss";
 
 const Header = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const cart = useSelector((state) => state.cart);
   const [products, setProducts] = useState();
-  const [, setSearchParams] = useSearchParams();
-  // const category = String(searchParams.get("category" || "all"));
+  const [searchText, setSearchText] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -27,6 +28,16 @@ const Header = () => {
 
     fetchApi();
   }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (searchText.trim()) {
+      navigate({
+        pathname: "/search",
+        search: `keyword=${searchText}`,
+      });
+    }
+  };
 
   return (
     <div className="header">
@@ -55,12 +66,18 @@ const Header = () => {
             <ImSearch size={20} />
 
             <div className="search__text active">tìm kiếm</div>
-            <div className="search__input">
-              <input className="input" type="text" placeholder="Tìm kiếm..." />
-              <div className="input__icon">
+            <form className="search__input" onSubmit={handleSubmit}>
+              <input
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+                className="input"
+                type="text"
+                placeholder="Tìm kiếm..."
+              />
+              <button type="submit" className="input__icon">
                 <ImSearch size={20} />
-              </div>
-            </div>
+              </button>
+            </form>
           </div>
 
           <Link to="/cart" className="cart">
@@ -82,23 +99,17 @@ const Header = () => {
               return (
                 <div key={index}>
                   <li className="item__modal">
-                    <div className="">
-                      <Link
-                        onClick={() =>
-                          setSearchParams({
-                            category: item.name
-                              .replace(/\s/g, "")
-                              .toLowerCase(),
-                          })
-                        }
-                        to={`/products?category=${item.name
+                    <Link
+                      to={{
+                        pathname: "/products",
+                        search: `category=${item.name
                           .replace(/\s/g, "")
-                          .toLowerCase()}`}
-                        className="item__link"
-                      >
-                        {item.name}
-                      </Link>
-                    </div>
+                          .toLowerCase()}`,
+                      }}
+                      className="item__link"
+                    >
+                      {item.name}
+                    </Link>
                   </li>
                 </div>
               );
