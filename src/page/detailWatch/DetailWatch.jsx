@@ -101,12 +101,7 @@ const DetailWatch = () => {
                           <div className="wrapper__quantity">
                             <div className="wrapper__detail-button">
                               <Link
-                                onClick={() =>
-                                  handleAddToCart(
-                                    item,
-                                    item.imageColor.map((colors) => colors)
-                                  )
-                                }
+                                onClick={() => handleAddToCart(item)}
                                 to="/cart"
                                 className="detail__button"
                               >
