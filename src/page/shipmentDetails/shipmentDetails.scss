@@ -1,5 +1,18 @@
 @use "../../scss/" as *;
 
+.wrapper__loading-step1 {
+  padding: 18px 14px;
+  @include flex(center, center);
+
+  @include bigMobile {
+    margin-bottom: 5px;
+  }
+
+  @include mobile {
+    margin-bottom: 15px;
+  }
+}
+
 .shipment__link {
   text-align: center;
   @include smallTablet {
@@ -699,6 +712,7 @@
               -webkit-box-orient: vertical;
               overflow: hidden;
               text-overflow: ellipsis;
+              padding: 0 5px;
             }
           }
           .shipment__item-price {

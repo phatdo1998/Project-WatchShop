@@ -64,7 +64,7 @@ const SideBar = ({ data, type }) => {
               <div className="selling__item">
                 <div className="products__name">{item.name}</div>
                 <div className="products__price">
-                  {item.price.toLocaleString()}
+                  {item.price.toLocaleString()}đ
                 </div>
               </div>
             </Link>

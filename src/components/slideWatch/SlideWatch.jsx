@@ -33,7 +33,7 @@ const SlideWatch = ({ name, price, item, id }) => {
             {name}
           </Link>
         </div>
-        <div className="wrapper__slide-price">{price}</div>
+        <div className="wrapper__slide-price">{price}đ</div>
       </div>
     </div>
   );

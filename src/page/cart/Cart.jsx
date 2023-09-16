@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import "./cart.scss";
 import { IoIosAdd, IoIosRemove, IoMdRemove } from "react-icons/io";
@@ -11,10 +11,18 @@ import {
 } from "../../redux/slices/cartSlice";
 import empty from "../../assets/image/cart_empty_background.webp";
 import { Link } from "react-router-dom";
+import { Spin } from "antd";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, [loading]);
 
   const handleRemove = (id) => {
     dispatch(removeToCart(id));
@@ -42,7 +50,11 @@ const Cart = () => {
         <Header />
       </div>
 
-      {cart.length > 0 ? (
+      {loading ? (
+        <div className="wrapper__loading">
+          <Spin />
+        </div>
+      ) : cart.length > 0 ? (
         <>
           <div className="wrapper__cart-body">
             <div className="wrapper__cart-content">
@@ -81,13 +93,13 @@ const Cart = () => {
                           <div className="wrapper__cart-detail">
                             <div className="cart__name">{item.name}</div>
                             <div className="cart__price">
-                              {item.price?.toLocaleString()}
+                              {item.price?.toLocaleString()}đ
                             </div>
                           </div>
                         </div>
                         <div className="wrappper__cart-total">
                           <div className="cart__total">
-                            {cartPriceTotal.toLocaleString()}
+                            {cartPriceTotal.toLocaleString()}đ
                           </div>
                           <div className="wrapper__cart-icon">
                             <div className="cart__remove">
@@ -115,7 +127,7 @@ const Cart = () => {
                   <div className="wrapper__total">
                     <div className="cart__title-total">Tổng tiền:</div>
                     <div className="cart__price-total">
-                      {totalPrice.toLocaleString()}
+                      {totalPrice.toLocaleString()}đ
                     </div>
                   </div>
                   <div className="wrapper__policy">

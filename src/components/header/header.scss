@@ -452,7 +452,8 @@
 
       .input__icon {
         @include flex(center, center);
-        background: transparent;
+        background-color: #fff;
+        cursor: pointer;
       }
     }
 
