@@ -452,6 +452,7 @@
 
       .input__icon {
         @include flex(center, center);
+        background: transparent;
       }
     }
 
@@ -542,6 +543,7 @@
         display: block;
         transition: all 0.5s ease;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        z-index: 999;
       }
     }
     .list__modal::after {
@@ -561,7 +563,6 @@
       left: 472px;
       background-color: #fff;
       display: none;
-      animation: appear 0.5s ease;
 
       .item__modal {
         padding: 8px 0;
@@ -719,14 +720,5 @@
   }
   to {
     transform: translateY(0);
-  }
-}
-
-@keyframes appear {
-  from {
-    transform: rotateX(-180deg);
-  }
-  to {
-    transform: rotateX(0);
   }
 }

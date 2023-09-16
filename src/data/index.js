@@ -602,6 +602,18 @@ export const getProductByCategory = (category) => {
   });
 };
 
+export const getProductsByKeyword = (keyword) => {
+  return new Promise((resolve) => {
+    resolve(
+      products.flatMap((item) =>
+        item.items.filter((value) =>
+          value.name.toLowerCase().includes(keyword.toLowerCase())
+        )
+      )
+    );
+  });
+};
+
 export const newProduct = [
   {
     id: 3,
@@ -1013,35 +1025,41 @@ export const sellingProducts = [
   },
 ];
 
+export const getSellingProducts = () => {
+  return new Promise((resolve) => {
+    resolve(sellingProducts);
+  });
+};
+
 export const news = [
   {
     id: 17,
-    image: "",
+    image: "/images/news-1.jpg",
     time: "01-01-1970",
     name: "Tính năng đo điện tâm đồ được cập nhật vào Apple Watch",
   },
   {
     id: 18,
-    image: "",
+    image: "/images/news-2.jpg",
+    time: "01-01-1970",
+    name: "Tính năng đo điện tâm đồ được cập nhật vào Apple Watch",
+  },
+  {
+    id: 19,
+    image: "/images/news-3.jpg",
     time: "01-01-1970",
     name: "Smartwacth tốt nhất trên thị trường hiện nay",
   },
   {
-    id: 19,
-    image: "",
+    id: 20,
+    image: "/images/news-4.jpg",
     time: "01-01-1970",
     name: "Phát hiện bệnh lý tim mạch bằng thiết bị đeo tay",
   },
   {
-    id: 20,
-    image: "",
+    id: 21,
+    image: "/images/news-5.jpg",
     time: "01-01-1970",
     name: "Đồng hồ thông minh Apple Watch mới ra mắt",
-  },
-  {
-    id: 21,
-    image: "",
-    time: "01-01-1970",
-    name: "Đồng hồ Apple Watch chính hãng bán ra tại VN",
   },
 ];

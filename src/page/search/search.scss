@@ -1,0 +1,61 @@
+@use "../../scss/" as *;
+
+.wrapper__search {
+  border-top: 1px solid $border-color;
+  @include flex(center, center);
+  margin-top: 40px;
+
+  @include tablet {
+    margin-top: 60px;
+  }
+
+  @include mobile {
+    margin-top: 60px;
+  }
+  @include mediumMobile {
+    padding: 0 5px;
+  }
+
+  @include smallMobile {
+    padding: 0 5px;
+  }
+
+  .wrapper__search-product {
+    width: 1170px;
+
+    @include tablet {
+      padding: 0 20px;
+    }
+
+    @include smallTablet {
+      padding: 0 20px;
+    }
+
+    @include bigMobile {
+      padding: 0 20px;
+    }
+    @include mobile {
+      padding: 0 10px;
+    }
+    @include mediumMobile {
+      padding: 0 5px;
+    }
+
+    @include smallMobile {
+      padding: 0 5px;
+    }
+
+    .seach__heading {
+      font-weight: 700;
+      font-size: 20px;
+      margin-top: 30px;
+    }
+
+    .wrapper__product-search {
+      @include flex(center, center);
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+  }
+}
