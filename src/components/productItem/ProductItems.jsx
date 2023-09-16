@@ -36,7 +36,7 @@ const ProductItems = ({ item, numColumn }) => {
             {item.name}
           </Link>
         </div>
-        <div className="list__watch--price">{item.price.toLocaleString()}</div>
+        <div className="list__watch--price">{item.price.toLocaleString()}đ</div>
       </div>
     </div>
   );

@@ -583,8 +583,10 @@ export const getProducts = () => {
 
 export const getProductById = (id) => {
   return new Promise((resolve, reject) => {
-    // eslint-disable-next-line eqeqeq
-    resolve(products.flatMap((item) => item.items.filter((x) => x.id == id)));
+    setTimeout(() => {
+      // eslint-disable-next-line eqeqeq
+      resolve(products.flatMap((item) => item.items.filter((x) => x.id == id)));
+    }, 1000);
   });
 };
 

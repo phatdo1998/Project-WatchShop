@@ -1,5 +1,10 @@
 @use "../../scss/" as *;
 
+.wrapper__loading {
+  @include flex(center, center);
+  height: 100vh;
+}
+
 .container__detail {
   border-top: 1px solid $border-color;
   margin-top: 15px;

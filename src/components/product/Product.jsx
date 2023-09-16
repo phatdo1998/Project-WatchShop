@@ -16,7 +16,6 @@ import { Link } from "react-router-dom";
 const Product = () => {
   const [products, setProducts] = useState([]);
   const [selected, setSelected] = useState(0);
-  const [loading] = useState(false);
   const handleClick = (index) => {
     setSelected(index);
   };
@@ -52,25 +51,24 @@ const Product = () => {
         </div>
 
         <div className="container__watch">
-          {loading &&
-            products.map((item, index) => {
-              return (
-                <div
-                  onClick={() => handleClick(index)}
-                  key={index}
-                  className="watch"
+          {products.map((item, index) => {
+            return (
+              <div
+                onClick={() => handleClick(index)}
+                key={index}
+                className="watch"
+              >
+                <a
+                  className={`watch__link ${
+                    selected === index ? "active" : "inactive"
+                  }`}
                 >
-                  <a
-                    className={`watch__link ${
-                      selected === index ? "active" : "inactive"
-                    }`}
-                  >
-                    <img src={item.image} alt="" className="watch__img" />
-                    <div className="watch__name">{item.name}</div>
-                  </a>
-                </div>
-              );
-            })}
+                  <img src={item.image} alt="" className="watch__img" />
+                  <div className="watch__name">{item.name}</div>
+                </a>
+              </div>
+            );
+          })}
         </div>
         <div className="container__list-watch">
           <div className="list__watch">
