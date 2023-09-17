@@ -418,8 +418,24 @@
     margin-bottom: 40px;
   }
 
+  @include smallTablet {
+    margin-top: 40px;
+  }
+
+  @include bigMobile {
+    margin-top: 40px;
+  }
+  @include mobile {
+    margin-top: 60px;
+  }
+
+  @include mediumMobile {
+    margin-top: 40px;
+  }
+
   @include smallMobile {
     display: block;
+    margin-top: 40px;
   }
 
   .wrapper__empty {

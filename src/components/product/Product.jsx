@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import "swiper/css";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -11,11 +11,13 @@ import ProductItems from "../productItem/ProductItems";
 import SlideWatch from "../slideWatch/SlideWatch";
 import "./product.scss";
 import { Link } from "react-router-dom";
-// import { Spin } from "antd";
+import { Spin } from "antd";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
   const [selected, setSelected] = useState(0);
+  const [loading, setLoading] = useState(false);
+
   const handleClick = (index) => {
     setSelected(index);
   };
@@ -29,14 +31,21 @@ const Product = () => {
     xxl: 1440,
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const fetchProducts = async () => {
       const response = await getProducts();
       setProducts(response);
     };
-
     fetchProducts();
-  }, []);
+  }, [selected]);
+
+  useLayoutEffect(() => {
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  }, [selected]);
 
   return (
     <div className="wrapper__product">
@@ -71,11 +80,17 @@ const Product = () => {
           })}
         </div>
         <div className="container__list-watch">
-          <div className="list__watch">
-            {products[selected]?.items?.map((item, index) => {
-              return <ProductItems item={item} key={index} />;
-            })}
-          </div>
+          {loading ? (
+            <div className="wrapper__loading">
+              <Spin />
+            </div>
+          ) : (
+            <div className="list__watch">
+              {products[selected]?.items?.map((item, index) => {
+                return <ProductItems item={item} key={index} />;
+              })}
+            </div>
+          )}
         </div>
 
         <div className="wrapper__new--product">
