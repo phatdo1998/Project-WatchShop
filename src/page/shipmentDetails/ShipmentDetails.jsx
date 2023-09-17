@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import "./shipmentDetails.scss";
 import { Link } from "react-router-dom";
 import logo from "../../assets/image/logo.png";
@@ -56,11 +56,16 @@ const ShipmentDetails = () => {
     });
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 500);
-  }, [loading]);
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  }, [step]);
 
   const price = cart.map((price) => price);
 
@@ -327,9 +332,9 @@ const ShipmentDetails = () => {
                       <div className="information">{information.name}</div>
                       <div className="information">{information.phone}</div>
                       <div className="information">{information.address}</div>
-                      <div className="information">{information.city}</div>
-                      <div className="information">{information.districts}</div>
                       <div className="information">{information.wards}</div>
+                      <div className="information">{information.districts}</div>
+                      <div className="information">{information.city}</div>
                       <div className="information__vn">Việt Nam</div>
                     </div>
                     <div className="information__check">
@@ -351,7 +356,7 @@ const ShipmentDetails = () => {
                       onClick={handleButtonClick}
                       className="wrapper__shipment-button"
                     >
-                      <Link className="information__button" to="/">
+                      <Link className="information__button" to={"/"}>
                         Tiếp tục mua hàng
                       </Link>
                     </div>

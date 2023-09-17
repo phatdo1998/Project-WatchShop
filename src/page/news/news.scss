@@ -1,0 +1,189 @@
+@use "../../scss/" as *;
+
+.container__news {
+  .container__news-body {
+    border-top: 1px solid $border-color;
+    margin-top: 15px;
+    @include flex(center, center);
+
+    @include tablet {
+      margin-top: 60px;
+    }
+    @include smallTablet {
+      margin-top: 40px;
+    }
+    @include bigMobile {
+      margin-top: 40px;
+    }
+    @include mobile {
+      margin-top: 60px;
+    }
+    @include mediumMobile {
+      margin-top: 40px;
+    }
+    @include smallMobile {
+      margin-top: 40px;
+    }
+
+    .wrapper__news {
+      width: 1170px;
+
+      @include tablet {
+        width: 100%;
+        padding: 0 20px;
+      }
+
+      @include smallTablet {
+        width: 100%;
+        padding: 0 20px;
+      }
+      @include bigMobile {
+        width: 100%;
+        padding: 0 20px;
+      }
+      @include mobile {
+        width: 100%;
+        padding: 0 15px;
+      }
+      @include mediumMobile {
+        width: 100%;
+        padding: 0 10px;
+      }
+      @include smallMobile {
+        width: 100%;
+        padding: 0 5px;
+      }
+
+      .news-heading {
+        font-size: 22px;
+        font-weight: 700;
+        margin-top: 40px;
+      }
+
+      .wrapper__content {
+        @include flex(unset, unset);
+        gap: 20px;
+
+        @include smallTablet {
+          flex-direction: column;
+        }
+        @include bigMobile {
+          flex-direction: column;
+        }
+        @include mobile {
+          flex-direction: column;
+        }
+
+        @include mediumMobile {
+          flex-direction: column;
+        }
+        @include smallMobile {
+          flex-direction: column;
+        }
+
+        .wrapper__item-news {
+          flex: 5;
+          .wrapper__content-item {
+            @include flex(unset, unset);
+            flex: 5;
+            position: relative;
+            margin: 30px 0;
+            cursor: pointer;
+
+            .news-date {
+              position: absolute;
+              left: 5px;
+              top: 5px;
+              background-color: $blue-color;
+              border-radius: 4px;
+              font-size: 15px;
+              color: #fff;
+            }
+
+            .news__img {
+              width: 250px;
+
+              @include mobile {
+                width: 150px;
+              }
+
+              @include mediumMobile {
+                width: 150px;
+              }
+              @include smallMobile {
+                width: 130px;
+              }
+            }
+            .wrapper__item {
+              @include flex(unset, unset);
+              flex-direction: column;
+              margin-left: 15px;
+
+              .news__title {
+                font-weight: 600;
+                font-size: 16px;
+                @include truncate-multiline-new(4);
+
+                @include mobile {
+                  @include truncate-multiline-new(2);
+                }
+                @include mediumMobile {
+                  @include truncate-multiline-new(3);
+                }
+              }
+
+              .news__description {
+                font-size: 15px;
+                font-weight: 500;
+                @include truncate-multiline-new(3);
+              }
+            }
+          }
+        }
+
+        .wrapper__new-content {
+          flex: 2;
+
+          @include smallTablet {
+            margin-top: 30px;
+          }
+
+          .container__new-content {
+            .new__heading {
+              font-size: 22px;
+              font-weight: 700;
+            }
+
+            .new__content {
+              .wrapper__content-new {
+                @include flex(unset, unset);
+                gap: 10px;
+                border-bottom: 1px solid $border-color;
+                padding-bottom: 10px;
+                margin: 10px 0;
+                cursor: pointer;
+
+                @include smallTablet {
+                  @include flex(center, unset);
+                }
+
+                .new__img {
+                  width: 80px;
+                  object-fit: contain;
+                }
+
+                &:last-child {
+                  border: none;
+                }
+                .new__name {
+                  font-weight: 500;
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

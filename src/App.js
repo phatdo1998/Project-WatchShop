@@ -6,6 +6,8 @@ import Cart from "./page/cart/Cart";
 import ShipmentDetails from "./page/shipmentDetails/ShipmentDetails";
 import Products from "./page/products/Products";
 import Search from "./page/search/Search";
+import Contact from "./page/contact/Contact";
+import News from "./page/news/News";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/shipment" element={<ShipmentDetails />} />
         <Route path="/products" element={<Products />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/news" element={<News />} />
       </Routes>
     </div>
   );

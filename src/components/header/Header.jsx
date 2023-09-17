@@ -3,14 +3,13 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
 import { ImSearch } from "react-icons/im";
-import { IoIosAdd } from "react-icons/io";
+import { IoIosAdd, IoIosRemove } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { PiDotOutlineFill } from "react-icons/pi";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/image/logo.png";
 import { getProducts } from "../../data";
-
 import "./header.scss";
 
 const Header = () => {
@@ -18,7 +17,12 @@ const Header = () => {
   const cart = useSelector((state) => state.cart);
   const [products, setProducts] = useState();
   const [searchText, setSearchText] = useState("");
+  const [openModalProducts, setOpenModalProducts] = useState(false);
   const navigate = useNavigate();
+
+  const handleClickModalProducts = () => {
+    setOpenModalProducts(!openModalProducts);
+  };
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -37,6 +41,11 @@ const Header = () => {
         search: `keyword=${searchText}`,
       });
     }
+  };
+
+  const handleClickModal = (e) => {
+    e.stopPropagation();
+    setModalIsOpen(false);
   };
 
   return (
@@ -75,7 +84,7 @@ const Header = () => {
                 placeholder="Tìm kiếm..."
               />
               <button type="submit" className="input__icon">
-                <ImSearch style={{ backgroundColor: "#fff" }} size={20} />
+                <ImSearch size={20} color="#000" />
               </button>
             </form>
           </div>
@@ -117,78 +126,111 @@ const Header = () => {
           </ul>
         </li>
         <li className="item">
-          <Link to="/">TIN TỨC</Link>
+          <Link to="/news">TIN TỨC</Link>
         </li>
         <li className="item">
-          <Link to="/">LIÊN HỆ</Link>
+          <Link to="/contact">LIÊN HỆ</Link>
         </li>
       </ul>
 
-      <div className="modal">
+      <div
+        style={{ visibility: `${modalIsOpen ? "visible" : "hidden"}` }}
+        className="modal"
+      >
         <div
-          onClick={() => setModalIsOpen(false)}
+          onClick={handleClickModal}
           className={`modal__overlay `}
           style={{ visibility: `${modalIsOpen ? "visible" : "hidden"}` }}
+        ></div>
+        <div
+          style={{ visibility: `${modalIsOpen ? "visible" : "hidden"}` }}
+          className={`modal__content ${modalIsOpen ? "slide-in" : "slide-out"}`}
         >
-          <div
-            className={`modal__content ${
-              modalIsOpen ? "slide-in" : "slide-out"
-            }`}
-          >
-            <ul className="list__item">
-              <div className="wrapper__item">
-                <li className="item__modal">
-                  <PiDotOutlineFill size={30} color="#05c3ff" />
-                  <Link to="" className="item__modal-link">
-                    Trang chủ
-                  </Link>
-                </li>
-                <li className="item__modal">
-                  <div className="item__wrapper">
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyItems: "center",
-                        alignItems: "center",
-                        flex: 1,
-                      }}
-                    >
-                      <PiDotOutlineFill size={30} color="#05c3ff" />
-                      <Link
-                        to="/products?category=applewatch"
-                        className="item__modal-link"
-                      >
-                        Sản phẩm
-                      </Link>
-                    </div>
+          <ul className="list__item">
+            <div className="wrapper__item">
+              <li className="item__modal">
+                <PiDotOutlineFill size={30} color="#05c3ff" />
+                <Link to="" className="item__modal-link">
+                  Trang chủ
+                </Link>
+              </li>
+              <li className="item__modal">
+                <div className="item__wrapper">
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyItems: "center",
+                      alignItems: "center",
+                      flex: 1,
+                    }}
+                  >
+                    <PiDotOutlineFill size={30} color="#05c3ff" />
                     <Link
-                      style={{
-                        marginRight: 12,
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        padding: 5,
-                      }}
+                      to="/products?category=applewatch"
+                      className="item__modal-link"
                     >
-                      <IoIosAdd size={20} />
+                      Sản phẩm
                     </Link>
                   </div>
-                </li>
-                <li className="item__modal">
-                  <PiDotOutlineFill size={30} color="#05c3ff" />
-                  <Link to="" className="item__modal-link">
-                    Tin tức
+                  <Link
+                    style={{
+                      marginRight: 12,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      padding: 5,
+                    }}
+                  >
+                    {openModalProducts ? (
+                      <IoIosRemove
+                        onClick={handleClickModalProducts}
+                        size={20}
+                      />
+                    ) : (
+                      <IoIosAdd onClick={handleClickModalProducts} size={20} />
+                    )}
                   </Link>
-                </li>
-                <li className="item__modal">
-                  <PiDotOutlineFill size={30} color="#05c3ff" />
-                  <Link to="" className="item__modal-link">
-                    Liên hệ
-                  </Link>
-                </li>
+                </div>
+              </li>
+              <div
+                className={`wrapper__item-modal ${
+                  openModalProducts ? "modal-in" : "modal-out"
+                }`}
+              >
+                {openModalProducts &&
+                  products?.map((item, index) => {
+                    return (
+                      <li key={index} className={`item__modal products `}>
+                        <PiDotOutlineFill size={30} color={"#f61900"} />
+                        <Link
+                          to={{
+                            pathname: "/products",
+                            search: `category=${item.name
+                              .replace(/\s/g, "")
+                              .toLowerCase()}`,
+                          }}
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    );
+                  })}
               </div>
-            </ul>
-          </div>
+
+              <li className="item__modal">
+                <PiDotOutlineFill size={30} color="#05c3ff" />
+                <Link to="/news" className="item__modal-link">
+                  Tin tức
+                </Link>
+              </li>
+              <li className="item__modal">
+                <PiDotOutlineFill size={30} color="#05c3ff" />
+                <Link to="/contact" className="item__modal-link">
+                  Liên hệ
+                </Link>
+              </li>
+            </div>
+          </ul>
         </div>
       </div>
     </div>

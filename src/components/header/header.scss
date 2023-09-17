@@ -586,130 +586,125 @@
 .modal {
   z-index: 999;
   @include flex(center, center);
+  position: fixed;
+  inset: 0;
 
   .modal__overlay {
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
     @include flex(center, flex-start);
+  }
+
+  .modal__content {
+    width: 45%;
+    height: 100vh;
+    background-color: #fff;
+    transition: all 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include tablet {
+      z-index: 999;
+    }
 
     @include smallTablet {
+      width: 65%;
+      height: 100%;
       z-index: 999;
     }
 
     @include bigMobile {
+      width: 65%;
+      height: 100%;
+      z-index: 999;
+    }
+
+    @include mobile {
+      width: 65%;
+      height: 100%;
       z-index: 999;
     }
 
     @include mediumMobile {
+      width: 65%;
+      height: 100%;
       z-index: 999;
     }
-
     @include smallMobile {
+      width: 65%;
+      height: 100%;
       z-index: 999;
     }
 
-    .modal__content {
-      width: 45%;
-      height: 100vh;
-      background-color: #fff;
-      transition: all 0.5s ease;
-      position: absolute;
-      top: 0;
+    .list__item {
+      .item__modal {
+        padding: 8px 0 8px 20px;
+        font-size: 14px;
+        font-weight: 500;
+        @include flex(center, unset);
+        border-bottom: 1px solid #ebebeb;
+        display: none;
 
-      @include tablet {
-        z-index: 999;
+        @include tablet {
+          font-size: 12px;
+          display: flex;
+        }
+
+        @include smallTablet {
+          font-size: 12px;
+          display: flex;
+        }
+
+        @include bigMobile {
+          font-size: 12px;
+          display: flex;
+        }
+
+        @include mobile {
+          font-size: 12px;
+          display: flex;
+        }
+
+        @include mediumMobile {
+          font-size: 12px;
+          display: flex;
+        }
+
+        @include smallMobile {
+          font-size: 12px;
+          display: flex;
+        }
+
+        .item__wrapper {
+          width: 100%;
+          @include flex(center, space-between);
+        }
+      }
+      .products {
+        padding-left: 40px;
       }
 
-      @include smallTablet {
-        width: 65%;
-        height: 100%;
-        z-index: 999;
-      }
+      .wrapper__item-modal {
+        .modal-in {
+          transition: all 0.5s ease;
+        }
 
-      @include bigMobile {
-        width: 65%;
-        height: 100%;
-        z-index: 999;
-      }
-
-      @include mobile {
-        width: 65%;
-        height: 100%;
-        z-index: 999;
-      }
-
-      @include mediumMobile {
-        width: 65%;
-        height: 100%;
-        z-index: 999;
-      }
-      @include smallMobile {
-        width: 65%;
-        height: 100%;
-        z-index: 999;
-      }
-
-      .list__item {
-        .item__modal {
-          padding: 8px 0 8px 20px;
-          font-size: 14px;
-          font-weight: 500;
-          @include flex(center, unset);
-          border-bottom: 1px solid #ebebeb;
-          display: none;
-
-          @include tablet {
-            font-size: 12px;
-            display: flex;
-          }
-
-          @include smallTablet {
-            font-size: 12px;
-            display: flex;
-          }
-
-          @include bigMobile {
-            font-size: 12px;
-            display: flex;
-          }
-
-          @include mobile {
-            font-size: 12px;
-            display: flex;
-          }
-
-          @include mediumMobile {
-            font-size: 12px;
-            display: flex;
-          }
-
-          @include smallMobile {
-            font-size: 12px;
-            display: flex;
-          }
-
-          &:last-child {
-            border: none;
-          }
-
-          .item__wrapper {
-            width: 100%;
-            @include flex(center, space-between);
-          }
+        .modal-out {
+          transition: all 0.5s ease;
         }
       }
     }
+  }
+  .slide-in {
+    transform: translateX(0);
+  }
+  .slide-out {
+    transform: translateX(-500px);
 
-    .slide-in {
-      transform: translateX(0);
-    }
-    .slide-out {
+    @include smallTablet {
       transform: translateX(-500px);
-
-      @include smallTablet {
-        transform: translateX(-500px);
-      }
     }
   }
 }
