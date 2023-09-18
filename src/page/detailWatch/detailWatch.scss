@@ -8,6 +8,7 @@
 .container__detail {
   border-top: 1px solid $border-color;
   margin-top: 15px;
+  margin-bottom: 40px;
   @include flex(center, center);
 
   @include tablet {
@@ -23,9 +24,11 @@
   }
   @include mediumMobile {
     margin-top: 40px;
+    margin-bottom: 30px;
   }
   @include smallMobile {
     margin-top: 40px;
+    margin-bottom: 20px;
   }
 
   .wrapper__detail {

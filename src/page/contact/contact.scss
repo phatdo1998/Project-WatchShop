@@ -1,5 +1,391 @@
 @use "../../scss/" as *;
 
 .container__contact {
-  height: 100vh;
+  .modal {
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      inset: 0;
+    }
+
+    .wrapper__modal {
+      background-color: #fff;
+      z-index: 999;
+
+      @include mobile {
+        width: 90%;
+      }
+      @include mediumMobile {
+        width: 90%;
+      }
+      @include smallMobile {
+        width: 90%;
+      }
+
+      .modal__heading {
+        font-weight: 600;
+        font-size: 20px;
+        background-color: green;
+        text-align: center;
+        padding: 10px 0;
+        color: #fff;
+      }
+
+      .modal__contact-content {
+        padding: 10px 20px 20px 20px;
+        .modal__title {
+          font-size: 18px;
+          font-weight: 600;
+          text-align: center;
+        }
+
+        .modal__description {
+          font-size: 14px;
+          font-weight: 500;
+          text-align: center;
+        }
+      }
+      .modal__contact-link {
+        text-align: center;
+        margin-bottom: 20px;
+
+        .contact__link {
+          background-color: $blue-color;
+          padding: 10px 20px;
+          border-radius: 20px;
+          color: #fff;
+          font-weight: 500;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .container__contact-body {
+    @include flex(center, center);
+    flex-direction: column;
+    border-top: 1px solid $border-color;
+    background-color: #f3f3f3;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 15px;
+
+    @include tablet {
+      margin-top: 60px;
+    }
+    @include smallTablet {
+      margin-top: 40px;
+    }
+    @include bigMobile {
+      margin-top: 40px;
+    }
+    @include mobile {
+      margin-top: 60px;
+    }
+    @include mediumMobile {
+      margin-top: 40px;
+    }
+    @include smallMobile {
+      margin-top: 40px;
+    }
+
+    .wrapper__contact {
+      width: 1000px;
+      @include flex(unset, unset);
+      flex-direction: column;
+      background-color: #fff;
+      padding: 20px;
+
+      @include tablet {
+        width: 95%;
+      }
+
+      @include smallTablet {
+        width: 95%;
+      }
+
+      @include bigMobile {
+        width: 95%;
+      }
+      @include mobile {
+        width: 95%;
+        padding: 0 10px;
+      }
+      @include mediumMobile {
+        width: 95%;
+        padding: 0 10px;
+      }
+      @include smallMobile {
+        width: 95%;
+        padding: 0 10px;
+      }
+
+      .contact {
+        width: 80%;
+        .wrapper__address {
+          @include flex(center, unset);
+
+          @include mobile {
+            margin: 20px 0;
+          }
+
+          @include mediumMobile {
+            margin: 20px 0;
+          }
+
+          @include smallMobile {
+            margin: 20px 0;
+          }
+
+          .contact__icon {
+            border: 1px solid $border-color;
+            padding: 6px;
+            border-radius: 50%;
+          }
+
+          .wrapper__contact-item {
+            // @include flex(center, center);
+            margin-left: 10px;
+            font-size: 14px;
+
+            .contact__item-heading {
+              font-weight: 600;
+              font-size: 15px;
+            }
+
+            .contact__item-address {
+              font-weight: 500;
+              color: #696969;
+            }
+          }
+        }
+        .wrapper__contact-address {
+          @include flex(center, space-between);
+          margin-top: 20px;
+
+          @include mobile {
+            display: block;
+          }
+
+          @include mediumMobile {
+            display: block;
+          }
+
+          @include smallMobile {
+            display: block;
+          }
+        }
+      }
+    }
+    .container__contact-form {
+      background-color: #fff;
+      width: 1000px;
+      margin-top: 40px;
+      padding: 20px;
+
+      @include tablet {
+        width: 95%;
+        margin-top: 20px;
+      }
+      @include smallTablet {
+        width: 95%;
+        margin-top: 20px;
+      }
+      @include bigMobile {
+        width: 95%;
+        margin-top: 20px;
+      }
+
+      @include mobile {
+        margin-top: 20px;
+        width: 95%;
+        padding: 10px;
+      }
+
+      @include mediumMobile {
+        margin-top: 20px;
+        width: 95%;
+        padding: 10px;
+      }
+
+      @include smallMobile {
+        margin-top: 20px;
+        width: 95%;
+        padding: 10px;
+      }
+
+      .wrapper__contact-form {
+        .contact__form-heading {
+          font-size: 20px;
+          font-weight: 700;
+        }
+
+        .contact__form-description {
+          margin: 20px 0;
+          font-size: 16px;
+
+          @include bigMobile {
+            font-size: 14px;
+            margin: 10px 0;
+          }
+
+          @include mobile {
+            font-size: 14px;
+            margin: 10px 0;
+          }
+          @include mediumMobile {
+            font-size: 14px;
+            margin: 10px 0;
+          }
+
+          @include smallMobile {
+            font-size: 14px;
+            margin: 10px 0;
+          }
+        }
+
+        .wrapper__error {
+          background-color: #fff;
+          margin-bottom: 10px;
+
+          .error__message {
+            background-color: #f8d7da;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 4px;
+          }
+        }
+        .wrapper__success {
+          background-color: #fff;
+          margin-bottom: 10px;
+
+          .success__item {
+            background-color: #d4edda;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 4px;
+          }
+        }
+
+        .form {
+          width: 100%;
+
+          .input__name {
+            font-size: 14px;
+            font-weight: 500;
+          }
+          .input__contact {
+            border: 1px solid $border-color;
+            width: 100%;
+            padding: 13px 20px;
+            font-size: 16px;
+            margin-top: 5px;
+
+            @include bigMobile {
+              font-size: 14px;
+              padding: 13px 12px;
+            }
+
+            @include mobile {
+              font-size: 14px;
+              padding: 13px 12px;
+            }
+
+            @include mediumMobile {
+              font-size: 14px;
+              padding: 13px 12px;
+            }
+
+            @include smallMobile {
+              font-size: 14px;
+              padding: 13px 12px;
+            }
+          }
+        }
+
+        .wrapper__form {
+          @include flex(center, space-between);
+          gap: 30px;
+          margin-top: 15px;
+
+          @include bigMobile {
+            flex-direction: column;
+            gap: 10px;
+          }
+          @include mobile {
+            flex-direction: column;
+            gap: 10px;
+          }
+
+          @include mediumMobile {
+            flex-direction: column;
+            gap: 10px;
+          }
+
+          @include smallMobile {
+            flex-direction: column;
+            gap: 10px;
+          }
+        }
+
+        .contact__content {
+          margin-top: 10px;
+
+          .contact__content-heading {
+            font-size: 14px;
+            font-weight: 500;
+          }
+
+          .text-area {
+            width: 100%;
+            padding: 20px;
+            border: 1px solid $border-color;
+            outline: none;
+            margin-top: 5px;
+            max-height: 100px;
+            font-size: 16px;
+
+            @include mobile {
+              font-size: 14px;
+            }
+            @include mediumMobile {
+              font-size: 14px;
+            }
+
+            @include smallMobile {
+              font-size: 14px;
+            }
+          }
+        }
+
+        .wrapper__contact-button {
+          @include flex(center, flex-end);
+
+          .contact__button {
+            margin-top: 20px;
+            cursor: pointer;
+
+            background-color: #fff;
+
+            .contact__button-name {
+              padding: 12px 24px;
+              border-radius: 20px;
+              background-color: #3b3b3b;
+              color: #fff;
+              text-align: right;
+
+              @include mobile {
+                padding: 10px 24px;
+              }
+              @include mediumMobile {
+                padding: 10px 24px;
+              }
+              @include smallMobile {
+                padding: 10px 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
