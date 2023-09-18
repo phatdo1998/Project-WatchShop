@@ -37,9 +37,6 @@ const Product = () => {
       setProducts(response);
     };
     fetchProducts();
-  }, [selected]);
-
-  useLayoutEffect(() => {
     setLoading(true);
 
     setTimeout(() => {

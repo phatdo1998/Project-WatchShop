@@ -577,9 +577,7 @@ const products = [
 
 export const getProducts = () => {
   return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(products);
-    }, 500);
+    resolve(products);
   });
 };
 
@@ -1039,7 +1037,7 @@ export const news = [
   {
     id: 17,
     image: "/images/news-1.jpg",
-    time: "01-01-1970",
+    time: "15-03-2012",
     name: "Đồng hồ Apple Watch chính hãng bán ra tại VN",
     description:
       "Sau vài tháng ra mắt thị trường, các phiên bản đồng hồ thông minh Apple Watch đã có mặt tại thị trường Việt Nam qua kênh chính hãng, giá từ 11,5 triệu đồng.",
@@ -1047,7 +1045,7 @@ export const news = [
   {
     id: 18,
     image: "/images/news-2.jpg",
-    time: "01-01-1970",
+    time: "21-08-2013",
     name: "Tính năng đo điện tâm đồ được cập nhật vào Apple Watch",
     description:
       "TTO - Apple từng công bố sẽ đưa các tính năng về tim mạch vào Apple Watch trong tháng 9, nhưng mới đây mới chính thức được áp dụng.",
@@ -1055,7 +1053,7 @@ export const news = [
   {
     id: 19,
     image: "/images/news-3.jpg",
-    time: "01-01-1970",
+    time: "05-11-2016",
     name: "Smartwacth tốt nhất trên thị trường hiện nay",
     description:
       "Apple Watch Series 5 vừa mới được ra mắt có nhiều tính năng sức khỏe mới, trong đó bao gồm cả một App Store dành riêng cho thiết bị này.",
@@ -1063,7 +1061,7 @@ export const news = [
   {
     id: 20,
     image: "/images/news-4.jpg",
-    time: "01-01-1970",
+    time: "19-07-2018",
     name: "Phát hiện bệnh lý tim mạch bằng thiết bị đeo tay",
     description:
       "Bạn cũng sẽ kết nối với bác sĩ của mình một cách liên tục và được đánh giá tình trạng sức khỏe một cách thường xuyên hơn.",
@@ -1071,7 +1069,7 @@ export const news = [
   {
     id: 21,
     image: "/images/news-5.jpg",
-    time: "01-01-1970",
+    time: "18-09-2023",
     name: "Đồng hồ thông minh Apple Watch mới ra mắt",
     description:
       "Bạn cũng sẽ kết nối với bác sĩ của mình một cách liên tục và được đánh giá tình trạng sức khỏe một cách thường xuyên hơn.",

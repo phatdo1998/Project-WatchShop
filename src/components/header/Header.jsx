@@ -52,13 +52,13 @@ const Header = () => {
     <div className="header">
       <div className="header__wrapper">
         <div className="header__wrapper-icon">
-          <Link className="icon__menu">
+          <a className="icon__menu">
             <BiMenu
               onClick={() => setModalIsOpen(true)}
               size={30}
               color="black"
             />
-          </Link>
+          </a>
         </div>
         <div className="header__hotline-wrapper">
           Hotline:
