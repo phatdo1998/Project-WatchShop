@@ -699,6 +699,7 @@
               height: 70px;
               border: 1px solid $border-color;
               border-radius: 7px;
+              object-fit: contain;
             }
 
             .shipment__item-name {

@@ -3,7 +3,6 @@ import "./shipmentDetails.scss";
 import { Link } from "react-router-dom";
 import logo from "../../assets/image/logo.png";
 import Select from "react-select";
-import s6 from "../../assets/image/s6_preview_rev_1.png";
 import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -107,7 +106,6 @@ const ShipmentDetails = () => {
                     dispatch(addAddress(values.address));
                     dispatch(addPhone(values.phone));
                     setStep(2);
-                    console.log("click");
                   }}
                 >
                   {({
@@ -290,7 +288,7 @@ const ShipmentDetails = () => {
                       className="check__input"
                       onChange={() => {}}
                     />
-                    <img src={cod} alt="" className="check__image" />
+                    <img src={cod} alt="cod" className="check__image" />
                     <div className="check__title">
                       Thanh toán khi giao hàng (COD)
                     </div>
@@ -368,11 +366,16 @@ const ShipmentDetails = () => {
             <div className="wrapper__product-shipment">
               {cart.map((item, index) => {
                 const priceTotal = item.price * item.qty;
+
                 return (
                   <div key={index} className="shipment__item">
                     <div className="wrapper__item-product">
                       <div className="item__qty">{item.qty}</div>
-                      <img src={s6} alt="" className="shipment__img" />
+                      <img
+                        src={item.imageColor[0].image}
+                        alt={item.name}
+                        className="shipment__img"
+                      />
                       <div className="shipment__item-name">{item.name}</div>
                     </div>
                     <div className="shipment__item-price">

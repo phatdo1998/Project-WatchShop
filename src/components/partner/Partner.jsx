@@ -60,7 +60,7 @@ const Partner = () => {
             {data.map((item, index) => {
               return (
                 <SwiperSlide key={index} className="slide__wrapper">
-                  <img src={item} alt="" className="slide__img" />
+                  <img src={item} alt={item} className="slide__img" />
                 </SwiperSlide>
               );
             })}

@@ -17,7 +17,7 @@ const SlideWatch = ({ name, price, item, id }) => {
         >
           <img
             src={item.imageColor[0].image}
-            alt=""
+            alt={item.name}
             className="list__slide-image"
           />
         </Link>

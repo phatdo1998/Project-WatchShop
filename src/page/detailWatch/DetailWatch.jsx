@@ -62,7 +62,11 @@ const DetailWatch = () => {
                   <div className="wrapper__detail-product">
                     <div className="wrapper__watch">
                       <div className="wrapper__img-detail">
-                        <img src={colorSelected.image} alt="" className="" />
+                        <img
+                          src={colorSelected.image}
+                          alt={item.name}
+                          className=""
+                        />
                       </div>
                     </div>
 

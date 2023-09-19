@@ -86,7 +86,7 @@ const Cart = () => {
                             </div>
                             <img
                               src={item.image.image}
-                              alt=""
+                              alt={item.name}
                               className="cart__img"
                             />
                           </div>
@@ -165,7 +165,7 @@ const Cart = () => {
           <div className="wrapper__empty-card">
             <div className="wrapper__empty">
               <div className="wrapper__empty-content">
-                <img src={empty} alt="" className="empty__image" />
+                <img src={empty} alt="empty card" className="empty__image" />
                 <div className="empty__heading">“Hổng” có gì trong giỏ hết</div>
                 <div className="empty__title">
                   Về trang cửa hàng để chọn mua sản phẩm bạn nhé!!

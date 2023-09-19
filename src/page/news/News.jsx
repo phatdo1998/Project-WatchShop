@@ -33,7 +33,11 @@ const News = () => {
                     return (
                       <div key={index} className="wrapper__content-item">
                         <div className="news-date">{item.time}</div>
-                        <img src={item.image} alt="" className="news__img" />
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="news__img"
+                        />
                         <div className="wrapper__item">
                           <div className="news__title">{item.name}</div>
                           <div className="news__description">

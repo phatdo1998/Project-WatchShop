@@ -537,6 +537,10 @@
       }
     }
 
+    .wrapper__navlink {
+      @include flex(center, center);
+    }
+
     .wrapper {
       @include flex(center, center);
 

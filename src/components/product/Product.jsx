@@ -69,7 +69,11 @@ const Product = () => {
                     selected === index ? "active" : "inactive"
                   }`}
                 >
-                  <img src={item.image} alt="" className="watch__img" />
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="watch__img"
+                  />
                   <div className="watch__name">{item.name}</div>
                 </a>
               </div>
@@ -262,7 +266,7 @@ const Product = () => {
                           <Link className="wrapper__news-link">
                             <img
                               src={item.image}
-                              alt=""
+                              alt={item.name}
                               className="list__news-image"
                             />
                           </Link>
