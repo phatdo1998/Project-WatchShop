@@ -1088,3 +1088,33 @@ export const slides = [
     image: "/images/banner5.jpg",
   },
 ];
+
+export const brand = [
+  {
+    image: "/images/Logo-AriesGold.jpg",
+  },
+  {
+    image: "/images/logo-cadino.jpg",
+  },
+  {
+    image: "/images/logo-casio.jpg",
+  },
+  {
+    image: "/images/logo-Citizen.png",
+  },
+  {
+    image: "/images/logo-dw.webp",
+  },
+  {
+    image: "/images/logo-G-Shock.png",
+  },
+  {
+    image: "/images/logo-orient.jpg",
+  },
+  {
+    image: "/images/logo-q&q.jpg",
+  },
+  {
+    image: "/images/logo-titan.jpg",
+  },
+];
