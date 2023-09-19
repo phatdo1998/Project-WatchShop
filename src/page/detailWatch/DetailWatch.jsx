@@ -24,7 +24,7 @@ const DetailWatch = () => {
       const response = await getProductById(id);
       setDetailProducts(response);
       setColorSelected({
-        color: response[0]?.color[1],
+        color: response[0]?.color[0],
         image: response[0]?.imageColor[0]?.image,
       });
       setLoading(false);
@@ -51,7 +51,6 @@ const DetailWatch = () => {
 
       {loading ? (
         <div className="wrapper__loading">
-          {" "}
           <Spin />
         </div>
       ) : (

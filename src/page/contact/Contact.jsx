@@ -15,12 +15,13 @@ const Contact = () => {
   const [loading, setLoading] = useState(true);
   const contactValidationScheme = Yup.object().shape({
     email: Yup.string().email("Email Invalid").required("Bạn chưa nhập Email"),
-    name: Yup.string().required("Bạn chưa nhập họ tên"),
+    name: Yup.string()
+      .required("Bạn chưa nhập họ tên")
+      .min(2, ({ min }) => `Vui lòng nhập ít nhất ${min} ký tự`),
     phone: Yup.string()
       .required("Bạn chưa nhập số điện thoại")
-      .min(10, ({ min }) => `Vui lòng nhập ít nhất ${min} số`)
+      .min(9, ({ min }) => `Vui lòng nhập ít nhất ${min} số`)
       .max(11, ({ max }) => `Vui lòng nhập ít hơn ${max} số`),
-    address: Yup.string().required("Bạn chưa nhập địa chỉ"),
   });
 
   useEffect(() => {
@@ -75,17 +76,28 @@ const Contact = () => {
             </div>
             <div className="container__contact-form">
               <Formik
-                initialValues={{ name: "", email: "", phone: "" }}
+                initialValues={{
+                  name: "",
+                  email: "",
+                  phone: "",
+                }}
                 validationSchema={contactValidationScheme}
-                validate={(values) => {}}
+                onSubmit={(values) => {
+                  setLoading(true);
+
+                  setTimeout(() => {
+                    setLoading(false);
+                    setOpenModal(true);
+                  }, 500);
+                }}
               >
                 {({
-                  values,
-                  errors,
-                  touched,
-                  isValid,
                   handleChange,
                   handleSubmit,
+                  values,
+                  isValid,
+                  errors,
+                  touched,
                 }) => (
                   <div className="wrapper__contact-form">
                     {openModal && (
@@ -123,7 +135,7 @@ const Contact = () => {
                       {!isValid && (
                         <div
                           style={{
-                            padding: !isValid ? 0 : 10,
+                            padding: isValid ? 10 : 0,
                           }}
                           className="error__message"
                         >
@@ -146,6 +158,7 @@ const Contact = () => {
                                 marginTop: 2,
                                 paddingTop: 3,
                                 paddingLeft: 5,
+                                paddingBottom: 3,
                               }}
                             >
                               - {errors.email}
@@ -207,17 +220,12 @@ const Contact = () => {
                         cols="10"
                         rows="10"
                         placeholder="Nhập nội dung"
-                      ></textarea>
+                      />
                     </div>
                     <div className="wrapper__contact-button">
                       <button
+                        onClick={handleSubmit}
                         type="submit"
-                        onClick={() => {
-                          handleSubmit();
-                          if (!isValid) {
-                            setOpenModal(true);
-                          }
-                        }}
                         className="contact__button"
                       >
                         <div className="contact__button-name">
