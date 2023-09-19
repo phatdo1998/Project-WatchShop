@@ -7,7 +7,7 @@ import { IoIosAdd, IoIosRemove } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { PiDotOutlineFill } from "react-icons/pi";
 import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/image/logo.png";
 import { getProducts } from "../../data";
 import "./header.scss";
@@ -19,6 +19,12 @@ const Header = () => {
   const [searchText, setSearchText] = useState("");
   const [openModalProducts, setOpenModalProducts] = useState(false);
   const navigate = useNavigate();
+
+  const navLinkStyle = ({ isActive }) => {
+    return {
+      color: isActive ? "#05c3ff" : "",
+    };
+  };
 
   const handleClickModalProducts = () => {
     setOpenModalProducts(!openModalProducts);
@@ -65,9 +71,9 @@ const Header = () => {
           <div className="header__hotline">09xxxxxx</div>
         </div>
         <div className="header__logo">
-          <Link to="/" className="header__logo-wrapper">
+          <NavLink to="/" className="header__logo-wrapper">
             <img className="header__image" src={logo} alt="" />
-          </Link>
+          </NavLink>
         </div>
         <div className="header__empty"></div>
         <div className="header__wrapper-right">
@@ -89,19 +95,27 @@ const Header = () => {
             </form>
           </div>
 
-          <Link to="/cart" className="cart">
+          <NavLink style={navLinkStyle} to="/cart" className="cart">
             <AiOutlineShoppingCart size={22} />
             <div className="cart__text">giỏ hàng ({cart.length})</div>
-          </Link>
+          </NavLink>
         </div>
       </div>
       <ul className="list">
         <li className="item">
-          <Link to="/">TRANHG CHỦ</Link>
+          <NavLink style={navLinkStyle} to="/">
+            TRANG CHỦ
+          </NavLink>
         </li>
         <li className="item wrapper active">
-          <Link to="/products?category=applewatch">SẢN PHẨM</Link>
-          <MdKeyboardArrowDown size={26} />
+          <NavLink
+            className="wrapper__navlink"
+            style={navLinkStyle}
+            to="/products?category=applewatch"
+          >
+            SẢN PHẨM
+            <MdKeyboardArrowDown size={26} />
+          </NavLink>
 
           <ul className="list__modal">
             {products?.map((item, index) => {
@@ -126,10 +140,14 @@ const Header = () => {
           </ul>
         </li>
         <li className="item">
-          <Link to="/news">TIN TỨC</Link>
+          <NavLink style={navLinkStyle} to="/news">
+            TIN TỨC
+          </NavLink>
         </li>
         <li className="item">
-          <Link to="/contact">LIÊN HỆ</Link>
+          <NavLink style={navLinkStyle} to="/contact">
+            LIÊN HỆ
+          </NavLink>
         </li>
       </ul>
 
@@ -150,9 +168,13 @@ const Header = () => {
             <div className="wrapper__item">
               <li className="item__modal">
                 <PiDotOutlineFill size={30} color="#05c3ff" />
-                <Link to="" className="item__modal-link">
+                <NavLink
+                  style={navLinkStyle}
+                  to="/"
+                  className="item__modal-link"
+                >
                   Trang chủ
-                </Link>
+                </NavLink>
               </li>
               <li className="item__modal">
                 <div className="item__wrapper">
@@ -165,14 +187,15 @@ const Header = () => {
                     }}
                   >
                     <PiDotOutlineFill size={30} color="#05c3ff" />
-                    <Link
+                    <NavLink
+                      style={navLinkStyle}
                       to="/products?category=applewatch"
                       className="item__modal-link"
                     >
                       Sản phẩm
-                    </Link>
+                    </NavLink>
                   </div>
-                  <Link
+                  <div
                     style={{
                       marginRight: 12,
                       display: "flex",
@@ -189,7 +212,7 @@ const Header = () => {
                     ) : (
                       <IoIosAdd onClick={handleClickModalProducts} size={20} />
                     )}
-                  </Link>
+                  </div>
                 </div>
               </li>
               <div
@@ -219,15 +242,23 @@ const Header = () => {
 
               <li className="item__modal">
                 <PiDotOutlineFill size={30} color="#05c3ff" />
-                <Link to="/news" className="item__modal-link">
+                <NavLink
+                  style={navLinkStyle}
+                  to="/news"
+                  className="item__modal-link"
+                >
                   Tin tức
-                </Link>
+                </NavLink>
               </li>
               <li className="item__modal">
                 <PiDotOutlineFill size={30} color="#05c3ff" />
-                <Link to="/contact" className="item__modal-link">
+                <NavLink
+                  style={navLinkStyle}
+                  to="/contact"
+                  className="item__modal-link"
+                >
                   Liên hệ
-                </Link>
+                </NavLink>
               </li>
             </div>
           </ul>

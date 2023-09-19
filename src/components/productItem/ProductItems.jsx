@@ -20,7 +20,7 @@ const ProductItems = ({ item, numColumn }) => {
         >
           <img
             src={item.imageColor[0].image}
-            alt=""
+            alt={item.name}
             className="list__watch--image"
           />
         </Link>

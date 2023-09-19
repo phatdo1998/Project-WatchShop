@@ -101,6 +101,7 @@
   font-size: 15px;
   font-weight: 700;
   color: $primary-color;
+  @include truncate-multiline-new(1);
 
   @include mobile {
     font-size: 14px;

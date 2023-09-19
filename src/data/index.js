@@ -1081,4 +1081,10 @@ export const slides = [
   {
     image: "/images/banner3.jpg",
   },
+  {
+    image: "/images/banner4.jpg",
+  },
+  {
+    image: "/images/banner5.jpg",
+  },
 ];

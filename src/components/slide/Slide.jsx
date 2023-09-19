@@ -48,9 +48,9 @@ const Slide = () => {
         {slides.map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              <a className="wrapper__slide-img" href="/">
-                <img src={item.image} alt="" className="slide__img" />
-              </a>
+              <div className="wrapper__slide-img">
+                <img src={item.image} alt="slide" className="slide__image" />
+              </div>
             </SwiperSlide>
           );
         })}

@@ -53,5 +53,6 @@
     font-weight: 700;
     color: $primary-color;
     font-size: 14px;
+    @include truncate-multiline-new(1);
   }
 }
