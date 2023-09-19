@@ -1073,3 +1073,12 @@ export const news = [
       "Bạn cũng sẽ kết nối với bác sĩ của mình một cách liên tục và được đánh giá tình trạng sức khỏe một cách thường xuyên hơn.",
   },
 ];
+
+export const slides = [
+  {
+    image: "/images/banner2.jpg",
+  },
+  {
+    image: "/images/banner3.jpg",
+  },
+];

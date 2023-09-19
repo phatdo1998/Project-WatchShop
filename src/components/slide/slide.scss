@@ -1,7 +1,13 @@
 @use "../../scss/" as *;
 
 .container {
-  .slide__img {
-    object-fit: contain;
+  margin-bottom: 40px;
+  .wrapper__slide-img {
+    @include flex(center, center);
+    .slide__img {
+      object-fit: cover;
+      width: 95%;
+      height: 100%;
+    }
   }
 }
