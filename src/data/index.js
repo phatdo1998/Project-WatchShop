@@ -396,12 +396,12 @@ const products = [
         qty: 1,
         imageColor: [
           {
-            image: "/images/samsung-galaxy-watch6-44mm-lte-den-2.jpg",
-            color: color.black,
-          },
-          {
             image: "/images/samsung-galaxy-watch6-44mm-bac-1.jpg",
             color: color.cream,
+          },
+          {
+            image: "/images/samsung-galaxy-watch6-44mm-lte-den-2.jpg",
+            color: color.black,
           },
         ],
         color: ["trắng", "đen", "xanh"],
@@ -968,12 +968,12 @@ export const sellingProducts = [
     qty: 1,
     imageColor: [
       {
-        image: "/images/samsung-galaxy-watch6-44mm-lte-den-2.jpg",
-        color: color.black,
-      },
-      {
         image: "/images/samsung-galaxy-watch6-44mm-bac-1.jpg",
         color: color.cream,
+      },
+      {
+        image: "/images/samsung-galaxy-watch6-44mm-lte-den-2.jpg",
+        color: color.black,
       },
     ],
     color: ["trắng", "đen", "xanh"],
