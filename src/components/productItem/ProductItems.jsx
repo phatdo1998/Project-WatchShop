@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./productItems.scss";
 import { Link } from "react-router-dom";
 
 const ProductItems = ({ item, numColumn }) => {
-  const [data, setData] = useState();
   const handleClick = () => {
     window.scrollTo(0, 0);
   };
-
-  useEffect(() => {
-    item.imageColor.map((item) => setData(item.image));
-  }, [item.imageColor]);
-
   return (
     <div
       className={`wrapper__list-watch-item ${
@@ -24,7 +18,11 @@ const ProductItems = ({ item, numColumn }) => {
           to={`/detail/${item.id}`}
           className="list__watch--wrapper-image"
         >
-          <img src={data} alt="" className="list__watch--image" />
+          <img
+            src={item.imageColor[0].image}
+            alt=""
+            className="list__watch--image"
+          />
         </Link>
         <div className="list__watch--name">
           <Link

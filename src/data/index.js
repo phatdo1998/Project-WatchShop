@@ -32,7 +32,6 @@ const products = [
             image: "/images/apple-watch-se-2022-44mm-den_preview_rev_1.png",
             color: color.darkBlue,
           },
-
           {
             image: "/images/apple-watch-se-2022-44mm-trang_preview_rev_1.png",
             color: color.white,
@@ -56,14 +55,13 @@ const products = [
             color: color.white,
           },
           {
+            image: "/images/apple-watch-se-2022-40mm-den-xanh-1.jpg",
+            color: color.darkBlue,
+          },
+          {
             image:
               "/images/apple-watch-se-2022-40mm-day-silicone-trang-kem-1.jpg",
             color: color.cream,
-          },
-
-          {
-            image: "/images/apple-watch-se-2022-40mm-den-xanh-1.jpg",
-            color: color.darkBlue,
           },
         ],
         color: ["trắng", "đen", "xanh"],
@@ -80,9 +78,14 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            image: "/images/apple-watch-s8-41mm-do-1.jpg",
+            color: color.red,
+          },
+          {
             image: "/images/apple-watch-s8-41mm-trang-1.jpg",
             color: color.white,
           },
+
           {
             image: "/images/apple-watch-s8-41mm-trang-kem-1.jpg",
             color: color.cream,
@@ -91,10 +94,6 @@ const products = [
           {
             image: "/images/apple-watch-s8-41mm-den-xanh-1.jpg",
             color: color.darkBlue,
-          },
-          {
-            image: "/images/apple-watch-s8-41mm-do-1.jpg",
-            color: color.red,
           },
         ],
         color: ["trắng", "đen", "xanh"],
@@ -111,6 +110,11 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            image:
+              "/images/apple-watch-s8-gps-45mm-day-silicone-den-xanh-1.jpg",
+            color: color.darkBlue,
+          },
+          {
             image: "/images/apple-watch-s8-gps-45mm-day-silicone-trang-1-1.jpg",
             color: color.white,
           },
@@ -118,12 +122,6 @@ const products = [
             image:
               "/images/dong-ho-thong-minh-apple-watch-s8-trang-starlight-4.jpg",
             color: color.cream,
-          },
-
-          {
-            image:
-              "/images/apple-watch-s8-gps-45mm-day-silicone-den-xanh-1.jpg",
-            color: color.darkBlue,
           },
         ],
         color: ["trắng", "đen", "xanh"],
@@ -626,6 +624,10 @@ export const newProduct = [
     qty: 1,
     imageColor: [
       {
+        image: "/images/apple-watch-s8-41mm-do-1.jpg",
+        color: color.red,
+      },
+      {
         image: "/images/apple-watch-s8-41mm-trang-1.jpg",
         color: color.white,
       },
@@ -637,10 +639,6 @@ export const newProduct = [
       {
         image: "/images/apple-watch-s8-41mm-den-xanh-1.jpg",
         color: color.darkBlue,
-      },
-      {
-        image: "/images/apple-watch-s8-41mm-do-1.jpg",
-        color: color.red,
       },
     ],
     color: ["trắng", "đen", "xanh"],
@@ -657,17 +655,17 @@ export const newProduct = [
     qty: 1,
     imageColor: [
       {
-        image: "/images/apple-watch-s8-gps-45mm-day-silicone-trang-1-1.jpg",
-        color: color.white,
+        image:
+          "/images/dong-ho-thong-minh-apple-watch-s8-trang-starlight-4.jpg",
+        color: color.cream,
       },
       {
         image: "/images/apple-watch-s8-gps-45mm-day-silicone-den-xanh-1.jpg",
         color: color.darkBlue,
       },
       {
-        image:
-          "/images/dong-ho-thong-minh-apple-watch-s8-trang-starlight-4.jpg",
-        color: color.cream,
+        image: "/images/apple-watch-s8-gps-45mm-day-silicone-trang-1-1.jpg",
+        color: color.white,
       },
     ],
     color: ["trắng", "đen", "xanh"],
@@ -757,12 +755,12 @@ export const newProduct = [
     qty: 1,
     imageColor: [
       {
-        image: "/images/samsung-galaxy-watch6-44mm-lte-den-2.jpg",
-        color: color.black,
-      },
-      {
         image: "/images/samsung-galaxy-watch6-44mm-bac-1.jpg",
         color: color.cream,
+      },
+      {
+        image: "/images/samsung-galaxy-watch6-44mm-lte-den-2.jpg",
+        color: color.black,
       },
     ],
     color: ["trắng", "đen", "xanh"],

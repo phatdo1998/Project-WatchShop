@@ -106,13 +106,12 @@ const ShipmentDetails = () => {
                     dispatch(addEmail(values.email));
                     dispatch(addAddress(values.address));
                     dispatch(addPhone(values.phone));
-
                     setStep(2);
+                    console.log("click");
                   }}
                 >
                   {({
                     handleChange,
-                    handleBlur,
                     handleSubmit,
                     values,
                     isValid,
