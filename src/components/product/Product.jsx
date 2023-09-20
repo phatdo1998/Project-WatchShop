@@ -114,13 +114,13 @@ const Product = () => {
                     slidesPerView: 3,
                   },
                   [breakpoints.lg]: {
-                    slidesPerView: 2,
+                    slidesPerView: 3,
                   },
                   [breakpoints.md]: {
                     slidesPerView: 2,
                   },
                   [breakpoints.sm]: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                   },
                 }}
                 autoplay={{
@@ -177,13 +177,13 @@ const Product = () => {
                       slidesPerView: 3,
                     },
                     [breakpoints.lg]: {
-                      slidesPerView: 2,
+                      slidesPerView: 3,
                     },
                     [breakpoints.md]: {
                       slidesPerView: 2,
                     },
                     [breakpoints.sm]: {
-                      slidesPerView: 3,
+                      slidesPerView: 2,
                     },
                   }}
                   autoplay={{

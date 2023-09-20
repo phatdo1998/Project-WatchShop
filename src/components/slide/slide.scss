@@ -1,7 +1,6 @@
 @use "../../scss/" as *;
 
 .container {
-  margin-bottom: 40px;
   .wrapper__slide-img {
     @include flex(center, center);
     cursor: pointer;

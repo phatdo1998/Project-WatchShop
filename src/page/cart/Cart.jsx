@@ -18,6 +18,10 @@ const Cart = () => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
 
+  const totalQty = cart.reduce((init, total) => {
+    return (init += total.qty);
+  }, 0);
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -64,7 +68,7 @@ const Cart = () => {
                   <div className="wrapper__title">
                     Bạn đang có{" "}
                     <span style={{ fontWeight: 700, marginRight: 3 }}>
-                      {cart.length} sản phẩm
+                      {totalQty} sản phẩm
                     </span>
                     trong giỏ hàng
                   </div>

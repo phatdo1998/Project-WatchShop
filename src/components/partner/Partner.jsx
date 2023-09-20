@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/swiper-bundle.css";
 import Heding from "../heading/Heding";
 import { brand } from "../../data";
+import { Autoplay } from "swiper/modules";
 
 const Partner = () => {
   const breakpoints = {
@@ -27,25 +28,27 @@ const Partner = () => {
         </div>
         <div className="brand">
           <Swiper
-            autoplay={{ delay: 5000 }}
             breakpoints={{
               [breakpoints.xxl]: {
-                slidesPerView: 6,
+                slidesPerView: 3,
               },
               [breakpoints.xl]: {
                 slidesPerView: 3,
               },
+              [breakpoints.lg]: {
+                slidesPerView: 3,
+              },
               [breakpoints.md]: {
-                slidesPerView: 4,
+                slidesPerView: 2,
               },
               [breakpoints.sm]: {
                 slidesPerView: 2,
               },
-              [breakpoints.sx]: {
-                slidesPerView: 2,
-              },
             }}
-            spaceBetween={30}
+            autoplay={{
+              delay: 5000,
+            }}
+            modules={[Autoplay]}
           >
             {brand.map((item, index) => {
               return (

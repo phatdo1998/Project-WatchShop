@@ -16,7 +16,7 @@ const Slide = () => {
   };
 
   return (
-    <div className="container ">
+    <div className="container">
       <Swiper
         breakpoints={{
           [breakpoints.xxl]: {

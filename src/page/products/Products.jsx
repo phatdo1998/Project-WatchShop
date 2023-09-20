@@ -18,6 +18,7 @@ const Products = () => {
   const [searchParams] = useSearchParams();
   const [sellingProducts, setSellingProducts] = useState();
   const [loading, setLoading] = useState(true);
+  const [loadingProducts, setLoadingProducts] = useState(false);
 
   const category = String(searchParams.get("category") || "all");
 
@@ -25,14 +26,7 @@ const Products = () => {
     const fetchApi = async () => {
       const respone = await getProductByCategory(category);
       setProductsSelling(respone[0]?.items);
-
-      setLoading(true);
-
-      setTimeout(() => {
-        setLoading(false);
-      }, 500);
     };
-
     fetchApi();
   }, [category]);
 
@@ -46,10 +40,19 @@ const Products = () => {
   }, []);
 
   useEffect(() => {
+    setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 500);
-  }, [loading]);
+  }, []);
+
+  useEffect(() => {
+    setLoadingProducts(true);
+
+    setTimeout(() => {
+      setLoadingProducts(false);
+    }, 500);
+  }, [category]);
 
   return (
     <div className="wrapper__products-container">
@@ -103,11 +106,17 @@ const Products = () => {
               <div className="products__list">
                 <div className="products__list-heading">Sản phẩm</div>
                 <div className="products__list-item">
-                  {productsSelling?.map((item, index) => {
-                    return (
-                      <ProductItems key={index} item={item} numColumn={3} />
-                    );
-                  })}
+                  {loadingProducts ? (
+                    <div className="wrapper__loading-products">
+                      <Spin />
+                    </div>
+                  ) : (
+                    productsSelling?.map((item, index) => {
+                      return (
+                        <ProductItems key={index} item={item} numColumn={3} />
+                      );
+                    })
+                  )}
                 </div>
                 {/* <Pagination
               count={Math.ceil(productsSelling?.length / 6)}
