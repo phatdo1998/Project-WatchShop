@@ -38,7 +38,9 @@ const ShipmentDetails = () => {
     phone: Yup.string()
       .required("Bạn chưa nhập số điện thoại")
       .min(10, ({ min }) => `Vui lòng nhập ít nhất ${min} số`)
-      .max(11, ({ max }) => `Vui lòng nhập ít hơn ${max} số`),
+      .max(11, ({ max }) => `Vui lòng nhập ít hơn ${max} số`)
+      .matches(/^[0-9]+$/, "Vui lòng chỉ nhập số")
+      .typeError("vui lòng nhập số"),
     address: Yup.string().required("Bạn chưa nhập địa chỉ"),
   });
 
@@ -191,7 +193,8 @@ const ShipmentDetails = () => {
                           name="email"
                         />
                         <input
-                          type="number"
+                          type="text"
+                          inputMode="numeric"
                           placeholder="Số điện thoại"
                           className="input__phone"
                           onChange={handleChange("phone")}
