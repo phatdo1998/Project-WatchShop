@@ -6,29 +6,36 @@
 
 .container__slide {
   margin-top: 15px;
+  margin-bottom: 40px;
 
   @include tablet {
     margin-top: 65px;
+    margin-bottom: 30px;
   }
 
   @include smallTablet {
     margin-top: 65px;
+    margin-bottom: 30px;
   }
 
   @include bigMobile {
     margin-top: 45px;
+    margin-bottom: 20px;
   }
 
   @include mobile {
     margin-top: 50px;
+    margin-bottom: 20px;
   }
 
   @include mediumMobile {
     margin-top: 35px;
+    margin-bottom: 15px;
   }
 
   @include smallMobile {
     margin-top: 35px;
+    margin-bottom: 15px;
   }
 }
 

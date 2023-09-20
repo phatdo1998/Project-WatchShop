@@ -80,7 +80,7 @@ const Header = () => {
           <div className="search">
             <ImSearch size={20} />
 
-            <div className="search__text active">tìm kiếm</div>
+            <div className="search__text active">Tìm kiếm</div>
             <form className="search__input" onSubmit={handleSubmit}>
               <input
                 value={searchText}
@@ -97,7 +97,7 @@ const Header = () => {
 
           <NavLink style={navLinkStyle} to="/cart" className="cart">
             <AiOutlineShoppingCart size={22} />
-            <div className="cart__text">giỏ hàng ({cart.length})</div>
+            <div className="cart__text">Giỏ hàng ({cart.length})</div>
           </NavLink>
         </div>
       </div>
@@ -223,7 +223,13 @@ const Header = () => {
                 {openModalProducts &&
                   products?.map((item, index) => {
                     return (
-                      <li key={index} className={`item__modal products `}>
+                      <li
+                        onClick={() => {
+                          setModalIsOpen(false);
+                        }}
+                        key={index}
+                        className={`item__modal products `}
+                      >
                         <PiDotOutlineFill size={30} color={"#f61900"} />
                         <Link
                           to={{

@@ -59,7 +59,17 @@
     margin-top: 70px;
 
     @include mobile {
-      margin: 40px 15px 0 15px;
+      padding: 40px 15px 0 15px;
+      margin: 0;
+    }
+    @include mediumMobile {
+      padding: 20px 10px 0 10px;
+      margin: 0;
+    }
+
+    @include smallMobile {
+      padding: 30px 10px 0 10px;
+      margin: 0;
     }
 
     .slide__wrapper {
@@ -73,6 +83,7 @@
       @include tablet {
       }
       @include mobile {
+        margin-right: 20px;
       }
     }
     .slide__img {

@@ -3,6 +3,12 @@
 .wrapper__products-container {
   width: 100%;
 
+  .wrapper__loading-products {
+    @include flex(center, center);
+    width: 70vw;
+    height: 100vh;
+  }
+
   .wrapper__icon-modal {
     display: none;
     position: absolute;
