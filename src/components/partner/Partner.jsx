@@ -27,6 +27,7 @@ const Partner = () => {
         </div>
         <div className="brand">
           <Swiper
+            autoplay={{ delay: 5000 }}
             breakpoints={{
               [breakpoints.xxl]: {
                 slidesPerView: 6,
@@ -57,7 +58,6 @@ const Partner = () => {
         </div>
       </div>
     </div>
-    // </div>
   );
 };
 
