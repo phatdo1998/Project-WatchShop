@@ -38,10 +38,7 @@ const Slide = () => {
             slidesPerView: 1,
           },
         }}
-        autoplay={{
-          delay: 3000,
-        }}
-        slidesPerView={2}
+        slidesPerView={"auto"}
         modules={[Navigation, Autoplay, EffectCoverflow]}
         effect="coverflow"
       >
