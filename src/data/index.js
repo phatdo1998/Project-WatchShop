@@ -1114,7 +1114,4 @@ export const brand = [
   {
     image: "/images/logo-q&q.jpg",
   },
-  {
-    image: "/images/logo-titan.jpg",
-  },
 ];

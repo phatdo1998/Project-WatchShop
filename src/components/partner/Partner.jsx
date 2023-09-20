@@ -7,6 +7,8 @@ import Heding from "../heading/Heding";
 import { brand } from "../../data";
 import { Autoplay } from "swiper/modules";
 
+import "swiper/css";
+
 const Partner = () => {
   const breakpoints = {
     sx: 320,
@@ -44,11 +46,15 @@ const Partner = () => {
               [breakpoints.sm]: {
                 slidesPerView: 2,
               },
+              [breakpoints.sm]: {
+                slidesPerView: 2,
+              },
             }}
             autoplay={{
               delay: 5000,
             }}
             modules={[Autoplay]}
+            slidesPerView={"auto"}
           >
             {brand.map((item, index) => {
               return (

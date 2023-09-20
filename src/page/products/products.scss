@@ -7,6 +7,34 @@
     @include flex(center, center);
     width: 70vw;
     height: 100vh;
+
+    @include tablet {
+      height: 50vh;
+      width: 60vw;
+    }
+
+    @include smallTablet {
+      height: 50vh;
+      width: 90vw;
+    }
+
+    @include bigMobile {
+      height: 50vh;
+      width: 90vw;
+    }
+
+    @include mobile {
+      height: 50vh;
+      width: 90vw;
+    }
+    @include mediumMobile {
+      height: 50vh;
+      width: 90vw;
+    }
+    @include smallMobile {
+      height: 50vh;
+      width: 90vw;
+    }
   }
 
   .wrapper__icon-modal {
