@@ -5,22 +5,27 @@
   margin-bottom: 40px;
   @include flex(center, center);
 
+  @include smallTablet {
+    margin-top: 50px;
+  }
+
   @include bigMobile {
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 30px;
   }
 
   @include mobile {
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 10px;
   }
 
   @include mediumMobile {
+    margin-top: 20px;
     margin-bottom: 10px;
   }
   @include smallMobile {
-    width: 100%;
     margin-bottom: 20px;
+    margin-top: 20px;
   }
 
   &-item {

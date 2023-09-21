@@ -33,13 +33,18 @@ const ShipmentDetails = () => {
   const dispatch = useDispatch();
 
   const shipmentValidationScheme = Yup.object().shape({
-    email: Yup.string().email("Email Invalid").required("Bạn chưa nhập Email"),
+    email: Yup.string()
+      .matches(/^\S+@\S+\.\S+$/, "Email không hợp lệ")
+      .required("Bạn chưa nhập Email"),
     name: Yup.string().required("Bạn chưa nhập họ tên"),
     phone: Yup.string()
       .required("Bạn chưa nhập số điện thoại")
       .min(10, ({ min }) => `Vui lòng nhập ít nhất ${min} số`)
       .max(11, ({ max }) => `Vui lòng nhập ít hơn ${max} số`)
-      .matches(/^[0-9]+$/, "Vui lòng chỉ nhập số")
+      .matches(
+        /(84|0[3|5|7|8|9])+([0-9]{8})\b/g,
+        "Vui lòng nhập số điện thoại hợp lệ"
+      )
       .typeError("vui lòng nhập số"),
     address: Yup.string().required("Bạn chưa nhập địa chỉ"),
   });
