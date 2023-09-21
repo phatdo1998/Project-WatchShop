@@ -25,7 +25,7 @@ const SlideWatch = ({ name, price, item, id }) => {
           <Link
             onClick={handleClick}
             to={`/detail/${id}`}
-            className=""
+            className="slide__name"
             title={name}
           >
             {name}

@@ -18,7 +18,7 @@
 
   .list__slide-image {
     height: 100%;
-    width: 80%;
+    width: 100%;
     object-fit: contain;
     margin: 10px 0;
 
@@ -39,14 +39,35 @@
   }
 
   .wrapper__slide-name {
-    font-weight: 600;
-    margin-bottom: 10px;
-    @include truncate-multiline-new(2);
-    height: 48px;
+    .slide__name {
+      font-weight: 600;
+      margin-bottom: 10px;
+      @include truncate-multiline-new(2);
+      font-size: 14px;
+      height: 42px;
 
-    @include mobile {
-      font-size: 12px;
-      margin: 0 0 10px 0;
+      @include smallTablet {
+        height: auto;
+      }
+
+      @include bigMobile {
+        font-size: 12px;
+        height: auto;
+      }
+
+      @include mobile {
+        font-size: 12px;
+        height: auto;
+      }
+      @include mediumMobile {
+        font-size: 12px;
+        height: auto;
+      }
+
+      @include smallMobile {
+        font-size: 12px;
+        height: auto;
+      }
     }
   }
 
