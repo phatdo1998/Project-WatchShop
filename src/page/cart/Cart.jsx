@@ -106,19 +106,19 @@ const Cart = () => {
                             {cartPriceTotal.toLocaleString()}đ
                           </div>
                           <div className="wrapper__cart-icon">
-                            <div className="cart__remove">
+                            <button className="cart__remove">
                               <IoIosRemove
                                 size={20}
                                 onClick={() => handleDecrement(item.id)}
                               />
-                            </div>
+                            </button>
                             <div className="cart__qty">{item.qty}</div>
-                            <div className="cart__add">
+                            <button className="cart__add">
                               <IoIosAdd
                                 size={20}
                                 onClick={() => handleIncreasement(item.id)}
                               />
-                            </div>
+                            </button>
                           </div>
                         </div>
                       </div>

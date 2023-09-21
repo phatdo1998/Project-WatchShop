@@ -12,6 +12,7 @@ import SlideWatch from "../slideWatch/SlideWatch";
 import "./product.scss";
 import { Link } from "react-router-dom";
 import { Spin } from "antd";
+import LazyLoad from "react-lazy-load";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -69,11 +70,13 @@ const Product = () => {
                     selected === index ? "active" : "inactive"
                   }`}
                 >
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="watch__img"
-                  />
+                  <LazyLoad>
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="watch__img"
+                    />
+                  </LazyLoad>
                   <div className="watch__name">{item.name}</div>
                 </a>
               </div>

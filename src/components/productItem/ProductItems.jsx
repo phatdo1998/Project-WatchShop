@@ -1,6 +1,7 @@
 import React from "react";
 import "./productItems.scss";
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazy-load";
 
 const ProductItems = ({ item, numColumn }) => {
   const handleClick = () => {
@@ -18,11 +19,13 @@ const ProductItems = ({ item, numColumn }) => {
           to={`/detail/${item.id}`}
           className="list__watch--wrapper-image"
         >
-          <img
-            src={item.imageColor[0].image}
-            alt={item.name}
-            className="list__watch--image"
-          />
+          <LazyLoad>
+            <img
+              src={item.imageColor[0].image}
+              alt={item.name}
+              className="list__watch--image"
+            />
+          </LazyLoad>
         </Link>
         <div className="list__watch--name">
           <Link
