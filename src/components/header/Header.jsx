@@ -20,6 +20,10 @@ const Header = () => {
   const [openModalProducts, setOpenModalProducts] = useState(false);
   const navigate = useNavigate();
 
+  const totalQty = cart.reduce((init, total) => {
+    return (init += total.qty);
+  }, 0);
+
   const navLinkStyle = ({ isActive }) => {
     return {
       color: isActive ? "#05c3ff" : "",
@@ -97,7 +101,7 @@ const Header = () => {
 
           <NavLink style={navLinkStyle} to="/cart" className="cart">
             <AiOutlineShoppingCart size={22} />
-            <div className="cart__text">Giỏ hàng ({cart.length})</div>
+            <div className="cart__text">Giỏ hàng ({totalQty})</div>
           </NavLink>
         </div>
       </div>
