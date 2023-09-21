@@ -4,7 +4,6 @@ import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { slides } from "../../data";
 import { EffectCoverflow } from "swiper/modules";
-import LazyLoad from "react-lazy-load";
 
 const Slide = () => {
   const breakpoints = {
@@ -47,9 +46,7 @@ const Slide = () => {
           return (
             <SwiperSlide key={index}>
               <div className="wrapper__slide-img">
-                <LazyLoad>
-                  <img src={item.image} alt="slide" className="slide__image" />
-                </LazyLoad>
+                <img src={item.image} alt="slide" className="slide__image" />
               </div>
             </SwiperSlide>
           );

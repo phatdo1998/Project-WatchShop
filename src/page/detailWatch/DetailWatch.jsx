@@ -8,14 +8,14 @@ import { getProductById, newProduct } from "../../data";
 import ProductItems from "../../components/productItem/ProductItems";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
-import { v4 as uuidv4 } from "uuid";
 import { Spin } from "antd";
 
 const DetailWatch = () => {
   const { id } = useParams();
   const [detailProducts, setDetailProducts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [colorSelected, setColorSelected] = useState();
+  const [colorSelected, setColorSelected] = useState({});
+  const [bgSelected, setBgSelected] = useState(0);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,8 +24,8 @@ const DetailWatch = () => {
       const response = await getProductById(id);
       setDetailProducts(response);
       setColorSelected({
-        color: response[0]?.color[0],
         image: response[0]?.imageColor[0]?.image,
+        id: response[0].imageColor[0].id,
       });
       setLoading(false);
     };
@@ -37,8 +37,8 @@ const DetailWatch = () => {
     dispatch(
       addToCart({
         ...item,
-        image: colorSelected,
-        id: uuidv4(),
+        image: colorSelected.image,
+        id: colorSelected.id,
       })
     );
   };
@@ -80,24 +80,25 @@ const DetailWatch = () => {
                           {item.description}
                         </span>
                         <div className="wrapper__watch-color">
-                          {item.imageColor.map(({ color, image }, index) => {
-                            return (
-                              <div
-                                style={{
-                                  backgroundColor: color,
-                                }}
-                                onClick={() => {
-                                  setColorSelected({ color, image });
-                                }}
-                                key={index}
-                                className={`watch__color ${
-                                  color.toLowerCase() ===
-                                    colorSelected.color.toLowerCase() &&
-                                  "active"
-                                }`}
-                              ></div>
-                            );
-                          })}
+                          {item.imageColor.map(
+                            ({ id, image, color }, index) => {
+                              return (
+                                <div
+                                  style={{
+                                    backgroundColor: color,
+                                  }}
+                                  onClick={() => {
+                                    setColorSelected({ id, image, color });
+                                    setBgSelected(index);
+                                  }}
+                                  key={index}
+                                  className={`watch__color ${
+                                    bgSelected === index ? "active" : ""
+                                  }`}
+                                ></div>
+                              );
+                            }
+                          )}
                         </div>
 
                         <div className="wrapper__detail-cart">
@@ -107,7 +108,9 @@ const DetailWatch = () => {
                                 onClick={() =>
                                   handleAddToCart(
                                     item,
-                                    item.imageColor.map((colors) => colors)
+                                    item.imageColor.flatMap(
+                                      (idProductsImage) => idProductsImage.id
+                                    )
                                   )
                                 }
                                 to="/cart"
