@@ -4,6 +4,7 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { news } from "../../data/index";
 import { Spin } from "antd";
+import LazyLoad from "react-lazy-load";
 
 const News = () => {
   const [loading, setLoading] = useState(true);
@@ -33,11 +34,13 @@ const News = () => {
                     return (
                       <div key={index} className="wrapper__content-item">
                         <div className="news-date">{item.time}</div>
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="news__img"
-                        />
+                        <LazyLoad>
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="news__img"
+                          />
+                        </LazyLoad>
                         <div className="wrapper__item">
                           <div className="news__title">{item.name}</div>
                           <div className="news__description">

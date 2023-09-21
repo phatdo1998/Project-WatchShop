@@ -1,6 +1,7 @@
 import React from "react";
 import "./slideWatch.scss";
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazy-load";
 
 const SlideWatch = ({ name, price, item, id }) => {
   const handleClick = () => {
@@ -15,11 +16,13 @@ const SlideWatch = ({ name, price, item, id }) => {
           to={`/detail/${id}`}
           className="wrapper__slide-link"
         >
-          <img
-            src={item.imageColor[0].image}
-            alt={item.name}
-            className="list__slide-image"
-          />
+          <LazyLoad>
+            <img
+              src={item.imageColor[0].image}
+              alt={item.name}
+              className="list__slide-image"
+            />
+          </LazyLoad>
         </Link>
         <div className="wrapper__slide-name">
           <Link

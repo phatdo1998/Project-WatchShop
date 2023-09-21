@@ -6,6 +6,7 @@ import "swiper/swiper-bundle.css";
 import Heding from "../heading/Heding";
 import { brand } from "../../data";
 import { Autoplay } from "swiper/modules";
+import LazyLoad from "react-lazy-load";
 
 import "swiper/css";
 
@@ -59,7 +60,9 @@ const Partner = () => {
             {brand.map((item, index) => {
               return (
                 <SwiperSlide key={index} className="slide__wrapper">
-                  <img src={item.image} alt={item} className="slide__img" />
+                  <LazyLoad>
+                    <img src={item.image} alt={item} className="slide__img" />
+                  </LazyLoad>
                 </SwiperSlide>
               );
             })}

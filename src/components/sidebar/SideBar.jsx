@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./sidebar.scss";
 import { Link, useSearchParams } from "react-router-dom";
 import { getProducts } from "../../data";
+import LazyLoad from "react-lazy-load";
 
 const SideBar = ({ data, type }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -56,11 +57,13 @@ const SideBar = ({ data, type }) => {
               key={index}
               className="wrapper__selling-item"
             >
-              <img
-                src={item.imageColor[0].image}
-                alt=""
-                className="selling__image"
-              />
+              <LazyLoad>
+                <img
+                  src={item.imageColor[0].image}
+                  alt=""
+                  className="selling__image"
+                />
+              </LazyLoad>
               <div className="selling__item">
                 <div className="products__name">{item.name}</div>
                 <div className="products__price">
