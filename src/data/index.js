@@ -101,7 +101,7 @@ const products = [
           },
 
           {
-            id: 42,
+            id: 43,
             image: "/images/apple-watch-s8-41mm-den-xanh-1.jpg",
             color: color.darkBlue,
           },
