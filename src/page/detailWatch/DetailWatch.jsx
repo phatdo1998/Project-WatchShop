@@ -65,7 +65,7 @@ const DetailWatch = () => {
                         <img
                           src={colorSelected.image}
                           alt={item.name}
-                          className=""
+                          className="detail__image"
                         />
                       </div>
                     </div>

@@ -129,6 +129,10 @@
         }
       }
 
+      .detail__image {
+        width: 100%;
+      }
+
       .wrapper__detail-watch {
         flex: 1;
         @include flex(center, center);
