@@ -704,6 +704,12 @@
         }
       }
 
+      .wrapper__news-link {
+        .list__news-image {
+          width: 100%;
+        }
+      }
+
       .wrapper__news-link:hover .list__news-image {
         transform: scale(1.1);
         transition: all 0.5s ease;

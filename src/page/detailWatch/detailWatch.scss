@@ -157,8 +157,7 @@
             border-radius: 30%;
 
             &.active {
-              background-color: $blue-color;
-              color: #fff;
+              border: 2px solid $primary-color;
             }
           }
         }

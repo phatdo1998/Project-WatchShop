@@ -89,7 +89,7 @@ const Cart = () => {
                               <IoMdRemove color="white" />
                             </div>
                             <img
-                              src={item.image.image}
+                              src={item.image}
                               alt={item.name}
                               className="cart__img"
                             />

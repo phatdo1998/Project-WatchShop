@@ -5,8 +5,9 @@
 
   .wrapper__loading-products {
     @include flex(center, center);
-    width: 70vw;
+    width: 50vw;
     height: 100vh;
+    margin-left: 10%;
 
     @include tablet {
       height: 50vh;
@@ -192,7 +193,7 @@
       width: 1170px;
       height: 100%;
       @include flex(unset, center);
-      gap: 30px;
+      gap: 20px;
       margin-top: 40px;
 
       .wrapper__sidebar-content {

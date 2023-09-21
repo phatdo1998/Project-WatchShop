@@ -374,13 +374,12 @@ const ShipmentDetails = () => {
             <div className="wrapper__product-shipment">
               {cart.map((item, index) => {
                 const priceTotal = item.price * item.qty;
-
                 return (
                   <div key={index} className="shipment__item">
                     <div className="wrapper__item-product">
                       <div className="item__qty">{item.qty}</div>
                       <img
-                        src={item.imageColor[0].image}
+                        src={item.image}
                         alt={item.name}
                         className="shipment__img"
                       />

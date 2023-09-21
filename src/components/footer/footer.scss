@@ -25,13 +25,12 @@
 
   @include mediumMobile {
     @include flex(center, unset);
-    padding: 0 10px;
-    margin-top: 10px;
+    padding: 15px;
   }
 
   @include smallMobile {
     @include flex(center, unset);
-    padding: 0 10px;
+    padding: 15px;
     margin-top: 15px;
   }
 
@@ -52,10 +51,6 @@
     @include mobile {
       font-size: 14px;
       margin-top: 10px;
-    }
-
-    @include mediumMobile {
-      margin-top: 15px;
     }
   }
   .contact {

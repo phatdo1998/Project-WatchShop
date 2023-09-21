@@ -29,10 +29,13 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 84,
             image: "/images/apple-watch-se-2022-44mm-den_preview_rev_1.png",
             color: color.darkBlue,
           },
           {
+            id: 85,
+
             image: "/images/apple-watch-se-2022-44mm-trang_preview_rev_1.png",
             color: color.white,
           },
@@ -51,14 +54,17 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 37,
             image: "/images/apple-watch-se-2022-40mm-day-silicone-1.jpg",
             color: color.white,
           },
           {
+            id: 38,
             image: "/images/apple-watch-se-2022-40mm-den-xanh-1.jpg",
             color: color.darkBlue,
           },
           {
+            id: 39,
             image:
               "/images/apple-watch-se-2022-40mm-day-silicone-trang-kem-1.jpg",
             color: color.cream,
@@ -78,20 +84,24 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 40,
             image: "/images/apple-watch-s8-41mm-do-1.jpg",
             color: color.red,
           },
           {
+            id: 41,
             image: "/images/apple-watch-s8-41mm-trang-1.jpg",
             color: color.white,
           },
 
           {
+            id: 42,
             image: "/images/apple-watch-s8-41mm-trang-kem-1.jpg",
             color: color.cream,
           },
 
           {
+            id: 42,
             image: "/images/apple-watch-s8-41mm-den-xanh-1.jpg",
             color: color.darkBlue,
           },
@@ -110,15 +120,18 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 44,
             image:
               "/images/apple-watch-s8-gps-45mm-day-silicone-den-xanh-1.jpg",
             color: color.darkBlue,
           },
           {
+            id: 45,
             image: "/images/apple-watch-s8-gps-45mm-day-silicone-trang-1-1.jpg",
             color: color.white,
           },
           {
+            id: 46,
             image:
               "/images/dong-ho-thong-minh-apple-watch-s8-trang-starlight-4.jpg",
             color: color.cream,
@@ -138,6 +151,7 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 47,
             image:
               "/images/apple-watch-s8-gps-45mm-day-silicone-den-xanh-1.jpg",
             color: color.darkBlue,
@@ -157,6 +171,7 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 48,
             image: "/images/apple-watch-ultra-49mm-day-alpine-size-m-cam-1.jpg",
             color: color.orange,
           },
@@ -175,16 +190,19 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 49,
             image: "/images/apple-watch-se-2022-40mm-day-silicone-1.jpg",
             color: color.white,
           },
           {
+            id: 50,
             image:
               "/images/apple-watch-se-2022-40mm-day-silicone-trang-kem-1.jpg",
             color: color.cream,
           },
 
           {
+            id: 51,
             image: "/images/apple-watch-se-2022-40mm-den-xanh-1.jpg",
             color: color.darkBlue,
           },
@@ -203,6 +221,7 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 52,
             image: "/images/apple-watch-se-2022-40mm-den-xanh-1.jpg",
             color: color.darkBlue,
           },
@@ -226,10 +245,12 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 53,
             image: "/images/redmi-watch-3-trang-11.jpg",
             color: color.white,
           },
           {
+            id: 54,
             image: "/images/redmi-watch-3-active-den-1-1.jpg",
             color: color.darkBlue,
           },
@@ -247,10 +268,12 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 55,
             image: "/images/vong-tay-redmi-band-2-trang-1.jpg",
             color: color.white,
           },
           {
+            id: 56,
             image: "/images/vong-tay-redmi-band-2-1.jpg",
             color: color.darkBlue,
           },
@@ -268,10 +291,12 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 57,
             image: "/images/dong-ho-thong-minh-xiaomi-watch-s1-den-1.jpg",
             color: color.black,
           },
           {
+            id: 58,
             image: "/images/dong-ho-thong-minh-xiaomi-watch-s1-nau-1.jpg",
             color: color.brown,
           },
@@ -289,10 +314,12 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 59,
             image: "/images/vong-tay-thong-minh-mi-band-7-pro-trang-1.jpeg",
             color: color.white,
           },
           {
+            id: 60,
             image: "/images/vong-tay-mi-band-7-pro-2.jpg",
             color: color.black,
           },
@@ -310,10 +337,12 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 61,
             image: "/images/redmi-watch-2-lite-2-1.jpg",
             color: color.black,
           },
           {
+            id: 62,
             image: "/images/redmi-watch-2-lite-xanh-duong-1.jpg",
             color: color.blue,
           },
@@ -331,10 +360,12 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 63,
             image: "/images/redmi-watch-3-active-den-1-1.jpg",
             color: color.black,
           },
           {
+            id: 64,
             image: "/images/redmi-watch-3-active-xam-1-1.jpg",
             color: color.gray,
           },
@@ -358,10 +389,12 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 65,
             image: "/images/samsung-galaxy-watch6-classic-47mm-bac-2.jpg",
             color: color.white,
           },
           {
+            id: 66,
             image: "/images/samsung-galaxy-watch6-classic-47mm-den-1.jpg",
             color: color.black,
           },
@@ -379,6 +412,7 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 67,
             image: "/images/samsung-galaxy-watch6-44mm-lte-den-2.jpg",
             color: color.black,
           },
@@ -396,10 +430,12 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 68,
             image: "/images/samsung-galaxy-watch6-44mm-bac-1.jpg",
             color: color.cream,
           },
           {
+            id: 69,
             image: "/images/samsung-galaxy-watch6-44mm-lte-den-2.jpg",
             color: color.black,
           },
@@ -417,10 +453,12 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 70,
             image: "/images/samsung-galaxy-watch6-40-mm-1.jpg",
             color: color.black,
           },
           {
+            id: 71,
             image: "/images/samsung-galaxy-watch6-40mm-vang-1.jpg",
             color: color.yellow,
           },
@@ -438,10 +476,12 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 72,
             image: "/images/samsung-galaxy-watch-5-40-mm-den-1.jpg",
             color: color.black,
           },
           {
+            id: 73,
             image: "/images/samsung-galaxy-watch-5-40-mm-bac-1.jpg",
             color: color.purple,
           },
@@ -459,10 +499,12 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 74,
             image: "/images/samsung-galaxy-watch-5-44-mm-den-1.jpg",
             color: color.black,
           },
           {
+            id: 75,
             image: "/images/samsung-galaxy-watch-5-44-mm-xanh-1-1.jpg",
             color: color.black,
           },
@@ -480,10 +522,12 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 76,
             image: "/images/smartwatch-samsung-galaxy-watch-4-1.jpg",
             color: color.black,
           },
           {
+            id: 77,
             image: "/images/smartwatch-samsung-galaxy-watch-4-vang-hong-1.jpg",
             color: color.yellow,
           },
@@ -501,6 +545,7 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 78,
             image: "/images/sam-sung-galaxy-watch-5-pro-lte-1.jpg",
             color: color.black,
           },
@@ -518,6 +563,7 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 79,
             image: "/images/samsung-galaxy-watch-4-lte-classic-46mm1-org.jpg",
             color: color.black,
           },
@@ -535,10 +581,12 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 80,
             image: "/images/sam-sung-galaxy-watch-5-pro-lte-1.jpg",
             color: color.black,
           },
           {
+            id: 81,
             image: "/images/sam-sung-galaxy-watch-5-pro-xam-1.jpg",
             color: color.gray,
           },
@@ -556,10 +604,12 @@ const products = [
         qty: 1,
         imageColor: [
           {
+            id: 82,
             image: "/images/sam-sung-galaxy-watch-5-pro-xam-1.jpg",
             color: color.gray,
           },
           {
+            id: 83,
             image: "/images/sam-sung-galaxy-watch-5-pro-lte-1.jpg",
             color: color.black,
           },
