@@ -108,6 +108,7 @@ const Cart = () => {
                           <div className="wrapper__cart-icon">
                             <button className="cart__remove">
                               <IoIosRemove
+                                color="black"
                                 size={20}
                                 onClick={() => handleDecrement(item.id)}
                               />
@@ -115,6 +116,7 @@ const Cart = () => {
                             <div className="cart__qty">{item.qty}</div>
                             <button className="cart__add">
                               <IoIosAdd
+                                color="black"
                                 size={20}
                                 onClick={() => handleIncreasement(item.id)}
                               />
