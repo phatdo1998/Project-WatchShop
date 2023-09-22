@@ -95,7 +95,7 @@ const products = [
           },
 
           {
-            id: 42,
+            id: 43,
             image: "/images/apple-watch-s8-41mm-trang-kem-1.jpg",
             color: color.cream,
           },
