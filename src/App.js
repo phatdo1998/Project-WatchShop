@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
-import Home from "./page/Home/Home";
 import DetailWatch from "./page/detailWatch/DetailWatch";
 import Cart from "./page/cart/Cart";
 import ShipmentDetails from "./page/shipmentDetails/ShipmentDetails";
@@ -8,6 +7,7 @@ import Products from "./page/products/Products";
 import Search from "./page/search/Search";
 import Contact from "./page/contact/Contact";
 import News from "./page/news/News";
+import Home from "./page/home/Home";
 
 function App() {
   return (

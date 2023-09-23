@@ -17,7 +17,6 @@ const Products = () => {
   const [openModal, setOpenModal] = useState(false);
   const [searchParams] = useSearchParams();
   const [sellingProducts, setSellingProducts] = useState();
-  const [loading, setLoading] = useState(true);
   const [loadingProducts, setLoadingProducts] = useState(false);
 
   const category = String(searchParams.get("category") || "all");
@@ -40,13 +39,6 @@ const Products = () => {
   }, []);
 
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 500);
-  }, []);
-
-  useEffect(() => {
     setLoadingProducts(true);
 
     setTimeout(() => {
@@ -56,80 +48,64 @@ const Products = () => {
 
   return (
     <div className="wrapper__products-container">
-      {loading ? (
-        <div className="wrapper__loading">
-          <Spin />
-        </div>
-      ) : (
-        <>
+      <div
+        style={{
+          right: openModal ? 230 : 0,
+        }}
+        onClick={() => setOpenModal(!openModal)}
+        className="wrapper__icon-modal"
+      >
+        {openModal ? <AiOutlineClose size={30} color="#fff" /> : <BiMenuAltRight size={30} color="#fff" />}
+      </div>
+      <div className="modal__products">
+        <div
+          style={{
+            visibility: openModal ? "visible" : "hidden",
+          }}
+          onClick={() => setOpenModal(false)}
+          className={`overlay__products `}
+        >
           <div
             style={{
-              right: openModal ? 230 : 0,
+              transform: openModal ? "translateX(0)" : "translateX(230px)",
             }}
-            onClick={() => setOpenModal(!openModal)}
-            className="wrapper__icon-modal"
+            className={`modal__products-content ${openModal ? "modal-in" : "modal-out"}`}
           >
-            {openModal ? (
-              <AiOutlineClose size={30} color="#fff" />
-            ) : (
-              <BiMenuAltRight size={30} color="#fff" />
-            )}
+            <SideBar data={productsSelling} />
           </div>
-          <div className="modal__products">
-            <div
-              style={{
-                visibility: openModal ? "visible" : "hidden",
-              }}
-              onClick={() => setOpenModal(false)}
-              className={`overlay__products `}
-            >
-              <div
-                style={{
-                  transform: openModal ? "translateX(0)" : "translateX(230px)",
-                }}
-                className={`modal__products-content ${
-                  openModal ? "modal-in" : "modal-out"
-                }`}
-              >
-                <SideBar data={productsSelling} />
-              </div>
-            </div>
+        </div>
+      </div>
+      <div className="container__header">
+        <Header />
+      </div>
+      <div className="container__products">
+        <div className="wrapper__products">
+          <div className="wrapper__sidebar-content">
+            <SideBar type={"modal"} data={sellingProducts} />
           </div>
-          <div className="container__header">
-            <Header />
-          </div>
-          <div className="container__products">
-            <div className="wrapper__products">
-              <div className="wrapper__sidebar-content">
-                <SideBar type={"modal"} data={sellingProducts} />
-              </div>
-              <div className="products__list">
-                <div className="products__list-heading">Sản phẩm</div>
-                <div className="products__list-item">
-                  {loadingProducts ? (
-                    <div className="wrapper__loading-products">
-                      <Spin />
-                    </div>
-                  ) : (
-                    productsSelling?.map((item, index) => {
-                      return (
-                        <ProductItems key={index} item={item} numColumn={3} />
-                      );
-                    })
-                  )}
+          <div className="products__list">
+            <div className="products__list-heading">Sản phẩm</div>
+            <div className="products__list-item">
+              {loadingProducts ? (
+                <div className="wrapper__loading-products">
+                  <Spin />
                 </div>
-                {/* <Pagination
+              ) : (
+                productsSelling?.map((item, index) => {
+                  return <ProductItems key={index} item={item} numColumn={3} />;
+                })
+              )}
+            </div>
+            {/* <Pagination
               count={Math.ceil(productsSelling?.length / 6)}
               className="pagination"
             /> */}
-              </div>
-            </div>
           </div>
-          <div>
-            <Footer />
-          </div>
-        </>
-      )}
+        </div>
+      </div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };
