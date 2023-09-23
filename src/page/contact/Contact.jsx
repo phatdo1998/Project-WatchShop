@@ -13,14 +13,16 @@ const Contact = () => {
   const [openModal, setOpenModal] = useState(false);
   const [loading, setLoading] = useState(true);
   const contactValidationScheme = Yup.object().shape({
-    email: Yup.string().email("Email Invalid").required("Bạn chưa nhập Email"),
+    email: Yup.string()
+      .matches(/^\S+@\S+\.\S+$/, "Email không hợp lệ")
+      .required("Bạn chưa nhập Email"),
     name: Yup.string()
       .required("Bạn chưa nhập họ tên")
       .min(2, ({ min }) => `Vui lòng nhập ít nhất ${min} ký tự`),
     phone: Yup.string()
       .required("Bạn chưa nhập số điện thoại")
-      .min(9, ({ min }) => `Vui lòng nhập ít nhất ${min} số`)
-      .max(11, ({ max }) => `Vui lòng nhập ít hơn ${max} số`),
+      .matches(/(84|0[3|5|7|8|9])+([0-9]{8})\b/g, "Vui lòng nhập số điện thoại hợp lệ")
+      .typeError("vui lòng nhập số"),
   });
 
   useEffect(() => {
@@ -80,29 +82,16 @@ const Contact = () => {
               }, 500);
             }}
           >
-            {({
-              handleChange,
-              handleSubmit,
-              values,
-              isValid,
-              errors,
-              touched,
-            }) => (
+            {({ handleChange, handleSubmit, values, isValid, errors, touched }) => (
               <div className="wrapper__contact-form">
                 {openModal && (
                   <div className="modal">
                     <div className="overlay"></div>
                     <div className="wrapper__modal">
-                      <div className="modal__heading">
-                        Gửi tin nhắn thành công
-                      </div>
+                      <div className="modal__heading">Gửi tin nhắn thành công</div>
                       <div className="modal__contact-content">
-                        <div className="modal__title">
-                          Cám ơn bạn đã gửi tin nhắn cho chúng tôi
-                        </div>
-                        <div className="modal__description">
-                          Chúng tôi sẽ phản hồi bạn trong thời gian sớm nhất!
-                        </div>
+                        <div className="modal__title">Cám ơn bạn đã gửi tin nhắn cho chúng tôi</div>
+                        <div className="modal__description">Chúng tôi sẽ phản hồi bạn trong thời gian sớm nhất!</div>
                       </div>
                       <div className="modal__contact-link">
                         <Link to={"/"} className="contact__link">
@@ -112,12 +101,9 @@ const Contact = () => {
                     </div>
                   </div>
                 )}
-                <div className="contact__form-heading">
-                  Gửi thắc mắc cho chúng tôi
-                </div>
+                <div className="contact__form-heading">Gửi thắc mắc cho chúng tôi</div>
                 <div className="contact__form-description">
-                  Nếu bạn có thắc mắc gì, có thể gửi yêu cầu cho chúng tôi, và
-                  chúng tôi sẽ liên lạc lại với bạn sớm nhất có thể.
+                  Nếu bạn có thắc mắc gì, có thể gửi yêu cầu cho chúng tôi, và chúng tôi sẽ liên lạc lại với bạn sớm nhất có thể.
                 </div>
                 <div className="wrapper__error">
                   {!isValid && (
@@ -195,7 +181,7 @@ const Contact = () => {
                     <input
                       value={values.phone}
                       onChange={handleChange("phone")}
-                      type="number"
+                      type="text"
                       className="input__contact"
                       placeholder="Nhập số điện thoại của bạn"
                     />
@@ -203,22 +189,11 @@ const Contact = () => {
                 </div>
                 <div className="contact__content">
                   <div className="contact__content-heading">Nội dung</div>
-                  <textarea
-                    className="text-area"
-                    cols="10"
-                    rows="10"
-                    placeholder="Nhập nội dung"
-                  />
+                  <textarea className="text-area" cols="10" rows="10" placeholder="Nhập nội dung" />
                 </div>
                 <div className="wrapper__contact-button">
-                  <button
-                    onClick={handleSubmit}
-                    type="submit"
-                    className="contact__button"
-                  >
-                    <div className="contact__button-name">
-                      GỬI CHO CHÚNG TÔI
-                    </div>
+                  <button onClick={handleSubmit} type="submit" className="contact__button">
+                    <div className="contact__button-name">GỬI CHO CHÚNG TÔI</div>
                   </button>
                 </div>
               </div>

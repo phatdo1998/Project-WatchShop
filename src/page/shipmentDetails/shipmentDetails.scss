@@ -82,7 +82,6 @@
 
 .container__shipment {
   @include flex(center, center);
-  overflow-y: scroll;
   .wrapper__shipment {
     width: 1100px;
     @include flex(unset, center);
@@ -362,6 +361,7 @@
           .wrapper__check {
             @include flex(center, space-between);
             margin-top: 40px;
+            height: 51px;
 
             @include bigMobile {
               @include flex(center, center);
@@ -372,6 +372,7 @@
             @include mobile {
               @include flex(center, center);
               flex-direction: column-reverse;
+              gap: 20px;
             }
 
             @include mediumMobile {
@@ -402,14 +403,20 @@
               font-size: 14px;
               color: #338dbc;
               font-weight: 600;
+              flex: 1;
 
               &:hover {
                 filter: brightness(1.2);
               }
             }
 
+            .shipment__button-link {
+              flex: 1;
+              @include flex(center, center);
+            }
+
             .check-button {
-              padding: 18px 14px;
+              padding: 18px 9px;
               background-color: #338dbc;
               color: #fff;
               border-radius: 4px;
@@ -472,20 +479,24 @@
           @include flex(center, space-between);
           margin-top: 40px;
           font-size: 14px;
+          height: 52px;
 
           .title1 {
             color: #338dbc;
             font-weight: 500;
             cursor: pointer;
+            flex: 1;
           }
 
           .title2 {
-            padding: 17px 16px;
+            padding: 17px 0;
             background-color: #338dbc;
             border-radius: 4px;
             font-weight: 500;
             color: #fff;
             cursor: pointer;
+            flex: 1;
+            text-align: center;
           }
         }
       }

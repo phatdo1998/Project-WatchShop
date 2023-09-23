@@ -629,7 +629,7 @@ export const getProductById = (id) => {
     setTimeout(() => {
       // eslint-disable-next-line eqeqeq
       resolve(products.flatMap((item) => item.items.filter((x) => x.id == id)));
-    }, 1000);
+    }, 500);
   });
 };
 
