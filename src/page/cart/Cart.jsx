@@ -1,32 +1,24 @@
-import React, { useEffect, useState } from "react";
-import Header from "../../components/header/Header";
-import "./cart.scss";
+import React from "react";
 import { IoIosAdd, IoIosRemove, IoMdRemove } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import empty from "../../assets/image/cart_empty_background.webp";
+import Header from "../../components/header/Header";
 import {
   decrement,
   increasement,
   removeToCart,
   totalCartPrice,
 } from "../../redux/slices/cartSlice";
-import empty from "../../assets/image/cart_empty_background.webp";
-import { Link } from "react-router-dom";
-import { Spin } from "antd";
+import "./cart.scss";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const [loading, setLoading] = useState(true);
 
   const totalQty = cart.reduce((init, total) => {
     return (init += total.qty);
   }, 0);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, [loading]);
 
   const handleRemove = (id) => {
     dispatch(removeToCart(id));
@@ -54,11 +46,7 @@ const Cart = () => {
         <Header />
       </div>
 
-      {loading ? (
-        <div className="wrapper__loading">
-          <Spin />
-        </div>
-      ) : cart.length > 0 ? (
+      {cart.length > 0 ? (
         <>
           <div className="wrapper__cart-body">
             <div className="wrapper__cart-content">

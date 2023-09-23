@@ -11,49 +11,41 @@ const Search = () => {
   const [searchParams] = useSearchParams();
   const keyword = String(searchParams.get("keyword"));
   const [data, setData] = useState();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchApi = async () => {
+      setLoading(true);
       const result = await getProductsByKeyword(keyword);
       setData(result);
-    };
-    fetchApi();
-  }, [keyword]);
-
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
       setLoading(false);
-    }, 500);
+    };
+
+    fetchApi();
   }, [keyword]);
 
   return (
     <div className="container">
-      {loading ? (
-        <div className="wrapper__loading">
-          <Spin />
+      <div className="container__header">
+        <Header />
+      </div>
+      <div className="wrapper__search">
+        <div className="wrapper__search-product">
+          <div className="seach__heading">Kết quả tìm kiếm : {keyword}</div>
+          <div className="wrapper__product-search">
+            {loading && <Spin />}
+            {!loading &&
+              data?.length > 0 &&
+              data?.map((item, index) => {
+                return <ProductItem key={index} item={item} numColumn={4} />;
+              })}
+            {!loading && data?.length === 0 && <p>Không tìm thấy</p>}
+          </div>
         </div>
-      ) : (
-        <>
-          <div className="container__header">
-            <Header />
-          </div>
-          <div className="wrapper__search">
-            <div className="wrapper__search-product">
-              <div className="seach__heading">Kết quả tìm kiếm : {keyword}</div>
-              <div className="wrapper__product-search">
-                {data?.map((item, index) => {
-                  return <ProductItem key={index} item={item} numColumn={4} />;
-                })}
-              </div>
-            </div>
-          </div>
-          <div className="container__footer">
-            <Footer />
-          </div>
-        </>
-      )}
+      </div>
+      <div className="container__footer">
+        <Footer />
+      </div>
     </div>
   );
 };

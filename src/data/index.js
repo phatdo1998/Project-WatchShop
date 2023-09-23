@@ -65,8 +65,7 @@ const products = [
           },
           {
             id: 39,
-            image:
-              "/images/apple-watch-se-2022-40mm-day-silicone-trang-kem-1.jpg",
+            image: "/images/apple-watch-se-2022-40mm-day-silicone-trang-kem-1.jpg",
             color: color.cream,
           },
         ],
@@ -121,8 +120,7 @@ const products = [
         imageColor: [
           {
             id: 44,
-            image:
-              "/images/apple-watch-s8-gps-45mm-day-silicone-den-xanh-1.jpg",
+            image: "/images/apple-watch-s8-gps-45mm-day-silicone-den-xanh-1.jpg",
             color: color.darkBlue,
           },
           {
@@ -132,8 +130,7 @@ const products = [
           },
           {
             id: 46,
-            image:
-              "/images/dong-ho-thong-minh-apple-watch-s8-trang-starlight-4.jpg",
+            image: "/images/dong-ho-thong-minh-apple-watch-s8-trang-starlight-4.jpg",
             color: color.cream,
           },
         ],
@@ -152,8 +149,7 @@ const products = [
         imageColor: [
           {
             id: 47,
-            image:
-              "/images/apple-watch-s8-gps-45mm-day-silicone-den-xanh-1.jpg",
+            image: "/images/apple-watch-s8-gps-45mm-day-silicone-den-xanh-1.jpg",
             color: color.darkBlue,
           },
         ],
@@ -196,8 +192,7 @@ const products = [
           },
           {
             id: 50,
-            image:
-              "/images/apple-watch-se-2022-40mm-day-silicone-trang-kem-1.jpg",
+            image: "/images/apple-watch-se-2022-40mm-day-silicone-trang-kem-1.jpg",
             color: color.cream,
           },
 
@@ -641,11 +636,7 @@ export const getProductById = (id) => {
 export const getProductByCategory = (category) => {
   return new Promise((resolve) => {
     if (category !== "all") {
-      resolve(
-        products.filter(
-          (item) => item.name.replace(/\s/g, "").toLowerCase() === category
-        )
-      );
+      resolve(products.filter((item) => item.name.replace(/\s/g, "").toLowerCase() === category));
     } else {
       resolve(products);
     }
@@ -654,13 +645,9 @@ export const getProductByCategory = (category) => {
 
 export const getProductsByKeyword = (keyword) => {
   return new Promise((resolve) => {
-    resolve(
-      products.flatMap((item) =>
-        item.items.filter((value) =>
-          value.name.toLowerCase().includes(keyword.toLowerCase())
-        )
-      )
-    );
+    setTimeout(() => {
+      resolve(products.flatMap((item) => item.items.filter((value) => value.name.toLowerCase().includes(keyword.toLowerCase()))));
+    }, 800);
   });
 };
 
@@ -705,8 +692,7 @@ export const newProduct = [
     qty: 1,
     imageColor: [
       {
-        image:
-          "/images/dong-ho-thong-minh-apple-watch-s8-trang-starlight-4.jpg",
+        image: "/images/dong-ho-thong-minh-apple-watch-s8-trang-starlight-4.jpg",
         color: color.cream,
       },
       {

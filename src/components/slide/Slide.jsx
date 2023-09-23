@@ -41,6 +41,8 @@ const Slide = () => {
         slidesPerView={"auto"}
         modules={[Navigation, Autoplay, EffectCoverflow]}
         effect="coverflow"
+        autoplay
+        delay={5000}
       >
         {slides.map((item, index) => {
           return (
