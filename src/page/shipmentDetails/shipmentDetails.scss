@@ -498,7 +498,7 @@
           }
 
           .title2 {
-            padding: 17px 0;
+            padding: 15px 0;
             background-color: #338dbc;
             border-radius: 4px;
             font-weight: 500;
@@ -510,150 +510,249 @@
         }
       }
 
-      .wrapper__step3 {
-        margin: 20px 0;
-        font-weight: 500;
-        .wrapper__order {
-          @include flex(center, flex-start);
-          font-size: 14px;
-          gap: 10px;
+      .modal__shipment {
+        @include flex(center, center);
+        position: fixed;
+        inset: 0;
+        z-index: 999;
 
-          .order__heading {
-            font-size: 21px;
-          }
-
-          .order__title {
-            color: #737373;
-          }
-
-          .order__thanks {
-            color: #4d4d4d;
-          }
+        .overlay {
+          position: fixed;
+          inset: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 20;
         }
-        .wrapper__information {
-          margin-top: 20px;
-          border-radius: 4px;
-          padding: 12px;
-          box-shadow: 0 0 0 1px #d9d9d9;
 
-          .information__heading {
-            font-size: 17px;
-            font-weight: 500;
-            margin-bottom: 5px;
-          }
+        .wrapper__modal-shipment {
+          background-color: #fff;
+          z-index: 999;
+          @include flex(center, center);
 
-          .container__information {
-            font-size: 14px;
-            color: #737373;
+          .modal__shipment-content {
+            padding: 20px;
+            width: 50vw;
+            @include flex(center, center);
 
-            .information__title {
-              color: #4d4d4d;
-              margin-bottom: 5px;
+            @include smallTablet {
+              width: 70vw;
             }
-
-            .information__vn {
-              margin: 15px 0;
-            }
-          }
-          .information__check {
-            font-size: 14px;
-            color: #4d4d4d;
-          }
-
-          .information__cod {
-            font-size: 14px;
-            color: #737373;
-          }
-        }
-        .wrapper__information-footer {
-          @include flex(center, space-between);
-          font-size: 14px;
-          margin-top: 40px;
-
-          @include bigMobile {
-            flex-direction: column-reverse;
-            gap: 20px;
-          }
-
-          @include mobile {
-            flex-direction: column-reverse;
-            gap: 20px;
-          }
-
-          @include mediumMobile {
-            flex-direction: column-reverse;
-            gap: 20px;
-          }
-
-          @include smallMobile {
-            flex-direction: column-reverse;
-            gap: 20px;
-          }
-
-          .wrapper__left {
-            @include flex(center, flex-start);
-            gap: 5px;
-            color: #737373;
-
-            .information__footer-title {
-              color: #338dbc;
-              cursor: pointer;
-              text-decoration: underline;
-            }
-          }
-
-          .wrapper__shipment-button {
             @include bigMobile {
-              width: 100%;
+              width: 80vw;
             }
-
             @include mobile {
-              width: 100%;
+              width: 80vw;
             }
             @include mediumMobile {
-              width: 100%;
+              width: 80vw;
             }
 
             @include smallMobile {
-              width: 100%;
-            }
-          }
-          .information__button {
-            padding: 18px 20px;
-            background-color: #338dbc;
-            color: #fff;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 13px;
-            font-weight: 500;
-            display: block;
-
-            @include bigMobile {
-              width: 100%;
-              text-align: center;
-              padding: 14px 0;
+              width: 90vw;
+              padding: 10px 10px 20px 10px;
             }
 
-            @include mobile {
+            .wrapper__modal-content {
               width: 100%;
-              text-align: center;
-              padding: 14px 0;
-            }
 
-            @include mediumMobile {
-              width: 100%;
-              padding: 14px 0;
-              text-align: center;
-            }
+              .wrapper__modal-heading {
+                text-align: center;
 
-            @include smallMobile {
-              width: 100%;
-              text-align: center;
-              padding: 14px 0;
-            }
+                .modal__content-heading {
+                  @include smallTablet {
+                    font-size: 24px;
+                  }
+                  @include bigMobile {
+                    font-size: 22px;
+                  }
 
-            &:hover {
-              filter: brightness(1.2);
+                  @include mediumMobile {
+                    font-size: 18px;
+                  }
+
+                  @include smallMobile {
+                    font-size: 18px;
+                  }
+                }
+              }
+              .wrapper__modal-icon {
+                text-align: center;
+              }
+
+              .wrapper__information {
+                margin-top: 20px;
+                border-radius: 4px;
+                padding: 12px;
+                box-shadow: 0 0 0 1px #d9d9d9;
+
+                @include mobile {
+                  font-size: 14px;
+                }
+
+                .information__heading {
+                  font-weight: 500;
+                  margin-bottom: 5px;
+
+                  @include smallTablet {
+                    font-size: 22px;
+                  }
+                  @include bigMobile {
+                    font-size: 20px;
+                  }
+
+                  @include mediumMobile {
+                    font-size: 18px;
+                  }
+                }
+
+                .container__information {
+                  color: #737373;
+
+                  @include mediumMobile {
+                    font-size: 14px;
+                  }
+
+                  .information__title {
+                    color: #4d4d4d;
+                    margin-bottom: 5px;
+                    font-weight: 600;
+                  }
+
+                  .information__vn {
+                    margin: 15px 0;
+                  }
+                }
+                .information__check {
+                  font-size: 14px;
+                  color: #4d4d4d;
+                }
+
+                .information__cod {
+                  font-size: 14px;
+                  color: #737373;
+                }
+              }
+              .wrapper__information-footer {
+                @include flex(center, space-between);
+                font-size: 14px;
+                margin-top: 40px;
+                gap: 40px;
+
+                @include tablet {
+                  gap: 0;
+                }
+                @include smallTablet {
+                  gap: 20px;
+                  flex-direction: column;
+                  margin-top: 20px;
+                }
+
+                @include bigMobile {
+                  flex-direction: column;
+                  gap: 20px;
+                }
+
+                @include mobile {
+                  flex-direction: column;
+                  gap: 20px;
+                }
+
+                @include mediumMobile {
+                  flex-direction: column;
+                  gap: 20px;
+                  font-size: 14px;
+                }
+
+                @include smallMobile {
+                  flex-direction: column;
+                  gap: 20px;
+                }
+
+                .wrapper__left {
+                  @include flex(center, flex-start);
+                  gap: 5px;
+                  font-size: 16px;
+                  color: #737373;
+
+                  @include mobile {
+                    font-size: 14px;
+                  }
+
+                  @include mediumMobile {
+                    font-size: 14px;
+                  }
+
+                  .information__footer-title {
+                    color: #338dbc;
+                    cursor: pointer;
+                    text-decoration: underline;
+                  }
+                }
+
+                .wrapper__shipment-button {
+                  font-size: 16px;
+
+                  @include smallTablet {
+                    width: 100%;
+                  }
+                  @include bigMobile {
+                    width: 100%;
+                  }
+
+                  @include mobile {
+                    width: 100%;
+                    font-size: 14px;
+                  }
+                  @include mediumMobile {
+                    width: 100%;
+                  }
+
+                  @include smallMobile {
+                    width: 100%;
+                  }
+                }
+                .information__button {
+                  padding: 18px 20px;
+                  background-color: #338dbc;
+                  color: #fff;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  font-weight: 500;
+                  display: block;
+
+                  @include smallTablet {
+                    padding: 14px 20px;
+                  }
+
+                  @include bigMobile {
+                    width: 100%;
+                    text-align: center;
+                    padding: 14px 0;
+                  }
+
+                  @include mobile {
+                    width: 100%;
+                    text-align: center;
+                    padding: 14px 0;
+                  }
+
+                  @include mediumMobile {
+                    width: 100%;
+                    padding: 14px 0;
+                    text-align: center;
+                    font-size: 14px;
+                  }
+
+                  @include smallMobile {
+                    width: 100%;
+                    text-align: center;
+                    padding: 14px 0;
+                  }
+
+                  &:hover {
+                    filter: brightness(1.2);
+                  }
+                }
+              }
             }
           }
         }

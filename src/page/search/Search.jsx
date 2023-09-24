@@ -33,7 +33,17 @@ const Search = () => {
         <div className="wrapper__search-product">
           <div className="seach__heading">Kết quả tìm kiếm : {keyword}</div>
           <div className="wrapper__product-search">
-            {loading && <Spin />}
+            {loading && (
+              <div
+                style={{
+                  height: loading ? "50vh" : "auto",
+                  width: "100%",
+                }}
+                className="wrapper__loading"
+              >
+                <Spin />
+              </div>
+            )}
             {!loading &&
               data?.length > 0 &&
               data?.map((item, index) => {

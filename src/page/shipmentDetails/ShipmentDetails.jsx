@@ -20,6 +20,7 @@ const ShipmentDetails = () => {
   const [hasSubmit, setHasSubmit] = useState(false);
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   const cart = useSelector((state) => state.cart);
   const information = useSelector((state) => state.information);
   const dispatch = useDispatch();
@@ -55,16 +56,13 @@ const ShipmentDetails = () => {
     return (total += item.price * item.qty);
   }, 0);
 
-  const handleButtonClick = () => {
-    dispatch(emptyCart());
-  };
-
   const handleStep2 = () => {
     setLoading(true);
 
     setTimeout(() => {
       setLoading(false);
-      setStep(3);
+
+      setOpenModal(true);
     }, 500);
   };
 
@@ -88,16 +86,11 @@ const ShipmentDetails = () => {
                 }}
                 validationSchema={shipmentValidationScheme}
                 onSubmit={(values) => {
-                  setLoading(true);
                   dispatch(addName(values.name));
                   dispatch(addEmail(values.email));
                   dispatch(addAddress(values.address));
                   dispatch(addPhone(values.phone));
-
-                  setTimeout(() => {
-                    setLoading(false);
-                    setStep(2);
-                  }, 500);
+                  setStep(2);
                 }}
               >
                 {({ handleChange, handleSubmit, values, isValid, errors, touched }) => (
@@ -254,7 +247,7 @@ const ShipmentDetails = () => {
                           }}
                           className="check-button"
                         >
-                          {loading ? <Spin /> : "Tiếp tục đến phương thức thanh toán"}
+                          Tiếp tục đến phương thức thanh toán
                         </button>
                       </Link>
                     </div>
@@ -288,43 +281,47 @@ const ShipmentDetails = () => {
               </div>
             )}
 
-            {step === 3 && (
-              <div className="wrapper__step3">
-                <div className="wrapper__order">
-                  <div className="">
-                    <AiOutlineCheckCircle size={60} color="#338dbc" />
-                  </div>
-                  <div className="">
-                    <div className="order__heading">Đặt hàng thành công</div>
-                    <div className="order__title">Mã đơn hàng #</div>
-                    <div className="order__thanks">Cám ơn bạn đã mua hàng!</div>
-                  </div>
-                </div>
-                <div className="wrapper__information">
-                  <div className="information__heading">Thông tin đơn hàng</div>
-                  <div className="container__information">
-                    <div className="information__title">Thông tin giao hàng</div>
-                    <div className="information">{information.name}</div>
-                    <div className="information">{information.phone}</div>
-                    <div className="information">{information.address}</div>
-                    <div className="information">{information.wards}</div>
-                    <div className="information">{information.districts}</div>
-                    <div className="information">{information.city}</div>
-                    <div className="information__vn">Việt Nam</div>
-                  </div>
-                  <div className="information__check">Phương thức thanh toán</div>
-                  <div className="information__cod">Thanh toán khi giao hàng (COD)</div>
-                </div>
-                <div className="wrapper__information-footer">
-                  <div className="wrapper__left">
-                    <AiFillQuestionCircle size={20} color="#737373" />
-                    <div className="">Cần hỗ trợ?</div>
-                    <div className="information__footer-title">Liên hệ chúng tôi</div>
-                  </div>
-                  <div onClick={handleButtonClick} className="wrapper__shipment-button">
-                    <Link className="information__button" to={"/"}>
-                      Tiếp tục mua hàng
-                    </Link>
+            {openModal && (
+              <div className="modal__shipment">
+                <div className="overlay"></div>
+                <div className="wrapper__modal-shipment">
+                  <div className="modal__shipment-content">
+                    <div className="wrapper__modal-content">
+                      <div className="wrapper__modal-icon">
+                        <AiOutlineCheckCircle size={80} color="#57d17c" />
+                      </div>
+                      <div className="wrapper__modal-heading">
+                        <h1 className="modal__content-heading">Đặt hàng thành công</h1>
+                        <div className="">Mã đơn hàng: #</div>
+                      </div>
+                      <div className="wrapper__information">
+                        <h2 className="information__heading">Thông tin đơn hàng</h2>
+                        <div className="container__information">
+                          <div className="information__title">Thông tin giao hàng</div>
+                          <div className="information">{information.name}</div>
+                          <div className="information">{information.phone}</div>
+                          <div className="information">{information.address}</div>
+                          <div className="information">{information.wards}</div>
+                          <div className="information">{information.districts}</div>
+                          <div className="information">{information.city}</div>
+                          <div className="information__vn">Việt Nam</div>
+                        </div>
+                        <div className="information__check">Phương thức thanh toán</div>
+                        <div className="information__cod">Thanh toán khi giao hàng (COD)</div>
+                      </div>
+                      <div className="wrapper__information-footer">
+                        <div className="wrapper__left">
+                          <AiFillQuestionCircle size={20} color="#737373" />
+                          <div className="">Cần hỗ trợ?</div>
+                          <div className="information__footer-title">Liên hệ chúng tôi</div>
+                        </div>
+                        <button onClick={() => dispatch(emptyCart())} className="wrapper__shipment-button">
+                          <Link className="information__button" to={"/"}>
+                            Tiếp tục mua hàng
+                          </Link>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
