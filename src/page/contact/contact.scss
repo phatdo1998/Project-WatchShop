@@ -363,24 +363,49 @@
           .contact__button {
             margin-top: 20px;
             cursor: pointer;
+            @include bigMobile {
+              width: 100%;
+            }
+
+            @include mobile {
+              width: 100%;
+            }
+
+            @include mediumMobile {
+              width: 100%;
+            }
+
+            @include smallMobile {
+              width: 100%;
+            }
 
             background-color: #fff;
 
             .contact__button-name {
-              padding: 12px 24px;
+              padding: 12px 0;
               border-radius: 20px;
               background-color: #3b3b3b;
               color: #fff;
               text-align: right;
+              width: 185px;
+              @include flex(center, center);
+
+              @include bigMobile {
+                padding: 10px 0;
+                width: 100%;
+              }
 
               @include mobile {
-                padding: 10px 24px;
+                padding: 10px 0;
+                width: 100%;
               }
               @include mediumMobile {
-                padding: 10px 24px;
+                padding: 10px 0;
+                width: 100%;
               }
               @include smallMobile {
-                padding: 10px 24px;
+                padding: 10px 0;
+                width: 100%;
               }
             }
           }

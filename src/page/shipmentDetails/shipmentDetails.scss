@@ -125,14 +125,15 @@
       padding: 56px 44px 0 0;
       border-right: 1px solid $border-color;
       padding-bottom: 20px;
+
       @include tablet {
-        border-top: 1px solid $border-color;
-        border-right: none;
+        border-right: 1px solid $border-color;
         margin-top: 15px;
       }
 
       @include smallTablet {
         padding: 0;
+        border: none;
       }
 
       @include bigMobile {
@@ -405,6 +406,10 @@
               font-weight: 600;
               flex: 1;
 
+              @include tablet {
+                flex: 1;
+              }
+
               &:hover {
                 filter: brightness(1.2);
               }
@@ -413,6 +418,10 @@
             .shipment__button-link {
               flex: 1;
               @include flex(center, center);
+
+              @include tablet {
+                flex: 2;
+              }
             }
 
             .check-button {
@@ -622,21 +631,25 @@
             @include bigMobile {
               width: 100%;
               text-align: center;
+              padding: 14px 0;
             }
 
             @include mobile {
               width: 100%;
               text-align: center;
+              padding: 14px 0;
             }
 
             @include mediumMobile {
               width: 100%;
+              padding: 14px 0;
               text-align: center;
             }
 
             @include smallMobile {
               width: 100%;
               text-align: center;
+              padding: 14px 0;
             }
 
             &:hover {
