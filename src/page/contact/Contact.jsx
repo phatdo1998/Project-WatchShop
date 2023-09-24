@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./contact.scss";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
@@ -8,10 +8,11 @@ import { IoIosMail } from "react-icons/io";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
+import { Spin } from "antd";
 
 const Contact = () => {
   const [openModal, setOpenModal] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const contactValidationScheme = Yup.object().shape({
     email: Yup.string()
       .matches(/^\S+@\S+\.\S+$/, "Email không hợp lệ")
@@ -24,12 +25,6 @@ const Contact = () => {
       .matches(/(84|0[3|5|7|8|9])+([0-9]{8})\b/g, "Vui lòng nhập số điện thoại hợp lệ")
       .typeError("vui lòng nhập số"),
   });
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 500);
-  }, [loading]);
 
   return (
     <div className="container__contact">
@@ -193,7 +188,14 @@ const Contact = () => {
                 </div>
                 <div className="wrapper__contact-button">
                   <button onClick={handleSubmit} type="submit" className="contact__button">
-                    <div className="contact__button-name">GỬI CHO CHÚNG TÔI</div>
+                    <div
+                      style={{
+                        backgroundColor: loading && "#fff",
+                      }}
+                      className="contact__button-name"
+                    >
+                      {loading ? <Spin /> : "GỬI CHO CHÚNG TÔI"}{" "}
+                    </div>
                   </button>
                 </div>
               </div>
