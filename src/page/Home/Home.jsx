@@ -5,7 +5,7 @@ import Header from "../../components/header/Header";
 import Slide from "../../components/slide/Slide";
 import "./home.scss";
 
-export const Home = () => {
+const Home = () => {
   return (
     <div className="container">
       <div className="container__header">
@@ -25,4 +25,4 @@ export const Home = () => {
   );
 };
 
-// export default Home;
+export default Home;
