@@ -49,7 +49,16 @@ const Search = () => {
               data?.map((item, index) => {
                 return <ProductItem key={index} item={item} numColumn={4} />;
               })}
-            {!loading && data?.length === 0 && <p>Không tìm thấy</p>}
+            {!loading && data?.length === 0 && (
+              <div className="wrapper__search-empty">
+                <img
+                  src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/a60759ad1dabe909c46a817ecbf71878.png"
+                  alt=""
+                  className="result__img"
+                />
+                <p className="search__empty-text">Không tìm thấy kết quả nào</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

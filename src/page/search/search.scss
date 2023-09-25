@@ -68,5 +68,23 @@
       gap: 10px;
       margin-top: 30px;
     }
+
+    .wrapper__search-empty {
+      @include flex(center, center);
+      flex-direction: column;
+
+      width: 100%;
+      .result__img {
+        width: 134px;
+        height: 134px;
+      }
+      .search__empty-text {
+        font-weight: 600;
+
+        @include mobile {
+          font-size: 16px;
+        }
+      }
+    }
   }
 }

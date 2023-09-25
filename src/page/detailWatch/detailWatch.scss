@@ -106,6 +106,17 @@
         @include smallTablet {
           @include flex(center, center);
         }
+
+        .wrapper__img-detail {
+          @include tablet {
+            height: 100%;
+            @include flex(center, center);
+          }
+          @include bigMobile {
+            height: 100%;
+            @include flex(center, center);
+          }
+        }
         .wrapper__detail-color {
           height: 111px;
           @include flex(center, flex-start);

@@ -298,9 +298,9 @@ const ShipmentDetails = () => {
                         <h2 className="information__heading">Thông tin đơn hàng</h2>
                         <div className="container__information">
                           <div className="information__title">Thông tin giao hàng</div>
-                          <div className="information">{information.name}</div>
-                          <div className="information">{information.phone}</div>
-                          <div className="information">{information.address}</div>
+                          <div className="information">Họ tên: {information.name}</div>
+                          <div className="information">Số điện thoại: {information.phone}</div>
+                          <div className="information">Địa chỉ: {information.address}</div>
                           <div className="information">{information.wards}</div>
                           <div className="information">{information.districts}</div>
                           <div className="information">{information.city}</div>
