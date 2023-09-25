@@ -177,6 +177,7 @@ const Contact = () => {
                       value={values.phone}
                       onChange={handleChange("phone")}
                       type="text"
+                      inputMode="numeric"
                       className="input__contact"
                       placeholder="Nhập số điện thoại của bạn"
                     />
